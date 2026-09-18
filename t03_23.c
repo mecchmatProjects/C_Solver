@@ -24,18 +24,27 @@ double soft_exponential_deriv(double a, double x) {
     }
 }
 
-int main() {
+int test_soft_exponential(void) {
     double x = 1.5;
-    double a = 0.5;
+    double eps = 1e-6;
 
-    printf("%f\n", soft_exponential(-a, x));
-    printf("%f\n", soft_exponential_deriv(-a, x));
-    
-    printf("%f\n", soft_exponential(0, x));
-    printf("%f\n", soft_exponential_deriv(0, x));
-    
-    printf("%f\n", soft_exponential(a, x));
-    printf("%f\n", soft_exponential_deriv(a, x));
+    double a1 = -0.5;
+    double exp_val1 = 2.0 * log(1.5);
+    double exp_deriv1 = 1.0 / 1.5;
+    if (fabs(soft_exponential(a1, x) - exp_val1) > eps) return 1;
+    if (fabs(soft_exponential_deriv(a1, x) - exp_deriv1) > eps) return 1;
+
+    double a2 = 0.0;
+    double exp_val2 = 1.5;
+    double exp_deriv2 = 1.0;
+    if (fabs(soft_exponential(a2, x) - exp_val2) > eps) return 1;
+    if (fabs(soft_exponential_deriv(a2, x) - exp_deriv2) > eps) return 1;
+
+    double a3 = 0.5;
+    double exp_val3 = 2.0 * (exp(0.75) - 1.0) + 0.5;
+    double exp_deriv3 = exp(0.75);
+    if (fabs(soft_exponential(a3, x) - exp_val3) > eps) return 1;
+    if (fabs(soft_exponential_deriv(a3, x) - exp_deriv3) > eps) return 1;
 
     return 0;
 }

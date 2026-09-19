@@ -5,6 +5,7 @@
 
 int test_onestep(void);
 int test_sinc(void);
+int test_soft_exponential(void);
 
 int main() {
     // катя
@@ -14,11 +15,17 @@ int main() {
         printf("Test failed!\n");
     }
     // Хорошун Маша
-        if (test_sinc() == 0) { // <-- 2. Викликаємо перевірку sinc
-            printf("sinc test passed!\n");
-        } else {
-            printf("sinc test failed!\n");
-        }
+    if (test_sinc() == 0) { // <-- 2. Викликаємо перевірку sinc
+        printf("sinc test passed!\n");
+    } else {
+        printf("sinc test failed!\n");
+    }
+    // Віра
+    if (test_soft_exponential() == 0) {
+        printf("soft_exponential test passed!\n");
+    } else {
+        printf("soft_exponential test failed!\n");
+    }
 
     return 0;
 }

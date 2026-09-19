@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 int test_onestep(void);
+int test_sinc(void);
 
 int main() {
     // катя
@@ -12,9 +13,12 @@ int main() {
     } else {
         printf("Test failed!\n");
     }
-
-    // Трубач;
-    // Пастушенко;
+    // Хорошун Маша
+        if (test_sinc() == 0) { // <-- 2. Викликаємо перевірку sinc
+            printf("sinc test passed!\n");
+        } else {
+            printf("sinc test failed!\n");
+        }
 
     return 0;
 }

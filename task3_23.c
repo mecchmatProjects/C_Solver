@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdbool.h>
 
-static is_zero(double x) {
+static bool is_zero(double x) {
     return fabs(x) < 1e-9;
 }
 

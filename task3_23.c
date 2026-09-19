@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdbool.h>
 
-bool is_zero(double x) {  //Щоб коректно працював is_zero(вже є в Activaton.c)
+static is_zero(double x) {
     return fabs(x) < 1e-9;
 }
 
@@ -24,7 +24,7 @@ double sinc_derivative(double x) {  //Похідна функції sinc
     }
 }
 
-int test_sinc() { //Тест для функції sinc
+int test_sinc(void) { //Тест для функції sinc
     if (!is_zero(sinc(0) - 1.0)) {
         printf("Test sinc for 0 is failed\n");
         return 1;
@@ -34,13 +34,4 @@ int test_sinc() { //Тест для функції sinc
         return 1;
     }
     return 0;
-}
-
-int main() { //Щоб запустити тест
-    if (test_sinc() == 0) {
-        printf("Test passed successfully.\n");
-    } 
-    else {
-        printf("Test failed.\n");
-    }
 }

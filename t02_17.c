@@ -1,25 +1,38 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdbool.h>
 
-double softSign(double x) {
-    return x / (1.0 + fabs(x));
+static bool is_zero_softsign(double x) {
+    return fabs(x) < 1e-9;
 }
 
-double softSign_derivative(double x) {
-    double d = 1.0 + fabs(x);
-    return 1.0 / (d * d);
+double softSign(double x) { 
+    return x / (1.0 + fabs(x)); 
 }
 
-int main() {
-    printf("Test f(0) = %g, df(0) = %g\n", f(0), df(0));
-    printf("Test f(1) = %g, df(1) = %g\n", f(1), df(1));
+double softSign_derivative(double x) { 
+    double d = 1.0 + fabs(x); 
+    return 1.0 / (d * d); 
+}
 
-    double x;
-    printf("\nEnter x: ");
-    scanf("%lf", &x);
+int test_softSign(void) {
+    if (!is_zero_softsign(softSign(0.0) - 0.0)) {
+        printf("Test softSign(0) failed\n");
+        return 1;
+    }
+    if (!is_zero_softsign(softSign_derivative(0.0) - 1.0)) {
+        printf("Test softSign_derivative(0) failed\n");
+        return 1;
+    }
 
-    printf("f(%g) = %g\n", x, f(x));
-    printf("df(%g) = %g\n", x, df(x));
+    if (!is_zero_softsign(softSign(1.0) - 0.5)) {
+        printf("Test softSign(1) failed\n");
+        return 1;
+    }
+    if (!is_zero_softsign(softSign_derivative(1.0) - 0.25)) {
+        printf("Test softSign_derivative(1) failed\n");
+        return 1;
+    }
 
-    return 0;
+    return 0; 
 }

@@ -73,14 +73,3 @@ int test_sRelu() {
 
     return 0;
 }
-
-int main() {
-    if (test_sRelu() == 0) {
-        printf("Test passed successfully.\n");
-    }
-    else {
-        printf("Test failed.\n");
-    }
-
-    return 0;
-}

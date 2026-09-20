@@ -8,6 +8,7 @@ int test_sinc(void);
 int test_soft_exponential(void);
 int test_Relu(void);
 int test_sRelu(void);
+int test_eReLu(void);
 
 int main() {
     // катя
@@ -39,6 +40,12 @@ int main() {
         printf("sRelu test passed!\n");
     } else {
         printf("sRelu test failed!\n");
+    }
+    // Богдан Косенко
+    if (test_eReLu() == 0) {
+        printf("eReLu test passed!\n");
+    } else {
+        printf("eReLu test failed!\n");
     }
     return 0;
 }

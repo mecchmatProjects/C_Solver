@@ -10,4 +10,5 @@ add_executable(C_Solver
         t03_23.c
         task_relu.c
         task_3_23_d.c
+        223г.c
 )

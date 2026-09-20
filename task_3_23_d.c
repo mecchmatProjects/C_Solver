@@ -3,7 +3,7 @@
 #include <math.h>
 #include <float.h>
 
-bool is_zero(double x) {
+static bool is_zero(double x) {
     return fabs(x) < 1e-9;
 }
 
@@ -35,7 +35,7 @@ double sRelu_derivative(double tl, double tr, double al, double ar, double x) {
     }
 }
 
-int test_sRelu() {
+int test_sRelu(void) {
     double tl = -1.0;
     double tr = 1.0;
     double al = 0.2;

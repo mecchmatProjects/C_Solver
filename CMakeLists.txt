@@ -9,4 +9,5 @@ add_executable(C_Solver
         task3_23.c
         t03_23.c
         task_relu.c
+        task_3_23_d.c
 )

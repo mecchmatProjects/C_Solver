@@ -7,6 +7,7 @@ int test_onestep(void);
 int test_sinc(void);
 int test_soft_exponential(void);
 int test_Relu(void);
+int test_sRelu(void);
 
 int main() {
     // катя
@@ -33,6 +34,11 @@ int main() {
     } else {
         printf("ReLU test failed!\n");
     }
-
+    // Марія Лемента
+    if (test_sRelu() == 0) {
+        printf("sRelu test passed!\n");
+    } else {
+        printf("sRelu test failed!\n");
+    }
     return 0;
 }

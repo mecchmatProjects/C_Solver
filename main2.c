@@ -6,6 +6,7 @@
 int test_onestep(void);
 int test_sinc(void);
 int test_soft_exponential(void);
+int test_Relu(void);
 
 int main() {
     // катя
@@ -25,6 +26,12 @@ int main() {
         printf("soft_exponential test passed!\n");
     } else {
         printf("soft_exponential test failed!\n");
+    }
+    // Артем
+    if (test_Relu() == 0) {
+        printf("ReLU test passed!\n");
+    } else {
+        printf("ReLU test failed!\n");
     }
 
     return 0;

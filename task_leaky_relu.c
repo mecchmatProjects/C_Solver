@@ -27,6 +27,5 @@ int test_leakyRelu(void) {
     if (fabs(leakyRelu(2.0, a) - 2.0) > 1e-9) return 1;
     if (fabs(leakyReluDerivative(2.0, a) - 0.0) > 1e-9) return 1;
     if (fabs(leakyReluDerivative(0.0, a) - DBL_MAX) > 1e-9) return 1;
-
     return 0;
 }

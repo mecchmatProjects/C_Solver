@@ -11,4 +11,5 @@ add_executable(C_Solver
         task_relu.c
         task_3_23_d.c
         223г.c
+        task_leaky_relu.c
 )

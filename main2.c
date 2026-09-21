@@ -9,6 +9,7 @@ int test_soft_exponential(void);
 int test_Relu(void);
 int test_sRelu(void);
 int test_eReLu(void);
+int test_leakyRelu(void);
 
 int main() {
     // катя
@@ -46,6 +47,12 @@ int main() {
         printf("eReLu test passed!\n");
     } else {
         printf("eReLu test failed!\n");
+    }
+    // Яковчук
+    if (test_leakyRelu() == 0) {
+        printf("leakyRelu test passed!\n");
+    } else {
+        printf("leakyRelu test failed!\n");
     }
     return 0;
 }

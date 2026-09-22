@@ -14,9 +14,9 @@ int test_leakyRelu(void);
 int main() {
     // катя
     if (test_onestep() == 0) {
-        printf("Everything is okay!\n");
+        printf("Onestep test passed!\n");
     } else {
-        printf("Test failed!\n");
+        printf("Onestep test failed!\n");
     }
     // Хорошун Маша
     if (test_sinc() == 0) { // <-- 2. Викликаємо перевірку sinc

@@ -6,10 +6,4 @@ set(CMAKE_C_STANDARD 11)
 add_executable(C_Solver
         main2.c
         Activation.c
-        task3_23.c
-        t03_23.c
-        task_relu.c
-        task_3_23_d.c
-        223г.c
-        task_leaky_relu.c
 )

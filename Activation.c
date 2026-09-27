@@ -58,10 +58,6 @@ int test_softPlus_derivative() {
 
     if (!is_zero(softPlus_derivative(-1.0) - numerical_derivative(-1.0, h))) {
         printf("Test failed: softPlus_derivative(-1.0) does not match numerical derivative\n");
-# include <stdio.h>
-# include <math.h>
-# include <stdbool.h>
-
 
 bool is_zero(double x){
     return fabs(x) < 1e-9;
@@ -229,20 +225,13 @@ int derivative_test_soft_sign() {
     return 0;
 }
 
-
-double invsqrt(double x, double alpha){
-    if (alpha*x*x < -1) {
-        return NAN;
-    }
-    return x/sqrt(1+alpha*x*x);
+double invsqrt(double x, double alpha) {
+    return x / sqrt(1.0 + alpha * x * x);
 }
-    
+
 double invsqrt_derivative(double x, double alpha) {
-    if (alpha*x*x < -1) {
-        return NAN;
-    }
-    double y = pow(1+alpha*x*x, 3);
-    return 1/sqrt(y);
+    double base = 1.0 + alpha * x * x;
+    return 1.0 / (base * sqrt(base));
 }
 
 ///Tests
@@ -266,15 +255,4 @@ int tests() {
     if (!isnan(invsqrt_derivative(1.0, -3.0))) {}
     printf("tests are successful\n");
     return 0;
-}
-
-int main() {
-    double x, alpha;
-    tests();
-    printf("input x and alpha: ");
-    scanf("%lf %lf", &x, &alpha);
-    double i = invsqrt(x, alpha);
-    double j = invsqrt_derivative(x, alpha);
-    printf("invsqrt(%lf, %lf) = %lf\n", x, alpha, i);
-    printf("invsqrt_derivative(%lf, %lf) = %lf\n", x, alpha, j);
 }

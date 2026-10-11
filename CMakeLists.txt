@@ -1,9 +1,8 @@
-cmake_minimum_required(VERSION 3.20)
-project(C_Solver C)
-
-set(CMAKE_C_STANDARD 11)
-
-add_executable(C_Solver
-        main2.c
-        Activation.c
-)
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL</key>
+	<string>https://github.com/mecchmatProjects/C_Solver/blob/dev_katya1/CMakeLists.txt</string>
+</dict>
+</plist>

@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <float.h>
 
 #include "miniai/ml/activation/activations.h"
 
@@ -235,6 +236,43 @@ static void test_polymorphic_interface(void) {
     }
 }
 
+static void test_onestep(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_onestep_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize OneStep");
+
+    expect_status(activation_value(&activation, -1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate negative OneStep");
+    expect_near(value, 0.0, "OneStep at -1");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate OneStep at zero");
+    expect_near(value, 1.0, "OneStep at zero");
+
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive OneStep");
+    expect_near(value, 1.0, "OneStep at 2");
+
+    expect_status(activation_derivative(&activation, -1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate negative OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at -1");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at 2");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate OneStep at zero");
+    expect_near(derivative, DBL_MAX, "OneStep derivative marker at zero");
+
+    expect_status(activation_onestep_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null OneStep initializer");
+}
+
 int main(void) {
     test_relu();
     test_leaky_relu();
@@ -245,6 +283,7 @@ int main(void) {
     test_gaussian();
     test_dispatch_validation();
     test_polymorphic_interface();
+    test_onestep();
 
     if (failures != 0) {
         fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);

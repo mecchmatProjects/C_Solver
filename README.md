@@ -376,6 +376,45 @@ MiniAI/
 └── models/
 ```
 
+### Bootstrap implemented in this repository
+
+The repository bootstrap adds the `include/miniai/`, `src/`, and `tests/` trees,
+with reserved `math/`, `ml/`, `data/`, and `core/` areas, plus `examples/`,
+`datasets/`, and `models/`. The activation milestone is implemented as a pure
+C17 library. Activations share a function-pointer interface and are initialized
+into caller-owned structs; no C++ runtime, heap allocation, or exceptions are
+required:
+
+```c
+#include <stdio.h>
+
+#include "miniai/ml/activation/activations.h"
+
+int main(void) {
+    Activation sigmoid;
+    double y;
+    double dy;
+
+    if (activation_sigmoid_init(&sigmoid) != ACTIVATION_STATUS_OK ||
+        activation_value(&sigmoid, 2.0, &y) != ACTIVATION_STATUS_OK ||
+        activation_derivative(&sigmoid, 2.0, &dy) != ACTIVATION_STATUS_OK) {
+        return 1;
+    }
+
+    printf("sigmoid(2) = %f, derivative = %f\n", y, dy);
+    return 0;
+}
+```
+
+Available activations: `ReLU`, `LeakyReLU`, `ELU`, `Sigmoid`, `SoftPlus`,
+`SoftSign`, and `Gaussian`. Build and run the activation tests with CMake:
+
+```text
+cmake -S . -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
 ---
 
 # 7. Відповідність лабораторним роботам

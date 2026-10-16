@@ -9,5 +9,6 @@
 #include "miniai/ml/activation/softplus.h"
 #include "miniai/ml/activation/softsign.h"
 #include "miniai/ml/activation/onestep.h"
+#include "miniai/ml/activation/sigmweight.h"
 
 #endif

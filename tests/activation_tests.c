@@ -273,6 +273,38 @@ static void test_onestep(void) {
                   "reject null OneStep initializer");
 }
 
+static void test_sigmweight(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+    double sig2;
+
+    expect_status(activation_sigmweight_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize Sigmweight");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at zero");
+    expect_near(value, 0.0, "Sigmweight at zero");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Sigmweight at zero");
+    expect_near(derivative, 0.5, "Sigmweight derivative at zero");
+
+    sig2 = 1.0 / (1.0 + exp(-2.0));
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive Sigmweight");
+    expect_near(value, 2.0 * sig2, "Sigmweight positive value");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive Sigmweight");
+    expect_near(derivative, sig2 + 2.0 * sig2 * (1.0 - sig2),
+                "Sigmweight positive derivative");
+
+    expect_status(activation_sigmweight_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Sigmweight initializer");
+}
+
 int main(void) {
     test_relu();
     test_leaky_relu();
@@ -284,6 +316,7 @@ int main(void) {
     test_dispatch_validation();
     test_polymorphic_interface();
     test_onestep();
+    test_sigmweight();
 
     if (failures != 0) {
         fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);

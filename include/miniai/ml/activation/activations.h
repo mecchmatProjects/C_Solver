@@ -6,6 +6,7 @@
 #include "miniai/ml/activation/leaky_relu.h"
 #include "miniai/ml/activation/relu.h"
 #include "miniai/ml/activation/sigmoid.h"
+#include "miniai/ml/activation/sigmweight.h"
 #include "miniai/ml/activation/softplus.h"
 #include "miniai/ml/activation/softsign.h"
 

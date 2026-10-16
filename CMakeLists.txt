@@ -15,6 +15,7 @@ add_library(miniai
     src/ml/activation/leaky_relu.c
     src/ml/activation/relu.c
     src/ml/activation/sigmoid.c
+    src/ml/activation/sigmweight.c
     src/ml/activation/softplus.c
     src/ml/activation/softsign.c
 )

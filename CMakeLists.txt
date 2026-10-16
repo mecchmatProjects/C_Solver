@@ -17,6 +17,7 @@ add_library(miniai
     src/ml/activation/sigmoid.c
     src/ml/activation/softplus.c
     src/ml/activation/softsign.c
+    src/ml/activation/invsqrt.c
 )
 add_library(miniai::miniai ALIAS miniai)
 

@@ -8,5 +8,6 @@
 #include "miniai/ml/activation/sigmoid.h"
 #include "miniai/ml/activation/softplus.h"
 #include "miniai/ml/activation/softsign.h"
+#include "miniai/ml/activation/invsqrt.h"
 
 #endif

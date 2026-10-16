@@ -187,6 +187,28 @@ static void test_gaussian(void) {
     expect_near(derivative, -2.0 * exp(-1.0), "Gaussian derivative at one");
 }
 
+static void test_invsqrt(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_gaussian_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize invsqrt");
+    expect_status(activation_value(&activation, 0.0, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at zero");
+    expect_near(value, 0.0, "invsqrt at zero");
+    expect_status(activation_value(&activation, 1.0, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at one");
+    expect_near(value, 1/sqrt(2), "invsqrt at one");
+    expect_status(activation_derivative(&activation, 0.0, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at zero");
+    expect_near(derivative, 1.0, "invsqrt derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at one");
+    expect_near(derivative, 1/(2*sqrt(2)), "invsqrt derivative at one");
+}
+
+
 static void test_dispatch_validation(void) {
     Activation activation;
     double result = 123.0;
@@ -243,6 +265,7 @@ int main(void) {
     test_softplus();
     test_softsign();
     test_gaussian();
+    test_invsqrt();
     test_dispatch_validation();
     test_polymorphic_interface();
 

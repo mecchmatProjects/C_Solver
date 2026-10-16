@@ -187,6 +187,33 @@ static void test_gaussian(void) {
     expect_near(derivative, -2.0 * exp(-1.0), "Gaussian derivative at one");
 }
 
+static void test_arctan(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_arctan_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Arctan");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at zero");
+    expect_near(value, 0.0, "Arctan at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at one");
+    expect_near(value, atan(1.0), "Arctan at one");
+    expect_status(activation_value(&activation, INFINITY, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at infinity");
+    expect_near(value, acos(-1.0) / 2.0, "Arctan at infinity");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at zero");
+    expect_near(derivative, 1.0, "Arctan derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at one");
+    expect_near(derivative, 0.5, "Arctan derivative at one");
+    expect_status(activation_arctan_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Arctan output");
+}
+
 static void test_dispatch_validation(void) {
     Activation activation;
     double result = 123.0;
@@ -243,6 +270,7 @@ int main(void) {
     test_softplus();
     test_softsign();
     test_gaussian();
+    test_arctan();
     test_dispatch_validation();
     test_polymorphic_interface();
 

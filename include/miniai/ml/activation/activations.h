@@ -5,6 +5,7 @@
 #include "miniai/ml/activation/gaussian.h"
 #include "miniai/ml/activation/leaky_relu.h"
 #include "miniai/ml/activation/relu.h"
+#include "miniai/ml/activation/s_relu.h"
 #include "miniai/ml/activation/sigmoid.h"
 #include "miniai/ml/activation/softplus.h"
 #include "miniai/ml/activation/soft_exponential.h"

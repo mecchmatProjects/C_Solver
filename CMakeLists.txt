@@ -16,6 +16,7 @@ add_library(miniai
     src/ml/activation/relu.c
     src/ml/activation/sigmoid.c
     src/ml/activation/softplus.c
+    src/ml/activation/soft_exponential.c
     src/ml/activation/softsign.c
     src/ml/activation/sigmweight.c
         include/miniai/ml/activation/onestep.h

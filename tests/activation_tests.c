@@ -305,12 +305,68 @@ static void test_sigmweight(void) {
                   "reject null Sigmweight initializer");
 }
 
+
+static void test_soft_exponential(void) {
+    Activation activation;
+    double value, derivative;
+    const double x = 1.5;
+
+    const double alphas[] = {-0.5, 0.0, 0.5};
+    const double expected_values[] = {
+        2.0 * log(1.5),
+        1.5,
+        2.0 * (exp(0.75) - 1.0) + 0.5
+    };
+    const double expected_derivatives[] = {
+        1.0 / 1.5,
+        1.0,
+        exp(0.75)
+    };
+
+    for (int i = 0; i < 3; ++i) {
+        expect_status(
+            activation_soft_exponential_init(&activation, alphas[i]),
+            ACTIVATION_STATUS_OK,
+            "initialize Soft Exponential"
+        );
+
+        expect_status(
+            activation_value(&activation, x, &value),
+            ACTIVATION_STATUS_OK,
+            "evaluate Soft Exponential"
+        );
+        expect_near(value, expected_values[i],
+                    "Soft Exponential value");
+
+        expect_status(
+            activation_derivative(&activation, x, &derivative),
+            ACTIVATION_STATUS_OK,
+            "differentiate Soft Exponential"
+        );
+        expect_near(derivative, expected_derivatives[i],
+                    "Soft Exponential derivative");
+    }
+
+    expect_status(
+        activation_soft_exponential_init(NULL, 0.5),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject null initializer"
+    );
+    expect_status(
+        activation_soft_exponential_init(&activation, NAN),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject NaN alpha"
+    );
+}
+
+
 int main(void) {
     test_relu();
     test_leaky_relu();
     test_elu();
     test_sigmoid();
     test_softplus();
+    test_soft_exponential();
     test_softsign();
     test_gaussian();
     test_dispatch_validation();

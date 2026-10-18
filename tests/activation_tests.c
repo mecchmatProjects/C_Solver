@@ -361,11 +361,11 @@ static void test_soft_exponential(void) {
 
 
 static void test_s_relu(void) {
-    Activation activation;
+    Activation activation = {0};
     double value = 0.0;
     double derivative = 0.0;
 
-    expect_status(activation_s_relu_init(&activation),
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.3),
                   ACTIVATION_STATUS_OK, "initialize SReLU");
 
     activation_value(&activation, -2.0, &value);
@@ -386,6 +386,16 @@ static void test_s_relu(void) {
     expect_near(derivative, DBL_MAX, "SReLU derivative at -1");
     activation_derivative(&activation, 1.0, &derivative);
     expect_near(derivative, DBL_MAX, "SReLU derivative at 1");
+
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.5),
+                  ACTIVATION_STATUS_OK, "change SReLU slope");
+    activation_value(&activation, 2.0, &value);
+    expect_near(value, 1.5, "SReLU with another slope");
+
+    expect_status(activation_s_relu_init(NULL, -1.0, 1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject null SReLU");
+    expect_status(activation_s_relu_init(&activation, 1.0, -1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject reversed bounds");
 }
 
 int main(void) {

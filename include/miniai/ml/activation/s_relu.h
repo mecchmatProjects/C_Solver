@@ -3,6 +3,8 @@
 
 #include "miniai/ml/activation/activation.h"
 
-ActivationStatus activation_s_relu_init(Activation *activation);
+ActivationStatus activation_s_relu_init(Activation *activation,
+                                        double tl, double tr,
+                                        double al, double ar);
 
 #endif

@@ -3,48 +3,52 @@
 #include <float.h>
 #include <math.h>
 
-static const double TL = -1.0;
-static const double TR = 1.0;
-static const double AL = 0.2;
-static const double AR = 0.3;
-
 static double s_relu_value(const Activation *activation, double x) {
-    (void)activation;
+    const double tl = activation->s_relu.tl;
+    const double tr = activation->s_relu.tr;
 
-    if (x <= TL) {
-        return TL + AL * (x - TL);
+    if (x <= tl) {
+        return tl + activation->s_relu.al * (x - tl);
     }
-    if (x < TR) {
+    if (x < tr) {
         return 0.0;
     }
-    return TR + AR * (x - TR);
+    return tr + activation->s_relu.ar * (x - tr);
 }
 
 static double s_relu_derivative(const Activation *activation, double x) {
-    (void)activation;
+    const double tl = activation->s_relu.tl;
+    const double tr = activation->s_relu.tr;
 
-    if (fabs(x - TL) < 1e-9 || fabs(x - TR) < 1e-9) {
+    if (fabs(x - tl) < 1e-9 || fabs(x - tr) < 1e-9) {
         return DBL_MAX;
     }
-    if (x < TL) {
-        return AL;
+    if (x < tl) {
+        return activation->s_relu.al;
     }
-    if (x < TR) {
+    if (x < tr) {
         return 0.0;
     }
-    return AR;
+    return activation->s_relu.ar;
 }
 
 static const ActivationVTable S_RELU_VTABLE = {
     s_relu_value, s_relu_derivative
 };
 
-ActivationStatus activation_s_relu_init(Activation *activation) {
-    if (activation == NULL) {
+ActivationStatus activation_s_relu_init(Activation *activation,
+                                        double tl, double tr,
+                                        double al, double ar) {
+    if (activation == NULL || !isfinite(tl) || !isfinite(tr) ||
+        !isfinite(al) || !isfinite(ar) || tl >= tr) {
         return ACTIVATION_STATUS_INVALID_ARGUMENT;
     }
 
     activation->vtable = &S_RELU_VTABLE;
     activation->parameter = 0.0;
+    activation->s_relu.tl = tl;
+    activation->s_relu.tr = tr;
+    activation->s_relu.al = al;
+    activation->s_relu.ar = ar;
     return ACTIVATION_STATUS_OK;
 }

@@ -124,6 +124,31 @@ static void test_sigmoid(void) {
     expect_near(derivative, 0.25, "Sigmoid derivative at zero");
 }
 
+static void test_sigmweight(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_sigmweight_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Sigmweight");
+                  
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at zero");
+    expect_near(value, 0.0, "Sigmweight at zero");
+    
+    expect_status(activation_value(&activation, 1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at large input");
+    expect_near(value, 1000.0, "Sigmweight large positive input");
+    
+    expect_status(activation_value(&activation, -1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at negative input");
+    expect_near(value, 0.0, "Sigmweight large negative input");
+    
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Sigmweight");
+    expect_near(derivative, 0.5, "Sigmweight derivative at zero");
+}
+
 static void test_softplus(void) {
     Activation activation;
     double value;
@@ -220,6 +245,54 @@ static void test_bent(void) {
     expect_status(activation_bent_init(NULL),
                   ACTIVATION_STATUS_INVALID_ARGUMENT,
                   "reject null Bent output");
+
+static void test_invsqrt(void) {
+    Activation activation;
+    double value;
+    double derivative;
+  
+    expect_status(activation_invsqrt_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize invsqrt");
+    expect_status(activation_value(&activation, 0.0, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at zero");
+    expect_near(value, 0.0, "invsqrt at zero");
+    expect_status(activation_value(&activation, 1.0, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at one");
+    expect_near(value, 1/sqrt(2), "invsqrt at one");
+    expect_status(activation_derivative(&activation, 0.0, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at zero");
+    expect_near(derivative, 1.0, "invsqrt derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at one");
+    expect_near(derivative, 1/(2*sqrt(2)), "invsqrt derivative at one");
+}
+
+
+static void test_arctan(void) {
+    Activation activation;
+    double value;
+    double derivative;
+  
+    expect_status(activation_arctan_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Arctan");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at zero");
+    expect_near(value, 0.0, "Arctan at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at one");
+    expect_near(value, atan(1.0), "Arctan at one");
+    expect_status(activation_value(&activation, INFINITY, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at infinity");
+    expect_near(value, acos(-1.0) / 2.0, "Arctan at infinity");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at zero");
+    expect_near(derivative, 1.0, "Arctan derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at one");
+    expect_near(derivative, 0.5, "Arctan derivative at one");
+    expect_status(activation_arctan_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Arctan output");
 }
 
 static void test_dispatch_validation(void) {
@@ -276,10 +349,13 @@ int main(void) {
     test_leaky_relu();
     test_elu();
     test_sigmoid();
+    test_sigmweight();
     test_softplus();
     test_softsign();
     test_gaussian();
     test_bent();
+    test_invsqrt();
+    test_arctan();
     test_dispatch_validation();
     test_polymorphic_interface();
 

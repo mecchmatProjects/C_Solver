@@ -7,6 +7,7 @@
 #include "miniai/ml/activation/relu.h"
 #include "miniai/ml/activation/sigmoid.h"
 #include "miniai/ml/activation/softplus.h"
+#include "miniai/ml/activation/soft_exponential.h"
 #include "miniai/ml/activation/softsign.h"
 #include "miniai/ml/activation/onestep.h"
 #include "miniai/ml/activation/sigmweight.h"

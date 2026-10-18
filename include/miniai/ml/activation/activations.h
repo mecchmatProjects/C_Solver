@@ -1,6 +1,7 @@
 #ifndef MINIAI_ML_ACTIVATION_ACTIVATIONS_H
 #define MINIAI_ML_ACTIVATION_ACTIVATIONS_H
 
+#include "miniai/ml/activation/bent.h"
 #include "miniai/ml/activation/arctan.h"
 #include "miniai/ml/activation/elu.h"
 #include "miniai/ml/activation/gaussian.h"

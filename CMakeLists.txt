@@ -10,6 +10,7 @@ include(CTest)
 
 add_library(miniai
     src/ml/activation/activation.c
+    src/ml/activation/bent.c
     src/ml/activation/arctan.c
     src/ml/activation/elu.c
     src/ml/activation/gaussian.c

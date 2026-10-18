@@ -45,7 +45,6 @@ ActivationStatus activation_s_relu_init(Activation *activation,
     }
 
     activation->vtable = &S_RELU_VTABLE;
-    activation->parameter = 0.0;
     activation->s_relu.tl = tl;
     activation->s_relu.tr = tr;
     activation->s_relu.al = al;

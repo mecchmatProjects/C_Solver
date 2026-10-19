@@ -14,6 +14,7 @@ add_library(miniai
     src/ml/activation/gaussian.c
     src/ml/activation/leaky_relu.c
     src/ml/activation/relu.c
+    src/ml/activation/s_relu.c
     src/ml/activation/sigmoid.c
     src/ml/activation/softplus.c
     src/ml/activation/soft_exponential.c

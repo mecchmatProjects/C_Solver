@@ -38,3 +38,14 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
 endif()
+=======
+cmake_minimum_required(VERSION 3.20)
+project(C_Solver C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(C_Solver
+        main2.c
+        Activation.c
+)
+

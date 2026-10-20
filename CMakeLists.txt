@@ -14,9 +14,14 @@ add_library(miniai
     src/ml/activation/gaussian.c
     src/ml/activation/leaky_relu.c
     src/ml/activation/relu.c
+    src/ml/activation/s_relu.c
     src/ml/activation/sigmoid.c
     src/ml/activation/softplus.c
+    src/ml/activation/soft_exponential.c
     src/ml/activation/softsign.c
+    src/ml/activation/sigmweight.c
+        include/miniai/ml/activation/onestep.h
+        src/ml/activation/onestep.c
 )
 add_library(miniai::miniai ALIAS miniai)
 

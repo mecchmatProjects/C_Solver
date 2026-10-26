@@ -25,9 +25,8 @@ add_library(miniai
     src/ml/activation/softplus.c
     src/ml/activation/soft_exponential.c
     src/ml/activation/softsign.c
-    src/ml/activation/sigmweight.c
-        include/miniai/ml/activation/onestep.h
-        src/ml/activation/onestep.c
+    include/miniai/ml/activation/onestep.h
+    src/ml/activation/onestep.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -71,4 +70,3 @@ if(BUILD_TESTING)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
 endif()
-

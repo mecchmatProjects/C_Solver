@@ -1,6 +1,7 @@
-#include "miniai/ml/activation/sigmweight.h"
-
 #include <math.h>
+#include <stddef.h>
+
+#include "miniai/ml/activation/sigmweight.h"
 
 static double sigmweight_value(const Activation *activation, double x) {
     (void)activation;
@@ -9,9 +10,8 @@ static double sigmweight_value(const Activation *activation, double x) {
 
 static double sigmweight_derivative(const Activation *activation, double x) {
     (void)activation;
-    double exp_nx = exp(-x);
-    double denom = 1.0 + exp_nx;
-    return (1.0 + (x + 1.0) * exp_nx) / (denom * denom);
+    double sig = 1.0 / (1.0 + exp(-x));
+    return sig + x * sig * (1.0 - sig);
 }
 
 static const ActivationVTable SIGMWEIGHT_VTABLE = {sigmweight_value, sigmweight_derivative};

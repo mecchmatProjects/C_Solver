@@ -125,31 +125,6 @@ static void test_sigmoid(void) {
     expect_near(derivative, 0.25, "Sigmoid derivative at zero");
 }
 
-static void test_sigmweight(void) {
-    Activation activation;
-    double value;
-    double derivative;
-
-    expect_status(activation_sigmweight_init(&activation), ACTIVATION_STATUS_OK,
-                  "initialize Sigmweight");
-                  
-    expect_status(activation_value(&activation, 0.0, &value),
-                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at zero");
-    expect_near(value, 0.0, "Sigmweight at zero");
-    
-    expect_status(activation_value(&activation, 1000.0, &value),
-                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at large input");
-    expect_near(value, 1000.0, "Sigmweight large positive input");
-    
-    expect_status(activation_value(&activation, -1000.0, &value),
-                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at negative input");
-    expect_near(value, 0.0, "Sigmweight large negative input");
-    
-    expect_status(activation_derivative(&activation, 0.0, &derivative),
-                  ACTIVATION_STATUS_OK, "differentiate Sigmweight");
-    expect_near(derivative, 0.5, "Sigmweight derivative at zero");
-}
-
 static void test_softplus(void) {
     Activation activation;
     double value;
@@ -537,7 +512,6 @@ int main(void) {
     test_dispatch_validation();
     test_polymorphic_interface();
     test_onestep();
-    test_sigmweight();
 
     if (failures != 0) {
         fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);

@@ -16,6 +16,12 @@ typedef struct {
 struct Activation {
     const ActivationVTable *vtable;
     double parameter;
+    struct {
+        double tl;
+        double tr;
+        double al;
+        double ar;
+    } s_relu;
 };
 
 typedef enum {

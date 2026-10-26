@@ -7,10 +7,14 @@
 #include "miniai/ml/activation/gaussian.h"
 #include "miniai/ml/activation/leaky_relu.h"
 #include "miniai/ml/activation/relu.h"
+#include "miniai/ml/activation/s_relu.h"
 #include "miniai/ml/activation/sigmoid.h"
 #include "miniai/ml/activation/sigmweight.h"
 #include "miniai/ml/activation/softplus.h"
+#include "miniai/ml/activation/soft_exponential.h"
 #include "miniai/ml/activation/softsign.h"
 #include "miniai/ml/activation/invsqrt.h"
+#include "miniai/ml/activation/onestep.h"
+#include "miniai/ml/activation/sigmweight.h"
 
 #endif

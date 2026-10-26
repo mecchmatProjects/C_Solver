@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include <float.h>
 
 #include "miniai/ml/activation/activations.h"
 
@@ -349,13 +350,177 @@ static void test_polymorphic_interface(void) {
     }
 }
 
+static void test_onestep(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_onestep_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize OneStep");
+
+    expect_status(activation_value(&activation, -1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate negative OneStep");
+    expect_near(value, 0.0, "OneStep at -1");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate OneStep at zero");
+    expect_near(value, 1.0, "OneStep at zero");
+
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive OneStep");
+    expect_near(value, 1.0, "OneStep at 2");
+
+    expect_status(activation_derivative(&activation, -1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate negative OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at -1");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at 2");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate OneStep at zero");
+    expect_near(derivative, DBL_MAX, "OneStep derivative marker at zero");
+
+    expect_status(activation_onestep_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null OneStep initializer");
+}
+
+static void test_sigmweight(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+    double sig2;
+
+    expect_status(activation_sigmweight_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize Sigmweight");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at zero");
+    expect_near(value, 0.0, "Sigmweight at zero");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Sigmweight at zero");
+    expect_near(derivative, 0.5, "Sigmweight derivative at zero");
+
+    sig2 = 1.0 / (1.0 + exp(-2.0));
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive Sigmweight");
+    expect_near(value, 2.0 * sig2, "Sigmweight positive value");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive Sigmweight");
+    expect_near(derivative, sig2 + 2.0 * sig2 * (1.0 - sig2),
+                "Sigmweight positive derivative");
+
+    expect_status(activation_sigmweight_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Sigmweight initializer");
+}
+
+
+static void test_soft_exponential(void) {
+    Activation activation;
+    double value, derivative;
+    const double x = 1.5;
+
+    const double alphas[] = {-0.5, 0.0, 0.5};
+    const double expected_values[] = {
+        2.0 * log(1.5),
+        1.5,
+        2.0 * (exp(0.75) - 1.0) + 0.5
+    };
+    const double expected_derivatives[] = {
+        1.0 / 1.5,
+        1.0,
+        exp(0.75)
+    };
+
+    for (int i = 0; i < 3; ++i) {
+        expect_status(
+            activation_soft_exponential_init(&activation, alphas[i]),
+            ACTIVATION_STATUS_OK,
+            "initialize Soft Exponential"
+        );
+
+        expect_status(
+            activation_value(&activation, x, &value),
+            ACTIVATION_STATUS_OK,
+            "evaluate Soft Exponential"
+        );
+        expect_near(value, expected_values[i],
+                    "Soft Exponential value");
+
+        expect_status(
+            activation_derivative(&activation, x, &derivative),
+            ACTIVATION_STATUS_OK,
+            "differentiate Soft Exponential"
+        );
+        expect_near(derivative, expected_derivatives[i],
+                    "Soft Exponential derivative");
+    }
+
+    expect_status(
+        activation_soft_exponential_init(NULL, 0.5),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject null initializer"
+    );
+    expect_status(
+        activation_soft_exponential_init(&activation, NAN),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject NaN alpha"
+    );
+}
+
+
+static void test_s_relu(void) {
+    Activation activation = {0};
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_OK, "initialize SReLU");
+
+    activation_value(&activation, -2.0, &value);
+    expect_near(value, -1.2, "SReLU at -2");
+    activation_value(&activation, 0.0, &value);
+    expect_near(value, 0.0, "SReLU at 0");
+    activation_value(&activation, 2.0, &value);
+    expect_near(value, 1.3, "SReLU at 2");
+
+    activation_derivative(&activation, -2.0, &derivative);
+    expect_near(derivative, 0.2, "SReLU derivative at -2");
+    activation_derivative(&activation, 0.0, &derivative);
+    expect_near(derivative, 0.0, "SReLU derivative at 0");
+    activation_derivative(&activation, 2.0, &derivative);
+    expect_near(derivative, 0.3, "SReLU derivative at 2");
+
+    activation_derivative(&activation, -1.0, &derivative);
+    expect_near(derivative, DBL_MAX, "SReLU derivative at -1");
+    activation_derivative(&activation, 1.0, &derivative);
+    expect_near(derivative, DBL_MAX, "SReLU derivative at 1");
+
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.5),
+                  ACTIVATION_STATUS_OK, "change SReLU slope");
+    activation_value(&activation, 2.0, &value);
+    expect_near(value, 1.5, "SReLU with another slope");
+
+    expect_status(activation_s_relu_init(NULL, -1.0, 1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject null SReLU");
+    expect_status(activation_s_relu_init(&activation, 1.0, -1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject reversed bounds");
+}
+
 int main(void) {
+    test_s_relu();
     test_relu();
     test_leaky_relu();
     test_elu();
     test_sigmoid();
     test_sigmweight();
     test_softplus();
+    test_soft_exponential();
     test_softsign();
     test_gaussian();
     test_bent();
@@ -371,6 +536,8 @@ int main(void) {
 #endif
     test_dispatch_validation();
     test_polymorphic_interface();
+    test_onestep();
+    test_sigmweight();
 
     if (failures != 0) {
         fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);

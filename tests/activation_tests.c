@@ -188,6 +188,94 @@ static void test_gaussian(void) {
     expect_near(derivative, -2.0 * exp(-1.0), "Gaussian derivative at one");
 }
 
+static void test_bent(void) {
+    Activation activation;
+    double value;
+    double derivative;
+    const double root_two = sqrt(2.0);
+
+    expect_status(activation_bent_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Bent");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Bent at zero");
+    expect_near(value, 0.0, "Bent at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive Bent");
+    expect_near(value, 1.0 + 0.5 * (root_two - 1.0),
+                "Bent positive value");
+    expect_status(activation_value(&activation, -1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate negative Bent");
+    expect_near(value, -1.0 + 0.5 * (root_two - 1.0),
+                "Bent negative value");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Bent at zero");
+    expect_near(derivative, 1.0, "Bent derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive Bent");
+    expect_near(derivative, 1.0 + 0.5 / root_two,
+                "Bent positive derivative");
+    expect_status(activation_derivative(&activation, -1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate negative Bent");
+    expect_near(derivative, 1.0 - 0.5 / root_two,
+                "Bent negative derivative");
+    expect_status(activation_bent_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Bent output");
+}
+
+#ifdef MINIAI_ENABLE_INVSQRT
+static void test_invsqrt(void) {
+    Activation activation;
+    double value;
+    double derivative;
+  
+    expect_status(activation_invsqrt_init(&activation, 1.0), ACTIVATION_STATUS_OK,
+                  "initialize invsqrt");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at zero");
+    expect_near(value, 0.0, "invsqrt at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate invsqrt at one");
+    expect_near(value, 1/sqrt(2), "invsqrt at one");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at zero");
+    expect_near(derivative, 1.0, "invsqrt derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate invsqrt at one");
+    expect_near(derivative, 1/(2*sqrt(2)), "invsqrt derivative at one");
+}
+#endif
+
+
+#ifdef MINIAI_ENABLE_ARCTAN_TESTS
+static void test_arctan(void) {
+    Activation activation;
+    double value;
+    double derivative;
+  
+    expect_status(activation_arctan_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Arctan");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at zero");
+    expect_near(value, 0.0, "Arctan at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at one");
+    expect_near(value, atan(1.0), "Arctan at one");
+    expect_status(activation_value(&activation, INFINITY, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Arctan at infinity");
+    expect_near(value, acos(-1.0) / 2.0, "Arctan at infinity");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at zero");
+    expect_near(derivative, 1.0, "Arctan derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Arctan at one");
+    expect_near(derivative, 0.5, "Arctan derivative at one");
+    expect_status(activation_arctan_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Arctan output");
+}
+#endif
+
 static void test_dispatch_validation(void) {
     Activation activation;
     double result = 123.0;
@@ -214,8 +302,8 @@ static void test_dispatch_validation(void) {
 }
 
 static void test_polymorphic_interface(void) {
-    Activation activations[3];
-    ActivationStatus statuses[3];
+    Activation activations[4];
+    ActivationStatus statuses[4];
     double value;
     double derivative;
     size_t index;
@@ -223,7 +311,8 @@ static void test_polymorphic_interface(void) {
     statuses[0] = activation_relu_init(&activations[0]);
     statuses[1] = activation_sigmoid_init(&activations[1]);
     statuses[2] = activation_gaussian_init(&activations[2]);
-    for (index = 0; index < 3; ++index) {
+    statuses[3] = activation_bent_init(&activations[3]);
+    for (index = 0; index < 4; ++index) {
         expect_status(statuses[index], ACTIVATION_STATUS_OK,
                       "initialize polymorphic activation");
         expect_status(activation_value(&activations[index], 0.5, &value),
@@ -404,14 +493,25 @@ int main(void) {
     test_leaky_relu();
     test_elu();
     test_sigmoid();
+    test_sigmweight();
     test_softplus();
     test_soft_exponential();
     test_softsign();
     test_gaussian();
+    test_bent();
+#ifdef MINIAI_ENABLE_INVSQRT
+    test_invsqrt();
+#else
+    fputs("NOT VALIDATED: InvSqrt (Lab 2 A3)\n", stderr);
+#endif
+#ifdef MINIAI_ENABLE_ARCTAN_TESTS
+    test_arctan();
+#else
+    fputs("NOT VALIDATED: Arctan (Lab 2 A7)\n", stderr);
+#endif
     test_dispatch_validation();
     test_polymorphic_interface();
     test_onestep();
-    test_sigmweight();
 
     if (failures != 0) {
         fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);

@@ -20,7 +20,7 @@ ActivationStatus activation_sigmweight_init(Activation *activation) {
     if (activation == NULL) {
         return ACTIVATION_STATUS_INVALID_ARGUMENT;
     }
-
+    
     activation->vtable = &SIGMWEIGHT_VTABLE;
     activation->parameter = 0.0;
     return ACTIVATION_STATUS_OK;

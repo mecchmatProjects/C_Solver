@@ -1,7 +1,3 @@
-//
-// Created by Katya on 15.10.2026.
-//
-
 #ifndef MINIAI_ML_ACTIVATION_ONESTEP_H
 #define MINIAI_ML_ACTIVATION_ONESTEP_H
 

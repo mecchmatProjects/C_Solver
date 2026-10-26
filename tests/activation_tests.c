@@ -245,29 +245,33 @@ static void test_bent(void) {
     expect_status(activation_bent_init(NULL),
                   ACTIVATION_STATUS_INVALID_ARGUMENT,
                   "reject null Bent output");
+}
 
+#ifdef MINIAI_ENABLE_INVSQRT
 static void test_invsqrt(void) {
     Activation activation;
     double value;
     double derivative;
   
-    expect_status(activation_invsqrt_init(&activation), ACTIVATION_STATUS_OK,
+    expect_status(activation_invsqrt_init(&activation, 1.0), ACTIVATION_STATUS_OK,
                   "initialize invsqrt");
-    expect_status(activation_value(&activation, 0.0, 0.0, &value),
+    expect_status(activation_value(&activation, 0.0, &value),
                   ACTIVATION_STATUS_OK, "evaluate invsqrt at zero");
     expect_near(value, 0.0, "invsqrt at zero");
-    expect_status(activation_value(&activation, 1.0, 1.0, &value),
+    expect_status(activation_value(&activation, 1.0, &value),
                   ACTIVATION_STATUS_OK, "evaluate invsqrt at one");
     expect_near(value, 1/sqrt(2), "invsqrt at one");
-    expect_status(activation_derivative(&activation, 0.0, 0.0, &derivative),
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
                   ACTIVATION_STATUS_OK, "differentiate invsqrt at zero");
     expect_near(derivative, 1.0, "invsqrt derivative at zero");
-    expect_status(activation_derivative(&activation, 1.0, 1.0, &derivative),
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
                   ACTIVATION_STATUS_OK, "differentiate invsqrt at one");
     expect_near(derivative, 1/(2*sqrt(2)), "invsqrt derivative at one");
 }
+#endif
 
 
+#ifdef MINIAI_ENABLE_ARCTAN_TESTS
 static void test_arctan(void) {
     Activation activation;
     double value;
@@ -294,6 +298,7 @@ static void test_arctan(void) {
                   ACTIVATION_STATUS_INVALID_ARGUMENT,
                   "reject null Arctan output");
 }
+#endif
 
 static void test_dispatch_validation(void) {
     Activation activation;
@@ -354,8 +359,16 @@ int main(void) {
     test_softsign();
     test_gaussian();
     test_bent();
+#ifdef MINIAI_ENABLE_INVSQRT
     test_invsqrt();
+#else
+    fputs("NOT VALIDATED: InvSqrt (Lab 2 A3)\n", stderr);
+#endif
+#ifdef MINIAI_ENABLE_ARCTAN_TESTS
     test_arctan();
+#else
+    fputs("NOT VALIDATED: Arctan (Lab 2 A7)\n", stderr);
+#endif
     test_dispatch_validation();
     test_polymorphic_interface();
 

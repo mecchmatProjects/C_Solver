@@ -27,7 +27,7 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
-        examples/onestep_demo.c
+
 )
 add_library(miniai::miniai ALIAS miniai)
 

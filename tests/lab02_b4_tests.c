@@ -28,13 +28,18 @@ static void expect_status(double actual, double expected,
 
 static void test_absolute_error_basic(void) {
     expect_near(miniai_absolute_error(3.0, 2.0), 1.0,
-        "absolute error");
+        "absolute error1");
     expect_status(miniai_absolute_error(1.0, 3.0), 1.0,
-        "absolute error");
+        "absolute error2");
     expect_near(miniai_absolute_error(3.0, 3.0), 0.0,
-        "absolute error");
+        "absolute error3");
     expect_status(miniai_absolute_error(-0.0, 0.0), 0.0,
-        "absolute error");
+        "absolute error4");
     expect_near(miniai_absolute_error(NAN, 1.0), NAN,
-        "absolute error");
+        "absolute error5");
+}
+int main() {
+    printf("tests running\n");
+    test_absolute_error_basic();
+    printf("tests finished\n");
 }

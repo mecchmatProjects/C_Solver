@@ -1,7 +1,7 @@
 #include <math.h>
 #include <stdio.h>
 
-#include "miniai/ml/activation/absolute_error.h"
+#include "miniai/ml/loss/losses.h"
 
 int main() {
     double prediction1=15.0;

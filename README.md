@@ -376,6 +376,99 @@ MiniAI/
 └── models/
 ```
 
+### Bootstrap implemented in this repository
+
+The repository bootstrap adds the `include/miniai/`, `src/`, and `tests/` trees,
+with reserved `math/`, `ml/`, `data/`, and `core/` areas, plus `examples/`,
+`datasets/`, and `models/`. The activation milestone is implemented as a pure
+C17 library. Activations share a function-pointer interface and are initialized
+into caller-owned structs; no C++ runtime, heap allocation, or exceptions are
+required:
+
+```c
+#include <stdio.h>
+
+#include "miniai/ml/activation/activations.h"
+
+int main(void) {
+    Activation sigmoid;
+    double y;
+    double dy;
+
+    if (activation_sigmoid_init(&sigmoid) != ACTIVATION_STATUS_OK ||
+        activation_value(&sigmoid, 2.0, &y) != ACTIVATION_STATUS_OK ||
+        activation_derivative(&sigmoid, 2.0, &dy) != ACTIVATION_STATUS_OK) {
+        return 1;
+    }
+
+    printf("sigmoid(2) = %f, derivative = %f\n", y, dy);
+    return 0;
+}
+```
+
+Available activations: `ReLU`, `LeakyReLU`, `ELU`, `Sigmoid`, `SoftPlus`,
+`SoftSign`, and `Gaussian`. Build and run the activation tests with CMake:
+
+```text
+cmake -S . -B build
+cmake --build build
+ctest --test-dir build --output-on-failure
+```
+
+### Student baseline (Lab 2–3, develop)
+
+The existing activation API and implementations are retained. Do not implement
+completed activations again or replace the project with a second build system.
+For multi-configuration generators (Visual Studio), use
+`cmake --build build --config Debug` and
+`ctest --test-dir build -C Debug --output-on-failure`.
+
+Two explicit, temporary exceptions apply:
+
+* **Lab 2 A3 / InvSqrt:** the unfinished source and its tests are excluded by
+  default. After completing the implementation, configure with
+  `-DMINIAI_ENABLE_INVSQRT=ON`, build, and run CTest. Then remove the temporary
+  option/guards and make the source and tests unconditional in the same PR.
+* **Lab 2 A7 / Arctan:** the source remains available, but its pending tests are
+  excluded by default: the current series can hang at infinity and is not valid
+  over the required domain. After fixing it, enable
+  `-DMINIAI_ENABLE_ARCTAN_TESTS=ON`, build, and run CTest. Then remove this
+  temporary option/guards and run its tests unconditionally.
+
+CMake and the activation test executable explicitly report these exceptions.
+A green baseline does **not** validate either unfinished task, nor certify all
+edge cases of other activations (including the pending Sigmweight stability
+task A4). No student formulas have been completed as part of this preparation.
+CTest has a 15-second activation-test timeout to bound regressions such as hangs.
+
+The agreed new declarations are in:
+
+* `include/miniai/ml/loss/losses.h` — Lab 2 scalar losses and Lab 3 MSE/MAE;
+* `include/miniai/math/vector.h` — Lab 3 vector operations;
+* `include/miniai/math/statistics.h` — Lab 3 statistics.
+* `include/miniai/ml/activation/{linear,tanh_activation,onestep,sinc,soft_exponential,srelu}.h`
+  — agreed declarations for Lab 2 A1/A2/A5/A6/A8/A9. These are not added to the
+  activation umbrella header until the corresponding implementations are ready.
+
+These are declarations, **not implementations**. Calling them before adding the
+corresponding student implementation produces a link error. There are no dummy
+implementations that return success or fake results. `miniai_header_tests` checks
+that the headers can be included together and repeatedly; it does not validate
+the declared functions.
+
+Each student adds their implementation to the appropriate subsystem, registers
+its `.c` file with `target_sources(miniai PRIVATE ...)`, and adds a separate test
+executable linked to `miniai::miniai` plus an `add_test` entry. Retain the existing
+tests and add regression cases rather than replacing them. New activations use
+the existing `Activation` interface; the four-parameter SReLU exception follows
+the methodical guide. Legacy `Activation.c`/`main2.c` are not library sources.
+
+Linux-like Unix builds link the math library `m`; MSVC does not need it.
+The baseline GitHub Actions workflow builds and tests on Linux and Windows;
+remote CI results must be checked on the PR, not inferred from local success.
+New examples must be registered as CMake executable targets and CTest smoke tests
+when students implement them; they are not present in this baseline.
+
 ---
 
 # 7. Відповідність лабораторним роботам

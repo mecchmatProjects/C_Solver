@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <float.h>
 
-#include "miniai/ml/activation/losses.h"
+#include <miniai/ml/loss/losses.h>
 
 static int failures = 0;
 static int checks = 0;

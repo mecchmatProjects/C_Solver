@@ -1,23 +1,40 @@
-#include "loss/absolute_error.c"
+#include <math.h>
+#include <stdio.h>
+#include <float.h>
 
-void test_absolute_error_basic(void) {
-    double result1 = miniai_absolute_error(3.0, 1.0);
-    if (result1==2.0) printf("test (3.0; 1.0) succeeded\n");
-    else printf("test (3.0; 1.0) failed\n");
+#include "miniai/ml/activation/losses.h"
 
-    double result2 = miniai_absolute_error(1.0, 3.0);
-    if (result2==2.0) printf("test (1.0; 3.0) succeeded\n");
-    else printf("test (1.0; 3.0) failed\n");
+static int failures = 0;
+static int checks = 0;
 
-    double result3 = miniai_absolute_error(3.0, 3.0);
-    if (result3==0.0) printf("test (3.0; 3.0) succeeded\n");
-    else printf("test (3.0; 3.0) failed\n");
+static void expect_near(double actual, double expected, const char *message) {
+    ++checks;
+    if (!(fabs(actual - expected) <= 1e-12)) {
+        fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message,
+                actual, expected);
+        ++failures;
+    }
+}
 
-    double result4 = miniai_absolute_error(-0.0, 0.0);
-    if (result4==0.0) printf("test (-0.0; 0.0) succeeded\n");
-    else printf("test (-0.0; 0.0) failed\n");
+static void expect_status(double actual, double expected,
+                          const char *message) {
+    ++checks;
+    if (actual != expected) {
+        fprintf(stderr, "FAIL: %s (status %d, expected %d)\n", message,
+                (int)actual, (int)expected);
+        ++failures;
+    }
+}
 
-    double result5 = miniai_absolute_error(NAN, 1.0);
-    if (isnan(result5)) printf("test (NaN; 1.0) succeeded\n");
-    else printf("test (NaN; 1.0) failed\n");
+static void test_absolute_error_basic(void) {
+    expect_near(miniai_absolute_error(3.0, 2.0), 1.0,
+        "absolute error");
+    expect_status(miniai_absolute_error(1.0, 3.0), 1.0,
+        "absolute error");
+    expect_near(miniai_absolute_error(3.0, 3.0), 0.0,
+        "absolute error");
+    expect_status(miniai_absolute_error(-0.0, 0.0), 0.0,
+        "absolute error");
+    expect_near(miniai_absolute_error(NAN, 1.0), NAN,
+        "absolute error");
 }

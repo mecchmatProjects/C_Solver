@@ -86,8 +86,8 @@ if(BUILD_TESTING)
     add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
     target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
-    
-    add_executable(miniai_absolute_error_demo tests/absolute_error_demo.c)
-    target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
-    add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 endif()
+
+add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
+target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
+add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)

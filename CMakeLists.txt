@@ -28,7 +28,7 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
-
+    src/ml/loss/absolute_error.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -82,4 +82,12 @@ if(BUILD_TESTING)
     add_executable(miniai_onestep_demo examples/onestep_demo.c)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
+
+    add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
+    target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
+    
+    add_executable(miniai_absolute_error_demo tests/absolute_error_demo.c)
+    target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 endif()

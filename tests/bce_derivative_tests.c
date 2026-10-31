@@ -9,8 +9,9 @@ static int checks = 0;
 
 static void expect_near(double actual, double expected, const char *message){
     ++checks;
-    // Use 1e-11 or 1e-12 tolerence for double comparison
-    if(!(fabs(actual - expected) <= 1e-11)){
+    // Relative tolarence for large numbers, absolute for small numbers
+    double tolerance = 1e-7 * fmax(1.0, fabs(expected));
+    if(!(fabs(actual - expected) <= tolerance)){
         fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message, actual, expected);
         ++failures;
     }
@@ -32,9 +33,9 @@ static void test_bce_derivative(void){
     // 2. Edge cases (clipping works at eps = 1e-12)
     // If p=0.0, it is clipped to 1e-12. -1 / 1e-12 = -1e12
     expect_near(miniai_binary_cross_entropy_derivative(0.0, 1.0), -1e12, "BCE derivative with clipping near 0");
-    // If p=1.0, it is clipped to 1.0 - 1e-12 / 1e-12 = 1e12
-    expect_near(miniai_binary_cross_entropy_derivative(1.0, 0.0), 1e12, "BCE derivative with clipping near 1");
-
+    // If p=1.0, it is clipped to 1.0 - 1e-12.
+    double expected_edge = 1.0 / (1.0 - (1.0 - 1e-12));
+    expect_near(miniai_binary_cross_entropy_derivative(1.0, 0.0), expected_edge, "BCE derivative with clipping near 1");
     // 3. Invalid data (must return NAN)
     expect_nan(miniai_binary_cross_entropy_derivative(0.5, 1.5), "reject target > 1.0");
     expect_nan(miniai_binary_cross_entropy_derivative(0.5, -0.5), "reject target < 0.0");

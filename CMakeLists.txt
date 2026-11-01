@@ -27,6 +27,7 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
+    src/ml/activation/sinc.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -69,4 +70,7 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
+    add_executable(sinc_tests tests/sinc_tests.c)
+    target_link_libraries(sinc_tests PRIVATE miniai::miniai)
+    add_test(NAME sinc_tests COMMAND sinc_tests)
 endif()

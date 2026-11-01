@@ -53,14 +53,17 @@ target_include_directories(miniai
 add_executable(miniai_cli src/main.c)
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
 
+
 if(BUILD_TESTING)
     add_executable(miniai_activation_tests tests/activation_tests.c)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
+
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
+
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
@@ -69,4 +72,15 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
+
+    add_executable(miniai_loss_header_compile tests/loss_header_compile.c)
+    target_include_directories(miniai_loss_header_compile
+            PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
+    )
+    add_test(NAME miniai_loss_header_compile COMMAND miniai_loss_header_compile)
+
+    add_library(miniai_loss_contract_compile OBJECT tests/loss_contract_tests.c)
+    target_include_directories(miniai_loss_contract_compile
+            PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
+    )
 endif()

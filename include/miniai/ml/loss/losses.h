@@ -3,12 +3,37 @@
 
 #include <stddef.h>
 
-/* Lab 2/3 declarations only; student implementations are not provided yet.
- * Invalid scalar inputs (including non-finite values) return NAN.
- * BCE requires prediction and target in [0,1]; clip prediction to
- * [1e-12,1-1e-12]. Its derivative is with respect to the clipped prediction.
- * Huber requires finite delta > 0. Absolute error uses subgradient 0 at equality.
- * Vector losses require n > 0 and non-NULL, finite input data; otherwise NAN.
+/*
+ * Loss API contract (Lab 2).
+ *
+ * All scalar loss functions and their derivatives:
+ * - require finite prediction and target values;
+ * - return NAN for invalid arguments.
+ *
+ * Squared error:
+ *   L = (prediction - target)^2
+ *
+ * Absolute error:
+ *   L = |prediction - target|
+ *   Its derivative is 0 when prediction == target.
+ *
+ * Binary cross entropy:
+ * - prediction and target must belong to [0, 1];
+ * - prediction is clipped to [1e-12, 1 - 1e-12];
+ * - derivative is calculated with respect to the clipped prediction.
+ *
+ * Huber loss:
+ * - delta must be finite and strictly positive.
+ *
+ * Log-cosh loss:
+ * - prediction and target must be finite.
+ *
+ * Vector losses (MSE and MAE):
+ * - require n > 0;
+ * - require non-NULL arrays containing finite values;
+ * - return NAN for invalid arguments.
+ *
+ * All derivatives are calculated with respect to prediction.
  */
 double miniai_squared_error(double prediction, double target);
 double miniai_squared_error_derivative(double prediction, double target);

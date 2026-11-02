@@ -28,6 +28,8 @@ static double soft_exponential_derivative(const Activation *activation, double x
         double denom = 1.0 - a * (x + a);
         if (denom <= 0.0) {
         return NAN;
+        }
+        return 1.0 / denom;
     } else if (a == 0.0) {
         return 1.0;
     } else {

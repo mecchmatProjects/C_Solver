@@ -37,12 +37,11 @@ int test_onestep() {
     }
     if (!is_zero(onestep(2)-1)) {
         printf("Test onestep for 2 is failed\n");
->>>>>>> 6d933eb1748b0cec9f8effef2e67775b204f4f4e
         return 1;
     }
     return 0;
 }
-<<<<<<< HEAD
+
 int derivative_test_soft_sign() {
     if (!iszero(soft_sign_derivative(-1))) {
         printf("test for soft_sign has failed\n");
@@ -58,7 +57,6 @@ int derivative_test_soft_sign() {
     }
     return 0;
 }
-=======
 
 // RELU
 double ReLu(double x) {

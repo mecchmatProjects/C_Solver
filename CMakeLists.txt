@@ -12,6 +12,7 @@ option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)"
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
 
 add_library(miniai
+    src/math/vector.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -59,13 +60,16 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
+        add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
+    target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
-
+    
     add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)

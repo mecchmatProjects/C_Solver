@@ -450,6 +450,61 @@ static void test_soft_exponential(void) {
         ACTIVATION_STATUS_INVALID_ARGUMENT,
         "reject NaN alpha"
     );
+    expect_status(
+    activation_soft_exponential_init(&activation, -0.5),
+    ACTIVATION_STATUS_OK,
+    "initialize Soft Exponential for boundary test"
+);
+
+expect_status(
+    activation_value(&activation, -1.5, &value),
+    ACTIVATION_STATUS_OK,
+    "evaluate Soft Exponential at boundary"
+);
+
+++checks;
+if (!isnan(value)) {
+    fprintf(stderr, "FAIL: expected NAN at boundary\n");
+    ++failures;
+}
+    expect_status(
+    activation_derivative(&activation, -1.5, &derivative),
+    ACTIVATION_STATUS_OK,
+    "differentiate Soft Exponential at boundary"
+);
+
+++checks;
+if (!isnan(derivative)) {
+    fprintf(stderr, "FAIL: expected NAN derivative at boundary\n");
+    ++failures;
+}
+    expect_status(
+    activation_value(&activation, -2.0, &value),
+    ACTIVATION_STATUS_OK,
+    "evaluate Soft Exponential outside domain"
+);
+
+++checks;
+if (!isnan(value)) {
+    fprintf(stderr, "FAIL: expected NAN outside domain\n");
+    ++failures;
+}
+    expect_status(
+    activation_derivative(&activation, -2.0, &derivative),
+    ACTIVATION_STATUS_OK,
+    "differentiate Soft Exponential outside domain"
+);
+
+++checks;
+if (!isnan(derivative)) {
+    fprintf(stderr, "FAIL: expected NAN derivative outside domain\n");
+    ++failures;
+}
+    expect_status(
+    activation_soft_exponential_init(&activation, INFINITY),
+    ACTIVATION_STATUS_INVALID_ARGUMENT,
+    "reject infinite Soft Exponential alpha"
+);
 }
 
 

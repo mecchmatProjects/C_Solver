@@ -1273,16 +1273,59 @@ Gradient Descent
 
 ## Loss
 
-```text
-MSE
+MiniAI provides scalar loss functions and vector loss metrics.
+
+### Scalar loss functions
+
+All scalar loss functions calculate the error between `prediction` and `target`.
+All derivatives are calculated with respect to `prediction`.
+
+Available functions:
+
+- `miniai_squared_error(prediction, target)` — squared error:
+  `(prediction - target)^2`.
+- `miniai_squared_error_derivative(prediction, target)` — derivative:
+  `2 * (prediction - target)`.
+- `miniai_absolute_error(prediction, target)` — absolute error:
+  `|prediction - target|`.
+- `miniai_absolute_error_derivative(prediction, target)` — subgradient;
+  returns `0` when `prediction == target`.
+- `miniai_binary_cross_entropy(prediction, target)` — binary cross-entropy:
+  `-[target * ln(prediction) + (1 - target) * ln(1 - prediction)]`.
+- `miniai_binary_cross_entropy_derivative(prediction, target)` — derivative
+  with respect to the clipped prediction.
+  Both arguments must be in `[0, 1]`. Prediction is clipped to
+  `[1e-12, 1 - 1e-12]`.
+- `miniai_huber_loss(prediction, target, delta)` — Huber loss:
+  `0.5 * error^2` when `|error| <= delta`,
+  otherwise `delta * (|error| - 0.5 * delta)`,
+  where `error = prediction - target`.
+- `miniai_huber_loss_derivative(prediction, target, delta)` — its derivative.
+  `delta` must be finite and greater than zero.
+- `miniai_log_cosh_loss(prediction, target)` — log-cosh loss:
+  `ln(cosh(prediction - target))`.
+- `miniai_log_cosh_loss_derivative(prediction, target)` — its derivative.
+
+### Vector loss metrics
+
+- `miniai_mse(pred, target, n)` — mean squared error.
+- `miniai_mae(pred, target, n)` — mean absolute error.
+
+Vector functions require `n > 0`, non-NULL arrays, and finite input values.
+
+### Input validation
+
+Scalar functions require finite `prediction` and `target` values.
+Invalid scalar or vector inputs return `NAN`.
+
+### Header
+
+Include:
+
+```c
+#include "miniai/ml/loss/losses.h"
 ```
 
-а за можливості:
-
-```text
-MAE
-Binary Cross Entropy
-```
 
 ## Neural network
 

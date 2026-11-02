@@ -14,7 +14,6 @@ static double soft_exponential_value(const Activation *activation, double x) {
     }
 
     return -log1p(-a * (x + a)) / a;
-}
     } else if (a == 0.0) {
         return x;
     } else {

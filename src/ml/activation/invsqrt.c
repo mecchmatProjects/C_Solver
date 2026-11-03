@@ -8,6 +8,9 @@ static double invsqrt_value(const Activation *activation, double x) {
     if (alpha == 0.0) {
         return x;
     }
+    if (fabs(x) > 1.0) {
+        return copysign(1.0 / hypot(1.0 / x, sqrt(alpha)), x);
+    }
     return x / hypot(1.0, sqrt(alpha) * x);
 }
 
@@ -18,7 +21,7 @@ static double invsqrt_derivative(const Activation *activation, double x) {
         return 1.0;
     }
     const double root = hypot(1.0, sqrt(alpha) * x);
-    return 1.0 / (root * root * root);
+    return 1.0 / root / root / root;
 }
 
 static const ActivationVTable INVSQRT_VTABLE = {

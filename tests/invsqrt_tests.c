@@ -25,6 +25,14 @@ static void expect_status(ActivationStatus actual, ActivationStatus expected,
     }
 }
 
+static void expect_positive(double actual, const char *message) {
+    ++checks;
+    if (!(actual > 0.0)) {
+        fprintf(stderr, "FAIL: %s (actual %.17g)\n", message, actual);
+        ++failures;
+    }
+}
+
 static void test_invsqrt_identity(void) {
     Activation activation;
     double value = 0.0;
@@ -94,6 +102,27 @@ static void test_invsqrt_large_input(void) {
     expect_near(value, -0.5, "InvSqrt saturates at minus 1/sqrt(alpha)");
 }
 
+static void test_invsqrt_range_limit(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_invsqrt_init(&activation, 4.0),
+                  ACTIVATION_STATUS_OK, "initialize InvSqrt near range limit");
+    expect_status(activation_value(&activation, 1e308, &value),
+                  ACTIVATION_STATUS_OK, "evaluate InvSqrt at 1e308");
+    expect_near(value, 0.5, "InvSqrt value at 1e308 does not overflow");
+    expect_status(activation_value(&activation, -1e308, &value),
+                  ACTIVATION_STATUS_OK, "evaluate InvSqrt at -1e308");
+    expect_near(value, -0.5, "InvSqrt value at -1e308 does not overflow");
+
+    expect_status(activation_invsqrt_init(&activation, 1.0),
+                  ACTIVATION_STATUS_OK, "initialize InvSqrt with alpha one");
+    expect_status(activation_derivative(&activation, 1e103, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate InvSqrt at 1e103");
+    expect_positive(derivative, "InvSqrt derivative at 1e103 is not lost");
+}
+
 static void test_invsqrt_validation(void) {
     Activation activation;
 
@@ -118,6 +147,7 @@ int main(void) {
     test_invsqrt_identity();
     test_invsqrt_unit_alpha();
     test_invsqrt_large_input();
+    test_invsqrt_range_limit();
     test_invsqrt_validation();
 
     if (failures != 0) {

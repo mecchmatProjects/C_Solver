@@ -500,8 +500,41 @@ if (!isnan(derivative)) {
     fprintf(stderr, "FAIL: expected NAN derivative outside domain\n");
     ++failures;
 }
+        const double small_alphas[] = {-1e-20, 1e-20};
+
+    for (int i = 0; i < 2; ++i) {
+        expect_status(
+            activation_soft_exponential_init(&activation, small_alphas[i]),
+            ACTIVATION_STATUS_OK,
+            "initialize Soft Exponential with tiny alpha"
+        );
+
+        expect_status(
+            activation_value(&activation, 1.5, &value),
+            ACTIVATION_STATUS_OK,
+            "evaluate Soft Exponential with tiny alpha"
+        );
+
+        expect_near(
+            value,
+            1.5,
+            "Soft Exponential numerical stability"
+        );
+
+        expect_status(
+            activation_derivative(&activation, 1.5, &derivative),
+            ACTIVATION_STATUS_OK,
+            "differentiate Soft Exponential with tiny alpha"
+        );
+
+        expect_near(
+            derivative,
+            1.0,
+            "Soft Exponential derivative numerical stability"
+        );
+    }
     expect_status(
-    activation_soft_exponential_init(&activation, INFINITY),
+        activation_soft_exponential_init(&activation, INFINITY),
     ACTIVATION_STATUS_INVALID_ARGUMENT,
     "reject infinite Soft Exponential alpha"
 );

@@ -13,6 +13,7 @@ option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
 
 add_library(miniai
     src/ml/activation/invsqrt.c
+    src/math/vector.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -28,6 +29,7 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
+
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -55,10 +57,13 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
+        add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
+    target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
-
+    
     add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
@@ -66,4 +71,12 @@ if(BUILD_TESTING)
     add_executable(miniai_invsqrt_tests tests/invsqrt_tests.c)
     target_link_libraries(miniai_invsqrt_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_invsqrt_tests COMMAND miniai_invsqrt_tests)
+
+    add_executable(miniai_onestep_tests tests/onestep_tests.c)
+    target_link_libraries(miniai_onestep_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_onestep_tests COMMAND miniai_onestep_tests)
+
+    add_executable(miniai_onestep_demo examples/onestep_demo.c)
+    target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
 endif()

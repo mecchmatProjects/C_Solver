@@ -42,4 +42,5 @@ int main() {
     printf("tests running\n");
     test_absolute_error_basic();
     printf("tests finished\n");
+    return failures != 0;
 }

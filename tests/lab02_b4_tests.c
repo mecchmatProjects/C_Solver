@@ -9,7 +9,8 @@ static int checks = 0;
 
 static void expect_near(double actual, double expected, const char *message) {
     ++checks;
-    if (!(fabs(actual - expected) <= 1e-12)) {
+    if (isnan(expected) ? !isnan(actual)
+                        : !(fabs(actual - expected) <= 1e-12)) {
         fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message,
                 actual, expected);
         ++failures;

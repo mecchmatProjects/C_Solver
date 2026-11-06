@@ -10,9 +10,11 @@ include(CTest)
 
 option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)" OFF)
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
+option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
     src/math/vector.c
+    src/ml/loss/vector_loss.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -82,4 +84,15 @@ if(BUILD_TESTING)
     add_executable(miniai_onestep_demo examples/onestep_demo.c)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
+
+    if(MINIAI_ENABLE_VECTOR_MSE_TESTS)
+        add_executable(miniai_lab03_b10_tests tests/lab03_b10_tests.c)
+        target_link_libraries(miniai_lab03_b10_tests PRIVATE miniai::miniai)
+        add_test(NAME miniai_lab03_b10_tests COMMAND miniai_lab03_b10_tests)
+    else()
+        message(STATUS
+            "Lab 3 B10 tests are disabled; enable MINIAI_ENABLE_VECTOR_MSE_TESTS "
+            "after Lab 2 B2 is available."
+        )
+    endif()
 endif()

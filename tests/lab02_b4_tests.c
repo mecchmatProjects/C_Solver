@@ -29,7 +29,7 @@ static void expect_status(double actual, double expected,
 static void test_absolute_error_basic(void) {
     expect_near(miniai_absolute_error(3.0, 2.0), 1.0,
         "absolute error1");
-    expect_status(miniai_absolute_error(1.0, 3.0), 1.0,
+    expect_near(miniai_absolute_error(1.0, 3.0), 2.0,
         "absolute error2");
     expect_near(miniai_absolute_error(3.0, 3.0), 0.0,
         "absolute error3");

@@ -16,3 +16,17 @@ int miniai_vector_subtract(const double a[], const double b[], double out[],
     }
     return 0;
 }
+
+double miniai_vector_sum(const double v[], size_t n) {
+    if (v == NULL || n == 0) {
+        return 0.0;
+    }
+
+    double sum = 0.0;
+
+    for (size_t i = 0; i < n; ++i) {
+        sum += v[i];
+    }
+
+    return sum;
+}

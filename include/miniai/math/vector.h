@@ -13,6 +13,12 @@
  * Normalization on empty/zero vectors returns an error without writing output.
  */
 double miniai_vector_sum(const double v[], size_t n);
+
+/* Adds a and b element by element and writes the result to out.
+ * Returns 0 on success. If n == 0, no pointers are accessed.
+ * If n > 0 and any pointer is NULL, returns 1 without writing.
+ * out may be the same array as a or b.
+ */
 int miniai_vector_add(const double a[], const double b[], double out[], size_t n);
 int miniai_vector_subtract(const double a[], const double b[], double out[], size_t n);
 int miniai_vector_scale(const double in[], double alpha, double out[], size_t n);

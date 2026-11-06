@@ -82,4 +82,12 @@ if(BUILD_TESTING)
     add_executable(miniai_onestep_demo examples/onestep_demo.c)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
+
+    add_executable(miniai_lab03_a2_tests tests/lab03_a2_tests.c)
+    target_link_libraries(miniai_lab03_a2_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a2_tests COMMAND miniai_lab03_a2_tests)
+
+    add_executable(miniai_vector_add_demo examples/vector_add_demo.c)
+    target_link_libraries(miniai_vector_add_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_vector_add_demo_smoke COMMAND miniai_vector_add_demo)
 endif()

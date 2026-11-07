@@ -223,7 +223,6 @@ static void test_bent(void) {
                   "reject null Bent output");
 }
 
-#ifdef MINIAI_ENABLE_INVSQRT
 static void test_invsqrt(void) {
     Activation activation;
     double value;
@@ -244,7 +243,6 @@ static void test_invsqrt(void) {
                   ACTIVATION_STATUS_OK, "differentiate invsqrt at one");
     expect_near(derivative, 1/(2*sqrt(2)), "invsqrt derivative at one");
 }
-#endif
 
 
 #ifdef MINIAI_ENABLE_ARCTAN_TESTS
@@ -503,11 +501,7 @@ int main(void) {
     test_softsign();
     test_gaussian();
     test_bent();
-#ifdef MINIAI_ENABLE_INVSQRT
     test_invsqrt();
-#else
-    fputs("NOT VALIDATED: InvSqrt (Lab 2 A3)\n", stderr);
-#endif
 #ifdef MINIAI_ENABLE_ARCTAN_TESTS
     test_arctan();
 #else

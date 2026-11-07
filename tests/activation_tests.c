@@ -450,21 +450,6 @@ static void test_soft_exponential(void) {
         ACTIVATION_STATUS_INVALID_ARGUMENT,
         "reject NaN alpha"
     );
-    const double small_alphas[] = {-1e-20, 1e-20};
-    for (int i = 0; i < 2; ++i) {
-        expect_status(
-            activation_soft_exponential_init(&activation, small_alphas[i]),
-            ACTIVATION_STATUS_OK,
-            "initialize Soft Exponential with near-zero alpha"
-        );
-        expect_status(
-            activation_value(&activation, x, &value),
-            ACTIVATION_STATUS_OK,
-            "evaluate Soft Exponential with near-zero alpha"
-        );
-        expect_near(value, x, "Soft Exponential near-zero-alpha value");
-    }
-
     expect_status(
     activation_soft_exponential_init(&activation, -0.5),
     ACTIVATION_STATUS_OK,

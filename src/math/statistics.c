@@ -18,3 +18,16 @@ double miniai_mean(const double data[], size_t n) {
 
     return sum / (double)n;
 }
+double miniai_variance( const double data[], size_t n ) {
+    double sum = 0.0;
+    if ( n == 0 || data == NULL ) {
+        return NAN;
+    }
+    double mean = miniai_mean( data, n );
+    for ( size_t i = 0; i < n; i++ ) {
+        double diff = data[i] - mean;
+        sum += diff * diff;
+    }
+
+    return sum/n;
+}

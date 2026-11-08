@@ -355,7 +355,11 @@ static void test_onestep(void) {
 
     expect_status(activation_derivative(&activation, 0.0, &derivative),
                   ACTIVATION_STATUS_OK, "differentiate OneStep at zero");
-    expect_near(derivative, DBL_MAX, "OneStep derivative marker at zero");
+    ++checks;
+    if (!isnan(derivative)) {
+        fprintf(stderr, "FAIL: OneStep derivative at zero must be NAN\n");
+        ++failures;
+    }
 
     expect_status(activation_onestep_init(NULL),
                   ACTIVATION_STATUS_INVALID_ARGUMENT,

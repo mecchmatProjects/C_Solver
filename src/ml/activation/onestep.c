@@ -1,7 +1,6 @@
 //
 // Created by Katya on 15.10.2026.
 //
-#include <float.h>
 #include <math.h>
 
 #include "miniai/ml/activation/onestep.h"
@@ -9,18 +8,24 @@
 static double onestep_value(const Activation *activation, double x) {
     (void)activation;
 
+    if (isnan(x)) {
+        return NAN;
+    }
+
     if (x >= 0.0) {
         return 1.0;
     }
+
     return 0.0;
 }
 
 static double onestep_derivative(const Activation *activation, double x) {
     (void)activation;
 
-    if (fabs(x) < 1e-9) {
-        return DBL_MAX;
+    if (isnan(x) || x == 0.0) {
+        return NAN;
     }
+
     return 0.0;
 }
 

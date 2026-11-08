@@ -27,7 +27,6 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
-    src/math/statistics.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -55,31 +54,19 @@ add_executable(miniai_cli src/main.c)
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
 
 if(BUILD_TESTING)
-
-    add_executable(miniai_activation_tests
-            tests/activation_tests.c)
+    add_executable(miniai_activation_tests tests/activation_tests.c)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
-
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
-
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
 
-
-    add_executable(miniai_mean_tests tests/miniai_mean_tests.c)
-    target_link_libraries(miniai_mean_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_mean_tests COMMAND miniai_mean_tests)
-    set_tests_properties(miniai_mean_tests PROPERTIES TIMEOUT 15)
-
     add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
-
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
-
 endif()

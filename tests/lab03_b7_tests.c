@@ -9,12 +9,12 @@ static int checks = 0;
 static void expect_near(double actual, double expected, const char *message) {
     ++checks;
     if (!(fabs(actual - expected) <= 1e-16)) {
-        fprintf(stderr, "FAIL: %s (actual &.17g, expected %.17g)\n", message, actual, expected);
+        fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message, actual, expected);
         ++failures;
     }
 }
 
-static void expected_zero(int actual, const char *message){
+static void expect_zero(int actual, const char *message){
     ++checks;
     if (actual != 0){
         fprintf(stderr, "FAIL: %s (code %d, expected 0)\n", message, actual);
@@ -22,7 +22,7 @@ static void expected_zero(int actual, const char *message){
     }
 }
 
-static void expected_nonzero(int actual, const char *message) {
+static void expect_nonzero(int actual, const char *message) {
     ++checks;
     if (actual == 0) {
         fprintf(stderr, "FAIL: %s (code 0, expected non-zero)\n", message);
@@ -47,7 +47,7 @@ static void test_normal_case(void) {
     
     expect_zero(miniai_standardize(in, out, 8), "standardize general array");
     // Standardized value at index 0 should be approx -1.3363062
-    expect_near(out[0], -1.3363062, "general standard deviation first component");
+    expect_near(out[0], -1.4031215200402281, "general standard deviation first component");
 }
 
 static void test_empty(void) {

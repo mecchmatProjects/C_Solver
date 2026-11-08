@@ -1,0 +1,5 @@
+miniai_activation_tests 1 0.33026
+miniai_mean_tests 1 0.271113
+miniai_header_tests 1 0.26634
+miniai_cli_smoke 1 0.272059
+---

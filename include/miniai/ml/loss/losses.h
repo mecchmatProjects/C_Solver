@@ -16,7 +16,6 @@ double miniai_absolute_error(double prediction, double target);
 double miniai_absolute_error_derivative(double prediction, double target);
 double miniai_binary_cross_entropy(double prediction, double target);
 double miniai_binary_cross_entropy_derivative(double prediction, double target);
-/* Huber loss; returns NAN unless inputs are finite and delta is positive. */
 double miniai_huber_loss(double prediction, double target, double delta);
 double miniai_huber_loss_derivative(double prediction, double target, double delta);
 double miniai_log_cosh_loss(double prediction, double target);

@@ -28,6 +28,7 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
+    src/ml/activation/sinc.c
     src/ml/loss/absolute_error.c
 )
 add_library(miniai::miniai ALIAS miniai)
@@ -59,24 +60,31 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
     target_link_libraries(miniai_lab03_a1_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a1_tests COMMAND miniai_lab03_a1_tests)
+
     add_executable(miniai_activation_tests tests/activation_tests.c)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
-        add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
+
+    add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
     target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
+
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
-    
+
     add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
+
+    add_executable(sinc_tests tests/sinc_tests.c)
+    target_link_libraries(sinc_tests PRIVATE miniai::miniai)
+    add_test(NAME sinc_tests COMMAND sinc_tests)
 
     add_executable(miniai_onestep_tests tests/onestep_tests.c)
     target_link_libraries(miniai_onestep_tests PRIVATE miniai::miniai)

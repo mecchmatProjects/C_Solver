@@ -1,0 +1,1 @@
+/usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/miniai_activation_tests.dir/tests/activation_tests.c.o -o miniai_activation_tests  libminiai.a

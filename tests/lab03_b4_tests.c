@@ -40,3 +40,8 @@ static void test_population_variance( void ) {
     expect_near(miniai_variance( NULL, 1 ), NAN,
         "variance error for NULL" );
 }
+int main() {
+    printf("tests running\n");
+    test_population_variance();
+    printf("tests finished\n");
+}

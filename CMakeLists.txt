@@ -29,6 +29,7 @@ add_library(miniai
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
     src/ml/loss/absolute_error.c
+    src/ml/loss/huber.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -89,6 +90,10 @@ if(BUILD_TESTING)
     add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
     target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
+
+    add_executable(miniai_lab02_b8_tests tests/lab02_b8_tests.c)
+    target_link_libraries(miniai_lab02_b8_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab02_b8_tests COMMAND miniai_lab02_b8_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

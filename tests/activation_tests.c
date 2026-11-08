@@ -1,0 +1,423 @@
+#include <math.h>
+#include <stdio.h>
+#include <float.h>
+
+#include "miniai/ml/activation/activations.h"
+
+static int failures = 0;
+static int checks = 0;
+
+static void expect_near(double actual, double expected, const char *message) {
+    ++checks;
+    if (!(fabs(actual - expected) <= 1e-12)) {
+        fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message,
+                actual, expected);
+        ++failures;
+    }
+}
+
+static void expect_status(ActivationStatus actual, ActivationStatus expected,
+                          const char *message) {
+    ++checks;
+    if (actual != expected) {
+        fprintf(stderr, "FAIL: %s (status %d, expected %d)\n", message,
+                (int)actual, (int)expected);
+        ++failures;
+    }
+}
+
+static void expect_finite(double actual, const char *message) {
+    ++checks;
+    if (!isfinite(actual)) {
+        fprintf(stderr, "FAIL: %s returned a non-finite result\n", message);
+        ++failures;
+    }
+}
+
+static void test_relu(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_relu_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize ReLU");
+    expect_status(activation_value(&activation, -2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate ReLU");
+    expect_near(value, 0.0, "ReLU negative value");
+    expect_status(activation_value(&activation, 3.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive ReLU");
+    expect_near(value, 3.0, "ReLU positive value");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate ReLU");
+    expect_near(derivative, 0.0, "ReLU derivative at zero");
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive ReLU");
+    expect_near(derivative, 1.0, "ReLU positive derivative");
+}
+
+static void test_leaky_relu(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_leaky_relu_init(&activation, 0.1),
+                  ACTIVATION_STATUS_OK, "initialize LeakyReLU");
+    expect_status(activation_value(&activation, -2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate LeakyReLU");
+    expect_near(value, -0.2, "LeakyReLU negative value");
+    expect_status(activation_derivative(&activation, -2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate LeakyReLU");
+    expect_near(derivative, 0.1, "LeakyReLU negative derivative");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate LeakyReLU at zero");
+    expect_near(derivative, 1.0, "LeakyReLU derivative at zero");
+    expect_status(activation_leaky_relu_init(&activation, -0.1),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject negative LeakyReLU slope");
+    expect_status(activation_leaky_relu_init(&activation, INFINITY),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject infinite LeakyReLU slope");
+    expect_status(activation_leaky_relu_init(NULL, 0.1),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null LeakyReLU output");
+}
+
+static void test_elu(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_elu_init(&activation, 1.0), ACTIVATION_STATUS_OK,
+                  "initialize ELU");
+    expect_status(activation_value(&activation, -1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate ELU");
+    expect_near(value, exp(-1.0) - 1.0, "ELU negative value");
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive ELU");
+    expect_near(value, 2.0, "ELU positive value");
+    expect_status(activation_derivative(&activation, -1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate ELU");
+    expect_near(derivative, exp(-1.0), "ELU negative derivative");
+    expect_status(activation_elu_init(&activation, -1.0),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject negative ELU alpha");
+    expect_status(activation_elu_init(&activation, NAN),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject NaN ELU alpha");
+}
+
+static void test_sigmoid(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_sigmoid_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Sigmoid");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmoid at zero");
+    expect_near(value, 0.5, "Sigmoid at zero");
+    expect_status(activation_value(&activation, 1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmoid at large input");
+    expect_near(value, 1.0, "Sigmoid large positive input");
+    expect_status(activation_value(&activation, -1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmoid at negative input");
+    expect_near(value, 0.0, "Sigmoid large negative input");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Sigmoid");
+    expect_near(derivative, 0.25, "Sigmoid derivative at zero");
+}
+
+static void test_softplus(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_softplus_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize SoftPlus");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate SoftPlus at zero");
+    expect_near(value, log(2.0), "SoftPlus at zero");
+    expect_status(activation_value(&activation, 1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate SoftPlus at large input");
+    expect_near(value, 1000.0, "SoftPlus large input");
+    expect_status(activation_value(&activation, -1000.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate SoftPlus at small input");
+    expect_near(value, 0.0, "SoftPlus small input");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate SoftPlus");
+    expect_near(derivative, 0.5, "SoftPlus derivative at zero");
+}
+
+static void test_softsign(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_softsign_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize SoftSign");
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate SoftSign");
+    expect_near(value, 2.0 / 3.0, "SoftSign positive value");
+    expect_status(activation_value(&activation, -2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate negative SoftSign");
+    expect_near(value, -2.0 / 3.0, "SoftSign negative value");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate SoftSign at zero");
+    expect_near(derivative, 1.0, "SoftSign derivative at zero");
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate SoftSign");
+    expect_near(derivative, 1.0 / 9.0, "SoftSign derivative");
+}
+
+static void test_gaussian(void) {
+    Activation activation;
+    double value;
+    double derivative;
+
+    expect_status(activation_gaussian_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize Gaussian");
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Gaussian at zero");
+    expect_near(value, 1.0, "Gaussian at zero");
+    expect_status(activation_value(&activation, 1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Gaussian at one");
+    expect_near(value, exp(-1.0), "Gaussian at one");
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Gaussian at zero");
+    expect_near(derivative, 0.0, "Gaussian derivative at zero");
+    expect_status(activation_derivative(&activation, 1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Gaussian");
+    expect_near(derivative, -2.0 * exp(-1.0), "Gaussian derivative at one");
+}
+
+static void test_dispatch_validation(void) {
+    Activation activation;
+    double result = 123.0;
+    const ActivationVTable invalid_vtable = {NULL, NULL};
+    const Activation invalid_activation = {&invalid_vtable, 0.0};
+
+    expect_status(activation_relu_init(&activation), ACTIVATION_STATUS_OK,
+                  "initialize activation for argument validation");
+    expect_status(activation_relu_init(NULL), ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null activation initializer");
+    expect_status(activation_value(NULL, 0.0, &result),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null activation value input");
+    expect_status(activation_value(&invalid_activation, 0.0, &result),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject missing activation value callback");
+    expect_status(activation_derivative(&invalid_activation, 0.0, &result),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject missing activation derivative callback");
+    expect_status(activation_value(&activation, 0.0, NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null activation result");
+    expect_near(result, 123.0, "invalid activation call preserves result");
+}
+
+static void test_polymorphic_interface(void) {
+    Activation activations[3];
+    ActivationStatus statuses[3];
+    double value;
+    double derivative;
+    size_t index;
+
+    statuses[0] = activation_relu_init(&activations[0]);
+    statuses[1] = activation_sigmoid_init(&activations[1]);
+    statuses[2] = activation_gaussian_init(&activations[2]);
+    for (index = 0; index < 3; ++index) {
+        expect_status(statuses[index], ACTIVATION_STATUS_OK,
+                      "initialize polymorphic activation");
+        expect_status(activation_value(&activations[index], 0.5, &value),
+                      ACTIVATION_STATUS_OK, "dispatch activation value");
+        expect_status(activation_derivative(&activations[index], 0.5,
+                                            &derivative),
+                      ACTIVATION_STATUS_OK, "dispatch activation derivative");
+        expect_finite(value, "activation value");
+        expect_finite(derivative, "activation derivative");
+    }
+}
+
+static void test_onestep(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_onestep_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize OneStep");
+
+    expect_status(activation_value(&activation, -1.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate negative OneStep");
+    expect_near(value, 0.0, "OneStep at -1");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate OneStep at zero");
+    expect_near(value, 1.0, "OneStep at zero");
+
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive OneStep");
+    expect_near(value, 1.0, "OneStep at 2");
+
+    expect_status(activation_derivative(&activation, -1.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate negative OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at -1");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive OneStep");
+    expect_near(derivative, 0.0, "OneStep derivative at 2");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate OneStep at zero");
+    expect_near(derivative, DBL_MAX, "OneStep derivative marker at zero");
+
+    expect_status(activation_onestep_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null OneStep initializer");
+}
+
+static void test_sigmweight(void) {
+    Activation activation;
+    double value = 0.0;
+    double derivative = 0.0;
+    double sig2;
+
+    expect_status(activation_sigmweight_init(&activation),
+                  ACTIVATION_STATUS_OK, "initialize Sigmweight");
+
+    expect_status(activation_value(&activation, 0.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate Sigmweight at zero");
+    expect_near(value, 0.0, "Sigmweight at zero");
+
+    expect_status(activation_derivative(&activation, 0.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate Sigmweight at zero");
+    expect_near(derivative, 0.5, "Sigmweight derivative at zero");
+
+    sig2 = 1.0 / (1.0 + exp(-2.0));
+    expect_status(activation_value(&activation, 2.0, &value),
+                  ACTIVATION_STATUS_OK, "evaluate positive Sigmweight");
+    expect_near(value, 2.0 * sig2, "Sigmweight positive value");
+
+    expect_status(activation_derivative(&activation, 2.0, &derivative),
+                  ACTIVATION_STATUS_OK, "differentiate positive Sigmweight");
+    expect_near(derivative, sig2 + 2.0 * sig2 * (1.0 - sig2),
+                "Sigmweight positive derivative");
+
+    expect_status(activation_sigmweight_init(NULL),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT,
+                  "reject null Sigmweight initializer");
+}
+
+
+static void test_soft_exponential(void) {
+    Activation activation;
+    double value, derivative;
+    const double x = 1.5;
+
+    const double alphas[] = {-0.5, 0.0, 0.5};
+    const double expected_values[] = {
+        2.0 * log(1.5),
+        1.5,
+        2.0 * (exp(0.75) - 1.0) + 0.5
+    };
+    const double expected_derivatives[] = {
+        1.0 / 1.5,
+        1.0,
+        exp(0.75)
+    };
+
+    for (int i = 0; i < 3; ++i) {
+        expect_status(
+            activation_soft_exponential_init(&activation, alphas[i]),
+            ACTIVATION_STATUS_OK,
+            "initialize Soft Exponential"
+        );
+
+        expect_status(
+            activation_value(&activation, x, &value),
+            ACTIVATION_STATUS_OK,
+            "evaluate Soft Exponential"
+        );
+        expect_near(value, expected_values[i],
+                    "Soft Exponential value");
+
+        expect_status(
+            activation_derivative(&activation, x, &derivative),
+            ACTIVATION_STATUS_OK,
+            "differentiate Soft Exponential"
+        );
+        expect_near(derivative, expected_derivatives[i],
+                    "Soft Exponential derivative");
+    }
+
+    expect_status(
+        activation_soft_exponential_init(NULL, 0.5),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject null initializer"
+    );
+    expect_status(
+        activation_soft_exponential_init(&activation, NAN),
+        ACTIVATION_STATUS_INVALID_ARGUMENT,
+        "reject NaN alpha"
+    );
+}
+
+
+static void test_s_relu(void) {
+    Activation activation = {0};
+    double value = 0.0;
+    double derivative = 0.0;
+
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_OK, "initialize SReLU");
+
+    activation_value(&activation, -2.0, &value);
+    expect_near(value, -1.2, "SReLU at -2");
+    activation_value(&activation, 0.0, &value);
+    expect_near(value, 0.0, "SReLU at 0");
+    activation_value(&activation, 2.0, &value);
+    expect_near(value, 1.3, "SReLU at 2");
+
+    activation_derivative(&activation, -2.0, &derivative);
+    expect_near(derivative, 0.2, "SReLU derivative at -2");
+    activation_derivative(&activation, 0.0, &derivative);
+    expect_near(derivative, 0.0, "SReLU derivative at 0");
+    activation_derivative(&activation, 2.0, &derivative);
+    expect_near(derivative, 0.3, "SReLU derivative at 2");
+
+    activation_derivative(&activation, -1.0, &derivative);
+    expect_near(derivative, DBL_MAX, "SReLU derivative at -1");
+    activation_derivative(&activation, 1.0, &derivative);
+    expect_near(derivative, DBL_MAX, "SReLU derivative at 1");
+
+    expect_status(activation_s_relu_init(&activation, -1.0, 1.0, 0.2, 0.5),
+                  ACTIVATION_STATUS_OK, "change SReLU slope");
+    activation_value(&activation, 2.0, &value);
+    expect_near(value, 1.5, "SReLU with another slope");
+
+    expect_status(activation_s_relu_init(NULL, -1.0, 1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject null SReLU");
+    expect_status(activation_s_relu_init(&activation, 1.0, -1.0, 0.2, 0.3),
+                  ACTIVATION_STATUS_INVALID_ARGUMENT, "reject reversed bounds");
+}
+
+int main(void) {
+    test_s_relu();
+    test_relu();
+    test_leaky_relu();
+    test_elu();
+    test_sigmoid();
+    test_softplus();
+    test_soft_exponential();
+    test_softsign();
+    test_gaussian();
+    test_dispatch_validation();
+    test_polymorphic_interface();
+    test_onestep();
+    test_sigmweight();
+
+    if (failures != 0) {
+        fprintf(stderr, "%d of %d activation checks failed\n", failures, checks);
+        return 1;
+    }
+
+    printf("%d activation checks passed\n", checks);
+    return 0;
+}

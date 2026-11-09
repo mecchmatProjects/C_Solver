@@ -31,3 +31,13 @@ double miniai_variance( const double data[], size_t n ) {
 
     return sum/n;
 }
+
+double miniai_stddev( const double data[], size_t n ) {
+    double val = miniai_variance(data, n);
+    if ( n == 0 || data == NULL ) {
+        return NAN;
+    }
+    else {
+        return sqrt(val);
+    }
+}

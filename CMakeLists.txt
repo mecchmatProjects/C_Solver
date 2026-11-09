@@ -104,6 +104,11 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_b4_tests tests/lab03_b4_tests.c)
     target_link_libraries(miniai_lab03_b4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_b4_tests COMMAND miniai_lab03_b4_tests)
+
+    add_executable(miniai_lab03_b5_tests tests/lab03_b5_tests.c
+            tests/lab03_b5_tests.c)
+    target_link_libraries(miniai_lab03_b5_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_b5_tests COMMAND miniai_lab03_b5_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
@@ -113,3 +118,9 @@ add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 add_executable(miniai_population_variance_demo examples/population_variance_demo.c)
 target_link_libraries(miniai_population_variance_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_population_variance_demo COMMAND miniai_population_variance_demo)
+
+
+add_executable(miniai_stddev_demo examples/stddev_demo.c
+        examples/stddev_demo.c)
+target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
+add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)

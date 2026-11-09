@@ -24,5 +24,6 @@ double miniai_vector_cosine_similarity(const double a[], const double b[], size_
 int miniai_vector_normalize(const double in[], double out[], size_t n);
 int miniai_vector_relu(const double in[], double out[], size_t n);
 int miniai_vector_sigmoid(const double in[], double out[], size_t n);
+double miniai_vector_sum(const double v[], size_t n);
 
 #endif

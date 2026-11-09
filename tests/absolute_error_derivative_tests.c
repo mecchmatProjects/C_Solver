@@ -31,11 +31,11 @@ static void absolute_error_derivative_tests(void) {
         "absolute error1");
     expect_near(miniai_absolute_error_derivative(1.0, 3.0), -1.0,
         "absolute error2");
-    expect_near(miniai_absolute_error(3.0, 3.0), 0.0,
+    expect_near(miniai_absolute_error_derivative(3.0, 3.0), 0.0,
         "absolute error3");
-    expect_status(miniai_absolute_error(-0.0, 0.0), 0.0,
+    expect_status(miniai_absolute_error_derivative(-0.0, 0.0), 0.0,
         "absolute error4");
-    expect_near(miniai_absolute_error(NAN, 1.0), NAN,
+    expect_near(miniai_absolute_error_derivative(NAN, 1.0), NAN,
         "absolute error5");
 }
 int main() {

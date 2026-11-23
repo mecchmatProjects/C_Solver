@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\miniai_lab03_a3_tests.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\miniai_lab03_a3_tests.dir/objects.a @CMakeFiles\miniai_lab03_a3_tests.dir\objects1.rsp
+C:\msys64\ucrt64\bin\cc.exe -Wl,--whole-archive CMakeFiles\miniai_lab03_a3_tests.dir/objects.a -Wl,--no-whole-archive -o miniai_lab03_a3_tests.exe -Wl,--out-implib,libminiai_lab03_a3_tests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\miniai_lab03_a3_tests.dir\linkLibs.rsp

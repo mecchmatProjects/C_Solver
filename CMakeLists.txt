@@ -105,6 +105,9 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)
 
+    add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
+    target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

@@ -10,6 +10,7 @@ include(CTest)
 
 
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
+option(MINIAI_ENABLE_LOSS_INTEGRATION "Build Lab 2 B10 loss integration tests and demo (requires scalar loss implementations)" OFF)
 option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
@@ -61,6 +62,11 @@ target_include_directories(miniai
 add_executable(miniai_cli src/main.c)
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
 
+if(MINIAI_ENABLE_LOSS_INTEGRATION)
+    add_executable(miniai_loss_demo examples/loss_demo.c)
+    target_link_libraries(miniai_loss_demo PRIVATE miniai::miniai)
+endif()
+
 if(BUILD_TESTING)
     add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
     target_link_libraries(miniai_lab03_a1_tests PRIVATE miniai::miniai)
@@ -87,6 +93,12 @@ if(BUILD_TESTING)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
 
+    if(MINIAI_ENABLE_LOSS_INTEGRATION)
+        add_executable(miniai_loss_integration_tests tests/loss_integration_tests.c)
+        target_link_libraries(miniai_loss_integration_tests PRIVATE miniai::miniai)
+        add_test(NAME miniai_loss_integration_tests COMMAND miniai_loss_integration_tests)
+        add_test(NAME miniai_loss_demo COMMAND miniai_loss_demo)
+    endif()
     add_executable(miniai_bce_derivative_tests tests/bce_derivative_tests.c)
     target_link_libraries(miniai_bce_derivative_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_bce_derivative_tests COMMAND miniai_bce_derivative_tests)

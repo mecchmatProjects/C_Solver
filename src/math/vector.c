@@ -105,3 +105,22 @@ double miniai_l2_norm(const double *arr, size_t length) {
     
     return sqrt(sum_sq);
 }
+
+double miniai_vector_l1_norm(const double v[], size_t n)
+{
+    if (n == 0) {
+        return 0.0;
+    }
+
+    if (v == NULL) {
+        return NAN;
+    }
+
+    double sum = 0.0;
+
+    for (size_t i = 0; i < n; ++i) {
+        sum += fabs(v[i]);
+    }
+
+    return sum;
+}

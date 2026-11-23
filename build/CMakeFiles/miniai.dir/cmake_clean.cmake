@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/miniai.dir/src/math/vector.c.obj"
+  "CMakeFiles/miniai.dir/src/math/vector.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj.d"
+  "CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj"
+  "CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj.d"
+  "libminiai.a"
+  "libminiai.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/miniai.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

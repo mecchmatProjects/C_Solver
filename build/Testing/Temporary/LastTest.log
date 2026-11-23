@@ -1,0 +1,166 @@
+Start testing: Nov 18 21:36 Фінляндія (зима)
+----------------------------------------------------------
+1/10 Testing: miniai_lab03_a1_tests
+1/10 Test: miniai_lab03_a1_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_lab03_a1_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_lab03_a1_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_lab03_a1_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_lab03_a1_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: miniai_activation_tests
+2/10 Test: miniai_activation_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_activation_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_activation_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+NOT VALIDATED: InvSqrt (Lab 2 A3)
+NOT VALIDATED: Arctan (Lab 2 A7)
+159 activation checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_activation_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_activation_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: miniai_lab03_a3_tests
+3/10 Test: miniai_lab03_a3_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_lab03_a3_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_lab03_a3_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+24 vector subtraction checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_lab03_a3_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_lab03_a3_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/10 Testing: miniai_header_tests
+4/10 Test: miniai_header_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_header_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_header_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_header_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_header_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/10 Testing: miniai_cli_smoke
+5/10 Test: miniai_cli_smoke
+Command: "C:/Users/7779/C_Solver/build/miniai_cli.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_cli_smoke" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+MiniAI C17 bootstrap ready; sigmoid(0) = 0.5
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_cli_smoke" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_cli_smoke" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: miniai_onestep_tests
+6/10 Test: miniai_onestep_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_onestep_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_onestep_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+All Onestep tests passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_onestep_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_onestep_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/10 Testing: miniai_onestep_demo_smoke
+7/10 Test: miniai_onestep_demo_smoke
+Command: "C:/Users/7779/C_Solver/build/miniai_onestep_demo.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_onestep_demo_smoke" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+Onestep(0) = 1.0
+Derivative at zero does not exist (NAN)
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_onestep_demo_smoke" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_onestep_demo_smoke" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/10 Testing: miniai_lab02_b4_tests
+8/10 Test: miniai_lab02_b4_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_lab02_b4_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_lab02_b4_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+tests running
+tests finished
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_lab02_b4_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_lab02_b4_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/10 Testing: miniai_lab03_a4_tests
+9/10 Test: miniai_lab03_a4_tests
+Command: "C:/Users/7779/C_Solver/build/miniai_lab03_a4_tests.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_lab03_a4_tests" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+lab03_a4_tests: all 13 checks passed
+<end of output>
+Test time =   1.02 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_lab03_a4_tests" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_lab03_a4_tests" time elapsed: 00:00:01
+----------------------------------------------------------
+
+10/10 Testing: miniai_absolute_error_demo
+10/10 Test: miniai_absolute_error_demo
+Command: "C:/Users/7779/C_Solver/build/miniai_absolute_error_demo.exe"
+Directory: C:/Users/7779/C_Solver/build
+"miniai_absolute_error_demo" start time: Nov 18 21:36 Фінляндія (зима)
+Output:
+----------------------------------------------------------
+example1: 10.000000
+example2: nan
+<end of output>
+Test time =   1.01 sec
+----------------------------------------------------------
+Test Passed.
+"miniai_absolute_error_demo" end time: Nov 18 21:36 Фінляндія (зима)
+"miniai_absolute_error_demo" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Nov 18 21:36 Фінляндія (зима)

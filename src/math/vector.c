@@ -1,6 +1,25 @@
 #include "miniai/math/vector.h"
 
 #include "miniai/ml/activation/relu.h"
+#include <math.h>
+#include <stddef.h>
+
+int miniai_vector_add(const double a[], const double b[], double out[],
+                      size_t n) {
+    if (n == 0) {
+        return 0;
+    }
+
+    if (a == NULL || b == NULL || out == NULL) {
+        return 1;
+    }
+
+    for (size_t i = 0; i < n; ++i) {
+        out[i] = a[i] + b[i];
+    }
+
+    return 0;
+}
 
 int miniai_vector_subtract(const double a[], const double b[], double out[],
                            size_t n) {
@@ -58,6 +77,58 @@ int miniai_vector_relu(const double in[], double out[], size_t n) {
             return (int)status;
         }
         out[index] = value;
+    }
+
+    return 0;
+}
+double miniai_vector_distance(const double a[], const double b[], size_t n) {
+    if (n == 0) {
+        return 0.0;
+    }
+
+    if (a == NULL || b == NULL) {
+        return NAN;
+    }
+
+    double scale = 0.0;
+    double sumsq = 1.0;
+
+    for (size_t i = 0; i < n; ++i) {
+        if (!isfinite(a[i]) || !isfinite(b[i])) {
+            return NAN;
+        }
+
+        double diff = fabs(a[i] - b[i]);
+        if (!isfinite(diff)) {
+            return NAN;
+        }
+
+        if (diff > 0.0) {
+            if (scale < diff) {
+                double ratio = scale / diff;
+                sumsq = 1.0 + sumsq * ratio * ratio;
+                scale = diff;
+            } else {
+                double ratio = diff / scale;
+                sumsq += ratio * ratio;
+            }
+        }
+    }
+
+    return scale * sqrt(sumsq);
+}
+
+int miniai_vector_scale(const double in[], double alpha, double out[],
+                        size_t n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (in == NULL || out == NULL) {
+        return 1;
+    }
+
+    for (size_t i = 0; i < n; ++i) {
+        out[i] = alpha * in[i];
     }
 
     return 0;

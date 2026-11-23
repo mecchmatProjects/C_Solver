@@ -41,6 +41,7 @@ add_library(miniai
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c
     src/ml/activation/tanh_activation.c
+    src/ml/activation/linear.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -188,6 +189,14 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
     target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
+
+    add_executable(miniai_linear_tests tests/linear_tests.c)
+    target_link_libraries(miniai_linear_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_tests COMMAND miniai_linear_tests)
+
+    add_executable(miniai_linear_demo examples/linear_demo.c)
+    target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

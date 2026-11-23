@@ -14,3 +14,6 @@
 /.vs/C_Solver/FileContentIndex
 /CMakeSettings.json
 /.vs
+.idea/
+ybuild/
+build/

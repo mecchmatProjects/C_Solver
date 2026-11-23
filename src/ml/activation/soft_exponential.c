@@ -7,11 +7,17 @@ static double soft_exponential_value(const Activation *activation, double x) {
     double a = activation->parameter;
 
     if (a < 0.0) {
-        return -log(1.0 - a * (x + a)) / a;
+        double denom = 1.0 - a * (x + a);
+
+        if (denom <= 0.0) {
+            return NAN;
+        }
+
+        return -log1p(-a * (x + a)) / a;
     } else if (a == 0.0) {
         return x;
     } else {
-        return (exp(a * x) - 1.0) / a + a;
+        return expm1(a * x) / a + a;
     }
 }
 
@@ -20,7 +26,9 @@ static double soft_exponential_derivative(const Activation *activation, double x
 
     if (a < 0.0) {
         double denom = 1.0 - a * (x + a);
-        if (denom <= 0.0) return DBL_MAX;
+        if (denom <= 0.0) {
+        return NAN;
+        }
         return 1.0 / denom;
     } else if (a == 0.0) {
         return 1.0;

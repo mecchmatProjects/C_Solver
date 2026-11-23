@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure baseline (InvSqrt and Arctan tests pending)
-        run: cmake -S . -B build -DBUILD_TESTING=ON
+        run: cmake -S . -B build-ci -DBUILD_TESTING=ON
       - name: Build
-        run: cmake --build build --config Debug
+        run: cmake --build build-ci --config Debug
       - name: Test baseline only
-        run: ctest --test-dir build -C Debug --output-on-failure
+        run: ctest --test-dir build-ci -C Debug --output-on-failure

@@ -8,7 +8,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 
 include(CTest)
 
-option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)" OFF)
+option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)" ON)
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
 
 add_library(miniai
@@ -28,8 +28,6 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
-    src/ml/loss/absolute_error.c
-    src/math/vector.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -98,6 +96,14 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
+
+    add_executable(miniai_lab02_a7_tests tests/lab02_a7_tests.c)
+    target_link_libraries(miniai_lab02_a7_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab02_a7_tests COMMAND miniai_lab02_a7_tests)
+    
+    add_executable(miniai_lab03_a7_tests tests/lab03_a7_tests.c)
+    target_link_libraries(miniai_lab03_a7_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a7_tests COMMAND miniai_lab03_a7_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

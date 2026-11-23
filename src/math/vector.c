@@ -87,19 +87,3 @@ double miniai_vector_distance(const double a[], const double b[], size_t n) {
 
     return scale * sqrt(sumsq);
 }
-
-int miniai_vector_scale(const double in[], double alpha, double out[],
-                        size_t n) {
-    if (n == 0) {
-        return 0;
-    }
-    if (in == NULL || out == NULL) {
-        return 1;
-    }
-
-    for (size_t i = 0; i < n; ++i) {
-        out[i] = alpha * in[i];
-    }
-
-    return 0;
-}

@@ -32,7 +32,6 @@ add_library(miniai
     src/ml/activation/onestep.c
     src/ml/loss/binary_cross_entropy.c
     src/ml/loss/absolute_error.c
-    src/math/vector.c 
     src/ml/activation/tanh_activation.c
     src/math/vector.c
     src/math/statistics.c
@@ -132,11 +131,7 @@ if(BUILD_TESTING)
     add_executable(lab03_a8_tests tests/lab03_a8_tests.c)
     target_link_libraries(lab03_a8_tests PRIVATE miniai::miniai)
     add_test(NAME lab03_a8_tests COMMAND lab03_a8_tests)
-    
-    add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
-    target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
-
+   
     add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
     target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)

@@ -1,5 +1,6 @@
 #include "miniai/math/vector.h"
 
+#include "miniai/ml/activation/relu.h"
 #include <math.h>
 #include <stddef.h>
 
@@ -51,6 +52,35 @@ double miniai_vector_sum(const double v[], size_t n) {
     return sum;
 }
 
+int miniai_vector_relu(const double in[], double out[], size_t n) {
+    Activation relu;
+    ActivationStatus status;
+    size_t index;
+
+    if (n == 0) {
+        return 0;
+    }
+    if (in == NULL || out == NULL) {
+        return (int)ACTIVATION_STATUS_INVALID_ARGUMENT;
+    }
+
+    status = activation_relu_init(&relu);
+    if (status != ACTIVATION_STATUS_OK) {
+        return (int)status;
+    }
+
+    for (index = 0; index < n; ++index) {
+        double value;
+
+        status = activation_value(&relu, in[index], &value);
+        if (status != ACTIVATION_STATUS_OK) {
+            return (int)status;
+        }
+        out[index] = value;
+    }
+
+    return 0;
+}
 double miniai_vector_distance(const double a[], const double b[], size_t n) {
     if (n == 0) {
         return 0.0;

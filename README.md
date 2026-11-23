@@ -1273,16 +1273,75 @@ Gradient Descent
 
 ## Loss
 
-```text
-MSE
+Header: `include/miniai/ml/loss/losses.h`
+
+```c
+#include "miniai/ml/loss/losses.h"
 ```
 
-а за можливості:
+### Scalar losses (Lab 2)
 
-```text
-MAE
-Binary Cross Entropy
+Scalar loss рахує помилку для однієї пари `prediction`, `target`.
+Тому функція називається `miniai_squared_error`, а не MSE: MSE — це середнє по вектору (Lab 3).
+
+Позначення: `p = prediction`, `y = target`, `e = p - y`.
+
+| Функція | Формула | Похідна за `p` |
+|---|---|---|
+| `miniai_squared_error(p, y)` | `e²` | `2e` |
+| `miniai_absolute_error(p, y)` | `\|e\|` | `sign(e)`, при `p == y` → `0` |
+| `miniai_binary_cross_entropy(p, y)` | `-[y·ln(p_c) + (1-y)·ln(1-p_c)]` | `-y/p_c + (1-y)/(1-p_c)` |
+| `miniai_huber_loss(p, y, delta)` | `0.5e²`, якщо `\|e\| <= delta`, інакше `delta(\|e\| - 0.5delta)` | `e` або `delta·sign(e)` |
+| `miniai_log_cosh_loss(p, y)` | `ln(cosh(e))` | `tanh(e)` |
+
+Похідні мають суфікс `_derivative`, наприклад `miniai_huber_loss_derivative(p, y, delta)`.
+
+### Контракт
+
+- Похідна завжди береться за `prediction`.
+- `prediction` і `target` мають бути скінченними. Інакше результат `NAN`.
+- `NAN` — єдиний сигнал помилки. Результат треба перевіряти через `isnan()`.
+- Absolute error: у точці `p == y` похідна не існує, повертається subgradient `0`.
+- BCE: `p` і `y` мають належати `[0, 1]` (soft label дозволено), інакше `NAN`.
+  Усередині `p_c = clip(p, 1e-12, 1 - 1e-12)`. Похідна рахується в точці `p_c`;
+  це не похідна композиції з clipping (вона була б 0 на насичених ділянках).
+- Huber: `delta` скінченне і `delta > 0`, інакше `NAN`.
+- Log-cosh: для великих `|e|` використовується `|e| + log1p(exp(-2|e|)) - ln 2`, щоб не було переповнення `cosh`.
+
+### Vector losses (Lab 3)
+
+- `miniai_mse(pred, target, n)` — середнє `miniai_squared_error`.
+- `miniai_mae(pred, target, n)` — середнє `miniai_absolute_error`.
+
+`n == 0`, `NULL` або нескінченні/NaN дані → `NAN`.
+
+### Приклад
+
+```c
+#include <math.h>
+#include <stdio.h>
+#include "miniai/ml/loss/losses.h"
+
+int main(void) {
+    double loss = miniai_absolute_error(0.8, 1.0);
+    if (isnan(loss)) {
+        fputs("invalid loss arguments\n", stderr);
+        return 1;
+    }
+    printf("loss = %f\n", loss);
+    return 0;
+}
 ```
+
+### Тести
+
+- `miniai_loss_header_compile` — header збирається сам по собі (без інших include), header guards, сигнатури всіх prototypes.
+- `miniai_loss_contract_tests` — некоректні аргументи для готових реалізацій (NaN/Inf, `target` поза `[0, 1]` для BCE), subgradient при рівності, clipping у BCE.
+
+### Обмеження
+
+Поки що реалізовані лише `miniai_absolute_error`, `miniai_absolute_error_derivative` і `miniai_binary_cross_entropy_derivative`.
+Решта функцій оголошена в header, реалізації додаються окремими PR.
 
 ## Neural network
 

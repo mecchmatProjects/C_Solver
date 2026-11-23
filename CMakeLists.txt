@@ -137,6 +137,14 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
+
+    add_executable(miniai_loss_header_compile tests/loss_header_compile.c)
+    target_include_directories(miniai_loss_header_compile PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+    add_test(NAME miniai_loss_header_compile COMMAND miniai_loss_header_compile)
+
+    add_executable(miniai_loss_contract_tests tests/loss_contract_tests.c)
+    target_link_libraries(miniai_loss_contract_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_loss_contract_tests COMMAND miniai_loss_contract_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

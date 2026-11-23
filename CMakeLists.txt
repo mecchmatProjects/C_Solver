@@ -40,6 +40,7 @@ add_library(miniai
     src/math/statistics.c
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c
+    src/ml/activation/tanh_activation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -179,6 +180,14 @@ if(BUILD_TESTING)
     add_executable(miniai_loss_contract_tests tests/loss_contract_tests.c)
     target_link_libraries(miniai_loss_contract_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_loss_contract_tests COMMAND miniai_loss_contract_tests)
+
+    add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
+    target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)
+
+    add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
+    target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

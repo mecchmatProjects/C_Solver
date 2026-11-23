@@ -134,6 +134,24 @@ int miniai_vector_scale(const double in[], double alpha, double out[],
     return 0;
 }
 
+double miniai_l2_norm(const double *arr, size_t length) {
+    if (length == 0) {
+        return 0.0;
+    }
+    if (arr == NULL) {
+        return NAN;
+    }
+
+    double sum_sq = 0.0;
+    for (size_t i = 0; i < length; ++i) {
+        if (!isfinite(arr[i])) {
+            return NAN;
+        }
+        sum_sq += arr[i] * arr[i];
+    }
+    
+    return sqrt(sum_sq);
+}
 
 double miniai_vector_l1_norm(const double v[], size_t n)
 {

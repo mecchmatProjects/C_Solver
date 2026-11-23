@@ -15,5 +15,6 @@
 #include "miniai/ml/activation/softsign.h"
 #include "miniai/ml/activation/invsqrt.h"
 #include "miniai/ml/activation/onestep.h"
+#include "miniai/ml/activation/linear.h"
 
 #endif

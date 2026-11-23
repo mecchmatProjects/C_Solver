@@ -26,11 +26,10 @@ add_library(miniai
     src/ml/activation/softplus.c
     src/ml/activation/soft_exponential.c
     src/ml/activation/softsign.c
-    include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
     src/ml/loss/absolute_error.c
-    src/math/vector.c
- "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    src/ml/loss/huber.c
+)
 add_library(miniai::miniai ALIAS miniai)
 
 if(MINIAI_ENABLE_INVSQRT)
@@ -53,53 +52,65 @@ target_include_directories(miniai
         $<INSTALL_INTERFACE:include>
 )
 
-add_executable(miniai_cli src/main.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+add_executable(miniai_cli src/main.c)
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
 
 if(BUILD_TESTING)
-    add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
     target_link_libraries(miniai_lab03_a1_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a1_tests COMMAND miniai_lab03_a1_tests)
-    add_executable(miniai_activation_tests tests/activation_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+
+    add_executable(miniai_activation_tests tests/activation_tests.c)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
-        add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+
+    add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
     target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
+
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
-    
-    add_executable(miniai_header_tests tests/header_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+
+    add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
 
-    add_executable(miniai_onestep_tests tests/onestep_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    add_executable(miniai_onestep_tests tests/onestep_tests.c)
     target_link_libraries(miniai_onestep_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_tests COMMAND miniai_onestep_tests)
 
-    add_executable(miniai_onestep_demo examples/onestep_demo.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    add_executable(miniai_onestep_demo examples/onestep_demo.c)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
 
-    add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
     target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
 
-    add_executable(lab03_a8_tests tests/lab03_a8_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+    add_executable(lab03_a8_tests tests/lab03_a8_tests.c)
     target_link_libraries(lab03_a8_tests PRIVATE miniai::miniai)
     add_test(NAME lab03_a8_tests COMMAND lab03_a8_tests)
-    
-    add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+
+    add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
+
+    add_executable(miniai_huber_derivative_tests tests/huber_derivative_tests.c)
+    target_link_libraries(miniai_huber_derivative_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_huber_derivative_tests COMMAND miniai_huber_derivative_tests)
+
+    add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
+    target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)
 endif()
 
-add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
 target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
+iniai_absolute_error_demo)

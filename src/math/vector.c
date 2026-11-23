@@ -2,6 +2,7 @@
 
 #include <math.h>
 #include <stddef.h>
+#include "activation.h"
 
 int miniai_vector_subtract(const double a[], const double b[], double out[],
                            size_t n) {
@@ -82,6 +83,31 @@ int miniai_vector_scale(const double in[], double alpha, double out[],
 
     for (size_t i = 0; i < n; ++i) {
         out[i] = alpha * in[i];
+    }
+
+    return 0;
+}
+
+int miniai_vector_sigmoid(const double in[], double out[], size_t n) {
+    if (n == 0) {
+        return 0;
+    }
+    if (in == NULL || out == NULL) {
+        return 1;
+    }
+
+    for (size_t i = 0; i < n; ++i) {
+        double x = in[i];
+        if (!isfinite(x)) {
+            return 1;
+        }
+        if (x >= 0.0) {
+            out[i] = 1.0 / (1.0 + exp(-x));
+        }
+        else {
+            double ex = exp(x);
+            out[i] = ex / (1.0 + ex);
+        }
     }
 
     return 0;

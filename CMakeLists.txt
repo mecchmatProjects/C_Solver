@@ -28,6 +28,9 @@ add_library(miniai
     src/ml/activation/softsign.c
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
+    src/ml/loss/absolute_error.c
+    src/math/vector.c
+        src/ml/activation/tanh_activation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -104,6 +107,14 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a7_tests tests/lab03_a7_tests.c)
     target_link_libraries(miniai_lab03_a7_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a7_tests COMMAND miniai_lab03_a7_tests)
+
+    add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
+    target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)
+
+    add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
+    target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

@@ -70,6 +70,12 @@ if(MINIAI_ENABLE_LOSS_INTEGRATION)
 endif()
 
 if(BUILD_TESTING)
+    add_executable(lab04_a5_tests tests/lab04_a5_tests.c tests/test_functions.c)
+    if(UNIX AND NOT APPLE)
+        target_link_libraries(lab04_a5_tests PRIVATE m)
+    endif()
+    add_test(NAME lab04_a5_tests COMMAND lab04_a5_tests)
+
     add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
     target_link_libraries(miniai_lab03_a1_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a1_tests COMMAND miniai_lab03_a1_tests)

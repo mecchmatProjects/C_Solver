@@ -197,6 +197,12 @@ if(BUILD_TESTING)
     add_executable(miniai_linear_demo examples/linear_demo.c)
     target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_test_objectives tests/objectives.h
+            tests/objectives.c
+            tests/objectives_test.c)
+    target_link_libraries(miniai_test_objectives PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_objectives COMMAND miniai_test_objectives)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef double (*miniai_objective_function)(
 const double parameters[],

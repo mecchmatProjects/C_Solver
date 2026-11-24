@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdint.h>
-#include "../src/gradient_safe.c"
 
 
 static int failures = 0;

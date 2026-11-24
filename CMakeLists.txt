@@ -14,34 +14,34 @@ option(MINIAI_ENABLE_LOSS_INTEGRATION "Build Lab 2 B10 loss integration tests an
 option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
-    src/ml/activation/invsqrt.c
-    src/math/vector.c
-    src/ml/loss/vector_loss.c
-    src/math/statistics.c
-    src/ml/activation/activation.c
-    src/ml/activation/bent.c
-    src/ml/activation/arctan.c
-    src/ml/activation/elu.c
-    src/ml/activation/gaussian.c
-    src/ml/activation/leaky_relu.c
-    src/ml/activation/relu.c
-    src/ml/activation/s_relu.c
-    src/ml/activation/sigmoid.c
-    src/ml/activation/sigmweight.c
-    src/ml/activation/softplus.c
-    src/ml/activation/soft_exponential.c
-    src/ml/activation/softsign.c
-    include/miniai/ml/activation/onestep.h
-    src/ml/activation/onestep.c
-    src/ml/loss/binary_cross_entropy.c
-    src/ml/loss/absolute_error.c
-    src/ml/loss/huber.c
-    src/math/vector.c
-    src/math/statistics.c
-    include/miniai/math/statistics.h
-    src/ml/activation/sinc.c
-    src/ml/activation/tanh_activation.c
-    src/ml/activation/linear.c
+        src/ml/activation/invsqrt.c
+        src/math/vector.c
+        src/ml/loss/vector_loss.c
+        src/math/statistics.c
+        src/ml/activation/activation.c
+        src/ml/activation/bent.c
+        src/ml/activation/arctan.c
+        src/ml/activation/elu.c
+        src/ml/activation/gaussian.c
+        src/ml/activation/leaky_relu.c
+        src/ml/activation/relu.c
+        src/ml/activation/s_relu.c
+        src/ml/activation/sigmoid.c
+        src/ml/activation/sigmweight.c
+        src/ml/activation/softplus.c
+        src/ml/activation/soft_exponential.c
+        src/ml/activation/softsign.c
+        include/miniai/ml/activation/onestep.h
+        src/ml/activation/onestep.c
+        src/ml/loss/binary_cross_entropy.c
+        src/ml/loss/absolute_error.c
+        src/ml/loss/huber.c
+        src/math/vector.c
+        src/math/statistics.c
+        include/miniai/math/statistics.h
+        src/ml/activation/sinc.c
+        src/ml/activation/tanh_activation.c
+        src/ml/activation/linear.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -80,9 +80,9 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
     target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
-        add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
-        target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
-        add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)
+    add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
+    target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()
@@ -123,8 +123,8 @@ if(BUILD_TESTING)
         add_test(NAME miniai_lab03_b10_tests COMMAND miniai_lab03_b10_tests)
     else()
         message(STATUS
-            "Lab 3 B10 tests are disabled; enable MINIAI_ENABLE_VECTOR_MSE_TESTS "
-            "after Lab 2 B2 is available."
+                "Lab 3 B10 tests are disabled; enable MINIAI_ENABLE_VECTOR_MSE_TESTS "
+                "after Lab 2 B2 is available."
         )
     endif()
 
@@ -169,7 +169,7 @@ if(BUILD_TESTING)
     add_executable(sinc_tests tests/sinc_tests.c)
     target_link_libraries(sinc_tests PRIVATE miniai::miniai)
     add_test(NAME sinc_tests COMMAND sinc_tests)
-    
+
     add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
@@ -197,6 +197,10 @@ if(BUILD_TESTING)
     add_executable(miniai_linear_demo examples/linear_demo.c)
     target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_objective_contract_tests tests/objective_contract_tests.c)
+    target_link_libraries(miniai_objective_contract_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_objective_contract_tests COMMAND miniai_objective_contract_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

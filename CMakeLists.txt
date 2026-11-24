@@ -31,7 +31,6 @@ add_library(miniai
     src/ml/activation/softplus.c
     src/ml/activation/soft_exponential.c
     src/ml/activation/softsign.c
-    include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
     src/ml/loss/binary_cross_entropy.c
     src/ml/loss/absolute_error.c
@@ -74,13 +73,16 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
     target_link_libraries(miniai_lab03_a1_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a1_tests COMMAND miniai_lab03_a1_tests)
+
     add_executable(miniai_activation_tests tests/activation_tests.c)
     target_link_libraries(miniai_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_activation_tests COMMAND miniai_activation_tests)
     set_tests_properties(miniai_activation_tests PROPERTIES TIMEOUT 15)
+
     add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
     target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
+
         add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
         target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
         add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)
@@ -167,6 +169,7 @@ if(BUILD_TESTING)
     add_executable(lab03_a8_tests tests/lab03_a8_tests.c)
     target_link_libraries(lab03_a8_tests PRIVATE miniai::miniai)
     add_test(NAME lab03_a8_tests COMMAND lab03_a8_tests)
+
     add_executable(sinc_tests tests/sinc_tests.c)
     target_link_libraries(sinc_tests PRIVATE miniai::miniai)
     add_test(NAME sinc_tests COMMAND sinc_tests)
@@ -174,6 +177,10 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
+
+    add_executable(miniai_huber_derivative_tests tests/huber_derivative_tests.c)
+    target_link_libraries(miniai_huber_derivative_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_huber_derivative_tests COMMAND miniai_huber_derivative_tests)
 
     add_executable(miniai_loss_header_compile tests/loss_header_compile.c)
     target_include_directories(miniai_loss_header_compile PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)

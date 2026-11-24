@@ -7,7 +7,6 @@
 typedef double (*miniai_objective_function)(
 const double parameters[],
 size_t n,
-void *context
 );
 
 static int miniai_gradient_validate_args(miniai_objective_function f,

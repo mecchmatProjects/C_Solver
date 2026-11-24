@@ -8,7 +8,7 @@ int miniai_is_valid_step(double h) {
 }
 
 /* 2. Внутрішній helper: перевірка callback-вказівника, точки x та кроку h для скалярної функції */
-static int miniai_validate_scalar_params(miniai_scalar_function f, double x, double h) {
+static int miniai_validate_scalar_params(miniai_scalar_function_with_context f, double x, double h) {
     if (f == NULL) {
         return 0;
     }
@@ -43,7 +43,7 @@ static int miniai_validate_gradient_params(
 
 /* 4. Безпечне обчислення похідної: спершу валідація, потім формула центральної різниці */
 double miniai_differentiate_scalar_checked(
-    miniai_scalar_function f,
+    miniai_scalar_function_with_context f,
     double x,
     double h,
     void *user_data
@@ -94,4 +94,32 @@ double miniai_derivative_central(miniai_scalar_function f, double x, double h) {
 
     result = (f_plus - f_minus) / 2.0 / h;
     return isfinite(result) ? result : NAN;
+}
+
+double miniai_derivative_backward(miniai_scalar_function f,
+                                  double x, double h) {
+    if (f == NULL || !isfinite(x) || !isfinite(h) || h <= 0.0) {
+        return NAN;
+    }
+
+    double previous_x = x - h;
+
+    if (!isfinite(previous_x)) {
+        return NAN;
+    }
+
+    double value = f(x);
+    double previous_value = f(previous_x);
+
+    if (!isfinite(value) || !isfinite(previous_value)) {
+        return NAN;
+    }
+
+    double derivative = (value - previous_value) / h;
+
+    if (!isfinite(derivative)) {
+        return NAN;
+    }
+
+    return derivative;
 }

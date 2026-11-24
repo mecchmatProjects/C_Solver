@@ -33,6 +33,7 @@ add_library(miniai
     src/ml/loss/binary_cross_entropy.c
     src/ml/loss/absolute_error.c
     src/ml/loss/huber.c
+    src/gradient_extra.c
     src/math/vector.c
     src/math/statistics.c
     include/miniai/math/statistics.h
@@ -117,6 +118,20 @@ if(BUILD_TESTING)
     add_executable(miniai_lab02_b8_tests tests/lab02_b8_tests.c)
     target_link_libraries(miniai_lab02_b8_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab02_b8_tests COMMAND miniai_lab02_b8_tests)
+
+    add_executable(miniai_gradient_extra_tests tests/test_gradient_extra.c)
+    target_link_libraries(miniai_gradient_extra_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_gradient_equal_steps
+             COMMAND miniai_gradient_extra_tests equal_steps)
+    add_test(NAME miniai_gradient_different_scales
+             COMMAND miniai_gradient_extra_tests different_scales)
+    add_test(NAME miniai_gradient_invalid_inputs
+             COMMAND miniai_gradient_extra_tests invalid_inputs)
+    add_test(NAME miniai_gradient_callback_failures
+             COMMAND miniai_gradient_extra_tests callback_failures)
+    add_test(NAME miniai_gradient_aliasing
+             COMMAND miniai_gradient_extra_tests aliasing)
+
     add_executable(miniai_lab03_b7_tests tests/lab03_b7_tests.c)
     target_link_libraries(miniai_lab03_b7_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_b7_tests COMMAND miniai_lab03_b7_tests)

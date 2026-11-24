@@ -197,6 +197,16 @@ if(BUILD_TESTING)
     add_executable(miniai_linear_demo examples/linear_demo.c)
     target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_neuron_gradient_demo examples/neuron_gradient_demo.c)
+    target_link_libraries(miniai_neuron_gradient_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_neuron_gradient_demo_smoke
+             COMMAND miniai_neuron_gradient_demo)
+
+    add_executable(miniai_neuron_gradient_tests tests/test_neuron_gradient.c)
+    target_link_libraries(miniai_neuron_gradient_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_neuron_gradient_tests
+             COMMAND miniai_neuron_gradient_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

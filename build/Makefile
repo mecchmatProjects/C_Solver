@@ -555,6 +555,19 @@ miniai_lab03_a3_tests/fast:
 .PHONY : miniai_lab03_a3_tests/fast
 
 #=============================================================================
+# Target rules for targets named miniai_vector_activation_tests
+
+# Build rule for target.
+miniai_vector_activation_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_vector_activation_tests
+.PHONY : miniai_vector_activation_tests
+
+# fast build rule for target.
+miniai_vector_activation_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/build
+.PHONY : miniai_vector_activation_tests/fast
+
+#=============================================================================
 # Target rules for targets named miniai_header_tests
 
 # Build rule for target.
@@ -566,6 +579,32 @@ miniai_header_tests: cmake_check_build_system
 miniai_header_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_header_tests.dir\build.make CMakeFiles/miniai_header_tests.dir/build
 .PHONY : miniai_header_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_bce_derivative_tests
+
+# Build rule for target.
+miniai_bce_derivative_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_bce_derivative_tests
+.PHONY : miniai_bce_derivative_tests
+
+# fast build rule for target.
+miniai_bce_derivative_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/build
+.PHONY : miniai_bce_derivative_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_invsqrt_tests
+
+# Build rule for target.
+miniai_invsqrt_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_invsqrt_tests
+.PHONY : miniai_invsqrt_tests
+
+# fast build rule for target.
+miniai_invsqrt_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/build
+.PHONY : miniai_invsqrt_tests/fast
 
 #=============================================================================
 # Target rules for targets named miniai_onestep_tests
@@ -594,6 +633,32 @@ miniai_onestep_demo/fast:
 .PHONY : miniai_onestep_demo/fast
 
 #=============================================================================
+# Target rules for targets named miniai_lab03_a2_tests
+
+# Build rule for target.
+miniai_lab03_a2_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab03_a2_tests
+.PHONY : miniai_lab03_a2_tests
+
+# fast build rule for target.
+miniai_lab03_a2_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/build
+.PHONY : miniai_lab03_a2_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_vector_add_demo
+
+# Build rule for target.
+miniai_vector_add_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_vector_add_demo
+.PHONY : miniai_vector_add_demo
+
+# fast build rule for target.
+miniai_vector_add_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/build
+.PHONY : miniai_vector_add_demo/fast
+
+#=============================================================================
 # Target rules for targets named miniai_lab02_b4_tests
 
 # Build rule for target.
@@ -605,6 +670,110 @@ miniai_lab02_b4_tests: cmake_check_build_system
 miniai_lab02_b4_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b4_tests.dir\build.make CMakeFiles/miniai_lab02_b4_tests.dir/build
 .PHONY : miniai_lab02_b4_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_lab02_b8_tests
+
+# Build rule for target.
+miniai_lab02_b8_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab02_b8_tests
+.PHONY : miniai_lab02_b8_tests
+
+# fast build rule for target.
+miniai_lab02_b8_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/build
+.PHONY : miniai_lab02_b8_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_lab03_b7_tests
+
+# Build rule for target.
+miniai_lab03_b7_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab03_b7_tests
+.PHONY : miniai_lab03_b7_tests
+
+# fast build rule for target.
+miniai_lab03_b7_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/build
+.PHONY : miniai_lab03_b7_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_absolute_error_derivative_tests
+
+# Build rule for target.
+miniai_absolute_error_derivative_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_absolute_error_derivative_tests
+.PHONY : miniai_absolute_error_derivative_tests
+
+# fast build rule for target.
+miniai_absolute_error_derivative_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/build
+.PHONY : miniai_absolute_error_derivative_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_mean_tests
+
+# Build rule for target.
+miniai_mean_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_mean_tests
+.PHONY : miniai_mean_tests
+
+# fast build rule for target.
+miniai_mean_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/build
+.PHONY : miniai_mean_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_lab03_b4_tests
+
+# Build rule for target.
+miniai_lab03_b4_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab03_b4_tests
+.PHONY : miniai_lab03_b4_tests
+
+# fast build rule for target.
+miniai_lab03_b4_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/build
+.PHONY : miniai_lab03_b4_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_lab03_b5_tests
+
+# Build rule for target.
+miniai_lab03_b5_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab03_b5_tests
+.PHONY : miniai_lab03_b5_tests
+
+# fast build rule for target.
+miniai_lab03_b5_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/build
+.PHONY : miniai_lab03_b5_tests/fast
+
+#=============================================================================
+# Target rules for targets named lab03_a8_tests
+
+# Build rule for target.
+lab03_a8_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lab03_a8_tests
+.PHONY : lab03_a8_tests
+
+# fast build rule for target.
+lab03_a8_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/build
+.PHONY : lab03_a8_tests/fast
+
+#=============================================================================
+# Target rules for targets named sinc_tests
+
+# Build rule for target.
+sinc_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 sinc_tests
+.PHONY : sinc_tests
+
+# fast build rule for target.
+sinc_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/build
+.PHONY : sinc_tests/fast
 
 #=============================================================================
 # Target rules for targets named miniai_lab03_a4_tests
@@ -620,6 +789,84 @@ miniai_lab03_a4_tests/fast:
 .PHONY : miniai_lab03_a4_tests/fast
 
 #=============================================================================
+# Target rules for targets named miniai_loss_header_compile
+
+# Build rule for target.
+miniai_loss_header_compile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_loss_header_compile
+.PHONY : miniai_loss_header_compile
+
+# fast build rule for target.
+miniai_loss_header_compile/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/build
+.PHONY : miniai_loss_header_compile/fast
+
+#=============================================================================
+# Target rules for targets named miniai_loss_contract_tests
+
+# Build rule for target.
+miniai_loss_contract_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_loss_contract_tests
+.PHONY : miniai_loss_contract_tests
+
+# fast build rule for target.
+miniai_loss_contract_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/build
+.PHONY : miniai_loss_contract_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_tanh_tests
+
+# Build rule for target.
+miniai_tanh_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_tanh_tests
+.PHONY : miniai_tanh_tests
+
+# fast build rule for target.
+miniai_tanh_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/build
+.PHONY : miniai_tanh_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_lab03_a6_tests
+
+# Build rule for target.
+miniai_lab03_a6_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_lab03_a6_tests
+.PHONY : miniai_lab03_a6_tests
+
+# fast build rule for target.
+miniai_lab03_a6_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/build
+.PHONY : miniai_lab03_a6_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_linear_tests
+
+# Build rule for target.
+miniai_linear_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_linear_tests
+.PHONY : miniai_linear_tests
+
+# fast build rule for target.
+miniai_linear_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/build
+.PHONY : miniai_linear_tests/fast
+
+#=============================================================================
+# Target rules for targets named miniai_linear_demo
+
+# Build rule for target.
+miniai_linear_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_linear_demo
+.PHONY : miniai_linear_demo
+
+# fast build rule for target.
+miniai_linear_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/build
+.PHONY : miniai_linear_demo/fast
+
+#=============================================================================
 # Target rules for targets named miniai_absolute_error_demo
 
 # Build rule for target.
@@ -631,6 +878,45 @@ miniai_absolute_error_demo: cmake_check_build_system
 miniai_absolute_error_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/build
 .PHONY : miniai_absolute_error_demo/fast
+
+#=============================================================================
+# Target rules for targets named miniai_population_variance_demo
+
+# Build rule for target.
+miniai_population_variance_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_population_variance_demo
+.PHONY : miniai_population_variance_demo
+
+# fast build rule for target.
+miniai_population_variance_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/build
+.PHONY : miniai_population_variance_demo/fast
+
+#=============================================================================
+# Target rules for targets named miniai_stddev_demo
+
+# Build rule for target.
+miniai_stddev_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 miniai_stddev_demo
+.PHONY : miniai_stddev_demo
+
+# fast build rule for target.
+miniai_stddev_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/build
+.PHONY : miniai_stddev_demo/fast
+
+#=============================================================================
+# Target rules for targets named test_differentiation_errors
+
+# Build rule for target.
+test_differentiation_errors: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_differentiation_errors
+.PHONY : test_differentiation_errors
+
+# fast build rule for target.
+test_differentiation_errors/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/build
+.PHONY : test_differentiation_errors/fast
 
 examples/absolute_error_demo.obj: examples/absolute_error_demo.c.obj
 .PHONY : examples/absolute_error_demo.obj
@@ -656,6 +942,30 @@ examples/absolute_error_demo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/examples/absolute_error_demo.c.s
 .PHONY : examples/absolute_error_demo.c.s
 
+examples/linear_demo.obj: examples/linear_demo.c.obj
+.PHONY : examples/linear_demo.obj
+
+# target to build an object file
+examples/linear_demo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/examples/linear_demo.c.obj
+.PHONY : examples/linear_demo.c.obj
+
+examples/linear_demo.i: examples/linear_demo.c.i
+.PHONY : examples/linear_demo.i
+
+# target to preprocess a source file
+examples/linear_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/examples/linear_demo.c.i
+.PHONY : examples/linear_demo.c.i
+
+examples/linear_demo.s: examples/linear_demo.c.s
+.PHONY : examples/linear_demo.s
+
+# target to generate assembly for a file
+examples/linear_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/examples/linear_demo.c.s
+.PHONY : examples/linear_demo.c.s
+
 examples/onestep_demo.obj: examples/onestep_demo.c.obj
 .PHONY : examples/onestep_demo.obj
 
@@ -680,6 +990,102 @@ examples/onestep_demo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_demo.dir\build.make CMakeFiles/miniai_onestep_demo.dir/examples/onestep_demo.c.s
 .PHONY : examples/onestep_demo.c.s
 
+examples/population_variance_demo.obj: examples/population_variance_demo.c.obj
+.PHONY : examples/population_variance_demo.obj
+
+# target to build an object file
+examples/population_variance_demo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/examples/population_variance_demo.c.obj
+.PHONY : examples/population_variance_demo.c.obj
+
+examples/population_variance_demo.i: examples/population_variance_demo.c.i
+.PHONY : examples/population_variance_demo.i
+
+# target to preprocess a source file
+examples/population_variance_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/examples/population_variance_demo.c.i
+.PHONY : examples/population_variance_demo.c.i
+
+examples/population_variance_demo.s: examples/population_variance_demo.c.s
+.PHONY : examples/population_variance_demo.s
+
+# target to generate assembly for a file
+examples/population_variance_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/examples/population_variance_demo.c.s
+.PHONY : examples/population_variance_demo.c.s
+
+examples/stddev_demo.obj: examples/stddev_demo.c.obj
+.PHONY : examples/stddev_demo.obj
+
+# target to build an object file
+examples/stddev_demo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/examples/stddev_demo.c.obj
+.PHONY : examples/stddev_demo.c.obj
+
+examples/stddev_demo.i: examples/stddev_demo.c.i
+.PHONY : examples/stddev_demo.i
+
+# target to preprocess a source file
+examples/stddev_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/examples/stddev_demo.c.i
+.PHONY : examples/stddev_demo.c.i
+
+examples/stddev_demo.s: examples/stddev_demo.c.s
+.PHONY : examples/stddev_demo.s
+
+# target to generate assembly for a file
+examples/stddev_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/examples/stddev_demo.c.s
+.PHONY : examples/stddev_demo.c.s
+
+examples/vector_add_demo.obj: examples/vector_add_demo.c.obj
+.PHONY : examples/vector_add_demo.obj
+
+# target to build an object file
+examples/vector_add_demo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/examples/vector_add_demo.c.obj
+.PHONY : examples/vector_add_demo.c.obj
+
+examples/vector_add_demo.i: examples/vector_add_demo.c.i
+.PHONY : examples/vector_add_demo.i
+
+# target to preprocess a source file
+examples/vector_add_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/examples/vector_add_demo.c.i
+.PHONY : examples/vector_add_demo.c.i
+
+examples/vector_add_demo.s: examples/vector_add_demo.c.s
+.PHONY : examples/vector_add_demo.s
+
+# target to generate assembly for a file
+examples/vector_add_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/examples/vector_add_demo.c.s
+.PHONY : examples/vector_add_demo.c.s
+
+src/differentiation.obj: src/differentiation.c.obj
+.PHONY : src/differentiation.obj
+
+# target to build an object file
+src/differentiation.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/differentiation.c.obj
+.PHONY : src/differentiation.c.obj
+
+src/differentiation.i: src/differentiation.c.i
+.PHONY : src/differentiation.i
+
+# target to preprocess a source file
+src/differentiation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/differentiation.c.i
+.PHONY : src/differentiation.c.i
+
+src/differentiation.s: src/differentiation.c.s
+.PHONY : src/differentiation.s
+
+# target to generate assembly for a file
+src/differentiation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/differentiation.c.s
+.PHONY : src/differentiation.c.s
+
 src/main.obj: src/main.c.obj
 .PHONY : src/main.obj
 
@@ -703,6 +1109,30 @@ src/main.s: src/main.c.s
 src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_cli.dir\build.make CMakeFiles/miniai_cli.dir/src/main.c.s
 .PHONY : src/main.c.s
+
+src/math/statistics.obj: src/math/statistics.c.obj
+.PHONY : src/math/statistics.obj
+
+# target to build an object file
+src/math/statistics.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/math/statistics.c.obj
+.PHONY : src/math/statistics.c.obj
+
+src/math/statistics.i: src/math/statistics.c.i
+.PHONY : src/math/statistics.i
+
+# target to preprocess a source file
+src/math/statistics.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/math/statistics.c.i
+.PHONY : src/math/statistics.c.i
+
+src/math/statistics.s: src/math/statistics.c.s
+.PHONY : src/math/statistics.s
+
+# target to generate assembly for a file
+src/math/statistics.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/math/statistics.c.s
+.PHONY : src/math/statistics.c.s
 
 src/math/vector.obj: src/math/vector.c.obj
 .PHONY : src/math/vector.obj
@@ -848,6 +1278,30 @@ src/ml/activation/gaussian.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.s
 .PHONY : src/ml/activation/gaussian.c.s
 
+src/ml/activation/invsqrt.obj: src/ml/activation/invsqrt.c.obj
+.PHONY : src/ml/activation/invsqrt.obj
+
+# target to build an object file
+src/ml/activation/invsqrt.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj
+.PHONY : src/ml/activation/invsqrt.c.obj
+
+src/ml/activation/invsqrt.i: src/ml/activation/invsqrt.c.i
+.PHONY : src/ml/activation/invsqrt.i
+
+# target to preprocess a source file
+src/ml/activation/invsqrt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.i
+.PHONY : src/ml/activation/invsqrt.c.i
+
+src/ml/activation/invsqrt.s: src/ml/activation/invsqrt.c.s
+.PHONY : src/ml/activation/invsqrt.s
+
+# target to generate assembly for a file
+src/ml/activation/invsqrt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.s
+.PHONY : src/ml/activation/invsqrt.c.s
+
 src/ml/activation/leaky_relu.obj: src/ml/activation/leaky_relu.c.obj
 .PHONY : src/ml/activation/leaky_relu.obj
 
@@ -871,6 +1325,30 @@ src/ml/activation/leaky_relu.s: src/ml/activation/leaky_relu.c.s
 src/ml/activation/leaky_relu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.s
 .PHONY : src/ml/activation/leaky_relu.c.s
+
+src/ml/activation/linear.obj: src/ml/activation/linear.c.obj
+.PHONY : src/ml/activation/linear.obj
+
+# target to build an object file
+src/ml/activation/linear.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj
+.PHONY : src/ml/activation/linear.c.obj
+
+src/ml/activation/linear.i: src/ml/activation/linear.c.i
+.PHONY : src/ml/activation/linear.i
+
+# target to preprocess a source file
+src/ml/activation/linear.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/linear.c.i
+.PHONY : src/ml/activation/linear.c.i
+
+src/ml/activation/linear.s: src/ml/activation/linear.c.s
+.PHONY : src/ml/activation/linear.s
+
+# target to generate assembly for a file
+src/ml/activation/linear.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/linear.c.s
+.PHONY : src/ml/activation/linear.c.s
 
 src/ml/activation/onestep.obj: src/ml/activation/onestep.c.obj
 .PHONY : src/ml/activation/onestep.obj
@@ -992,6 +1470,30 @@ src/ml/activation/sigmweight.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.s
 .PHONY : src/ml/activation/sigmweight.c.s
 
+src/ml/activation/sinc.obj: src/ml/activation/sinc.c.obj
+.PHONY : src/ml/activation/sinc.obj
+
+# target to build an object file
+src/ml/activation/sinc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj
+.PHONY : src/ml/activation/sinc.c.obj
+
+src/ml/activation/sinc.i: src/ml/activation/sinc.c.i
+.PHONY : src/ml/activation/sinc.i
+
+# target to preprocess a source file
+src/ml/activation/sinc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/sinc.c.i
+.PHONY : src/ml/activation/sinc.c.i
+
+src/ml/activation/sinc.s: src/ml/activation/sinc.c.s
+.PHONY : src/ml/activation/sinc.s
+
+# target to generate assembly for a file
+src/ml/activation/sinc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/sinc.c.s
+.PHONY : src/ml/activation/sinc.c.s
+
 src/ml/activation/soft_exponential.obj: src/ml/activation/soft_exponential.c.obj
 .PHONY : src/ml/activation/soft_exponential.obj
 
@@ -1064,6 +1566,30 @@ src/ml/activation/softsign.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/softsign.c.s
 .PHONY : src/ml/activation/softsign.c.s
 
+src/ml/activation/tanh_activation.obj: src/ml/activation/tanh_activation.c.obj
+.PHONY : src/ml/activation/tanh_activation.obj
+
+# target to build an object file
+src/ml/activation/tanh_activation.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj
+.PHONY : src/ml/activation/tanh_activation.c.obj
+
+src/ml/activation/tanh_activation.i: src/ml/activation/tanh_activation.c.i
+.PHONY : src/ml/activation/tanh_activation.i
+
+# target to preprocess a source file
+src/ml/activation/tanh_activation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.i
+.PHONY : src/ml/activation/tanh_activation.c.i
+
+src/ml/activation/tanh_activation.s: src/ml/activation/tanh_activation.c.s
+.PHONY : src/ml/activation/tanh_activation.s
+
+# target to generate assembly for a file
+src/ml/activation/tanh_activation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.s
+.PHONY : src/ml/activation/tanh_activation.c.s
+
 src/ml/loss/absolute_error.obj: src/ml/loss/absolute_error.c.obj
 .PHONY : src/ml/loss/absolute_error.obj
 
@@ -1087,6 +1613,102 @@ src/ml/loss/absolute_error.s: src/ml/loss/absolute_error.c.s
 src/ml/loss/absolute_error.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.s
 .PHONY : src/ml/loss/absolute_error.c.s
+
+src/ml/loss/binary_cross_entropy.obj: src/ml/loss/binary_cross_entropy.c.obj
+.PHONY : src/ml/loss/binary_cross_entropy.obj
+
+# target to build an object file
+src/ml/loss/binary_cross_entropy.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj
+.PHONY : src/ml/loss/binary_cross_entropy.c.obj
+
+src/ml/loss/binary_cross_entropy.i: src/ml/loss/binary_cross_entropy.c.i
+.PHONY : src/ml/loss/binary_cross_entropy.i
+
+# target to preprocess a source file
+src/ml/loss/binary_cross_entropy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.i
+.PHONY : src/ml/loss/binary_cross_entropy.c.i
+
+src/ml/loss/binary_cross_entropy.s: src/ml/loss/binary_cross_entropy.c.s
+.PHONY : src/ml/loss/binary_cross_entropy.s
+
+# target to generate assembly for a file
+src/ml/loss/binary_cross_entropy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.s
+.PHONY : src/ml/loss/binary_cross_entropy.c.s
+
+src/ml/loss/huber.obj: src/ml/loss/huber.c.obj
+.PHONY : src/ml/loss/huber.obj
+
+# target to build an object file
+src/ml/loss/huber.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj
+.PHONY : src/ml/loss/huber.c.obj
+
+src/ml/loss/huber.i: src/ml/loss/huber.c.i
+.PHONY : src/ml/loss/huber.i
+
+# target to preprocess a source file
+src/ml/loss/huber.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/huber.c.i
+.PHONY : src/ml/loss/huber.c.i
+
+src/ml/loss/huber.s: src/ml/loss/huber.c.s
+.PHONY : src/ml/loss/huber.s
+
+# target to generate assembly for a file
+src/ml/loss/huber.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/huber.c.s
+.PHONY : src/ml/loss/huber.c.s
+
+src/ml/loss/vector_loss.obj: src/ml/loss/vector_loss.c.obj
+.PHONY : src/ml/loss/vector_loss.obj
+
+# target to build an object file
+src/ml/loss/vector_loss.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj
+.PHONY : src/ml/loss/vector_loss.c.obj
+
+src/ml/loss/vector_loss.i: src/ml/loss/vector_loss.c.i
+.PHONY : src/ml/loss/vector_loss.i
+
+# target to preprocess a source file
+src/ml/loss/vector_loss.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.i
+.PHONY : src/ml/loss/vector_loss.c.i
+
+src/ml/loss/vector_loss.s: src/ml/loss/vector_loss.c.s
+.PHONY : src/ml/loss/vector_loss.s
+
+# target to generate assembly for a file
+src/ml/loss/vector_loss.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.s
+.PHONY : src/ml/loss/vector_loss.c.s
+
+tests/absolute_error_derivative_tests.obj: tests/absolute_error_derivative_tests.c.obj
+.PHONY : tests/absolute_error_derivative_tests.obj
+
+# target to build an object file
+tests/absolute_error_derivative_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/tests/absolute_error_derivative_tests.c.obj
+.PHONY : tests/absolute_error_derivative_tests.c.obj
+
+tests/absolute_error_derivative_tests.i: tests/absolute_error_derivative_tests.c.i
+.PHONY : tests/absolute_error_derivative_tests.i
+
+# target to preprocess a source file
+tests/absolute_error_derivative_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/tests/absolute_error_derivative_tests.c.i
+.PHONY : tests/absolute_error_derivative_tests.c.i
+
+tests/absolute_error_derivative_tests.s: tests/absolute_error_derivative_tests.c.s
+.PHONY : tests/absolute_error_derivative_tests.s
+
+# target to generate assembly for a file
+tests/absolute_error_derivative_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/tests/absolute_error_derivative_tests.c.s
+.PHONY : tests/absolute_error_derivative_tests.c.s
 
 tests/activation_tests.obj: tests/activation_tests.c.obj
 .PHONY : tests/activation_tests.obj
@@ -1112,6 +1734,30 @@ tests/activation_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_activation_tests.dir\build.make CMakeFiles/miniai_activation_tests.dir/tests/activation_tests.c.s
 .PHONY : tests/activation_tests.c.s
 
+tests/bce_derivative_tests.obj: tests/bce_derivative_tests.c.obj
+.PHONY : tests/bce_derivative_tests.obj
+
+# target to build an object file
+tests/bce_derivative_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/tests/bce_derivative_tests.c.obj
+.PHONY : tests/bce_derivative_tests.c.obj
+
+tests/bce_derivative_tests.i: tests/bce_derivative_tests.c.i
+.PHONY : tests/bce_derivative_tests.i
+
+# target to preprocess a source file
+tests/bce_derivative_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/tests/bce_derivative_tests.c.i
+.PHONY : tests/bce_derivative_tests.c.i
+
+tests/bce_derivative_tests.s: tests/bce_derivative_tests.c.s
+.PHONY : tests/bce_derivative_tests.s
+
+# target to generate assembly for a file
+tests/bce_derivative_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/tests/bce_derivative_tests.c.s
+.PHONY : tests/bce_derivative_tests.c.s
+
 tests/header_tests.obj: tests/header_tests.c.obj
 .PHONY : tests/header_tests.obj
 
@@ -1135,6 +1781,30 @@ tests/header_tests.s: tests/header_tests.c.s
 tests/header_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_header_tests.dir\build.make CMakeFiles/miniai_header_tests.dir/tests/header_tests.c.s
 .PHONY : tests/header_tests.c.s
+
+tests/invsqrt_tests.obj: tests/invsqrt_tests.c.obj
+.PHONY : tests/invsqrt_tests.obj
+
+# target to build an object file
+tests/invsqrt_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/tests/invsqrt_tests.c.obj
+.PHONY : tests/invsqrt_tests.c.obj
+
+tests/invsqrt_tests.i: tests/invsqrt_tests.c.i
+.PHONY : tests/invsqrt_tests.i
+
+# target to preprocess a source file
+tests/invsqrt_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/tests/invsqrt_tests.c.i
+.PHONY : tests/invsqrt_tests.c.i
+
+tests/invsqrt_tests.s: tests/invsqrt_tests.c.s
+.PHONY : tests/invsqrt_tests.s
+
+# target to generate assembly for a file
+tests/invsqrt_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/tests/invsqrt_tests.c.s
+.PHONY : tests/invsqrt_tests.c.s
 
 tests/lab02_b4_tests.obj: tests/lab02_b4_tests.c.obj
 .PHONY : tests/lab02_b4_tests.obj
@@ -1160,6 +1830,30 @@ tests/lab02_b4_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b4_tests.dir\build.make CMakeFiles/miniai_lab02_b4_tests.dir/tests/lab02_b4_tests.c.s
 .PHONY : tests/lab02_b4_tests.c.s
 
+tests/lab02_b8_tests.obj: tests/lab02_b8_tests.c.obj
+.PHONY : tests/lab02_b8_tests.obj
+
+# target to build an object file
+tests/lab02_b8_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/tests/lab02_b8_tests.c.obj
+.PHONY : tests/lab02_b8_tests.c.obj
+
+tests/lab02_b8_tests.i: tests/lab02_b8_tests.c.i
+.PHONY : tests/lab02_b8_tests.i
+
+# target to preprocess a source file
+tests/lab02_b8_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/tests/lab02_b8_tests.c.i
+.PHONY : tests/lab02_b8_tests.c.i
+
+tests/lab02_b8_tests.s: tests/lab02_b8_tests.c.s
+.PHONY : tests/lab02_b8_tests.s
+
+# target to generate assembly for a file
+tests/lab02_b8_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/tests/lab02_b8_tests.c.s
+.PHONY : tests/lab02_b8_tests.c.s
+
 tests/lab03_a1_tests.obj: tests/lab03_a1_tests.c.obj
 .PHONY : tests/lab03_a1_tests.obj
 
@@ -1183,6 +1877,30 @@ tests/lab03_a1_tests.s: tests/lab03_a1_tests.c.s
 tests/lab03_a1_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a1_tests.dir\build.make CMakeFiles/miniai_lab03_a1_tests.dir/tests/lab03_a1_tests.c.s
 .PHONY : tests/lab03_a1_tests.c.s
+
+tests/lab03_a2_tests.obj: tests/lab03_a2_tests.c.obj
+.PHONY : tests/lab03_a2_tests.obj
+
+# target to build an object file
+tests/lab03_a2_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/tests/lab03_a2_tests.c.obj
+.PHONY : tests/lab03_a2_tests.c.obj
+
+tests/lab03_a2_tests.i: tests/lab03_a2_tests.c.i
+.PHONY : tests/lab03_a2_tests.i
+
+# target to preprocess a source file
+tests/lab03_a2_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/tests/lab03_a2_tests.c.i
+.PHONY : tests/lab03_a2_tests.c.i
+
+tests/lab03_a2_tests.s: tests/lab03_a2_tests.c.s
+.PHONY : tests/lab03_a2_tests.s
+
+# target to generate assembly for a file
+tests/lab03_a2_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/tests/lab03_a2_tests.c.s
+.PHONY : tests/lab03_a2_tests.c.s
 
 tests/lab03_a3_tests.obj: tests/lab03_a3_tests.c.obj
 .PHONY : tests/lab03_a3_tests.obj
@@ -1232,6 +1950,222 @@ tests/lab03_a4_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a4_tests.dir\build.make CMakeFiles/miniai_lab03_a4_tests.dir/tests/lab03_a4_tests.c.s
 .PHONY : tests/lab03_a4_tests.c.s
 
+tests/lab03_a6_tests.obj: tests/lab03_a6_tests.c.obj
+.PHONY : tests/lab03_a6_tests.obj
+
+# target to build an object file
+tests/lab03_a6_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/tests/lab03_a6_tests.c.obj
+.PHONY : tests/lab03_a6_tests.c.obj
+
+tests/lab03_a6_tests.i: tests/lab03_a6_tests.c.i
+.PHONY : tests/lab03_a6_tests.i
+
+# target to preprocess a source file
+tests/lab03_a6_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/tests/lab03_a6_tests.c.i
+.PHONY : tests/lab03_a6_tests.c.i
+
+tests/lab03_a6_tests.s: tests/lab03_a6_tests.c.s
+.PHONY : tests/lab03_a6_tests.s
+
+# target to generate assembly for a file
+tests/lab03_a6_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/tests/lab03_a6_tests.c.s
+.PHONY : tests/lab03_a6_tests.c.s
+
+tests/lab03_a8_tests.obj: tests/lab03_a8_tests.c.obj
+.PHONY : tests/lab03_a8_tests.obj
+
+# target to build an object file
+tests/lab03_a8_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/tests/lab03_a8_tests.c.obj
+.PHONY : tests/lab03_a8_tests.c.obj
+
+tests/lab03_a8_tests.i: tests/lab03_a8_tests.c.i
+.PHONY : tests/lab03_a8_tests.i
+
+# target to preprocess a source file
+tests/lab03_a8_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/tests/lab03_a8_tests.c.i
+.PHONY : tests/lab03_a8_tests.c.i
+
+tests/lab03_a8_tests.s: tests/lab03_a8_tests.c.s
+.PHONY : tests/lab03_a8_tests.s
+
+# target to generate assembly for a file
+tests/lab03_a8_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/tests/lab03_a8_tests.c.s
+.PHONY : tests/lab03_a8_tests.c.s
+
+tests/lab03_b4_tests.obj: tests/lab03_b4_tests.c.obj
+.PHONY : tests/lab03_b4_tests.obj
+
+# target to build an object file
+tests/lab03_b4_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/tests/lab03_b4_tests.c.obj
+.PHONY : tests/lab03_b4_tests.c.obj
+
+tests/lab03_b4_tests.i: tests/lab03_b4_tests.c.i
+.PHONY : tests/lab03_b4_tests.i
+
+# target to preprocess a source file
+tests/lab03_b4_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/tests/lab03_b4_tests.c.i
+.PHONY : tests/lab03_b4_tests.c.i
+
+tests/lab03_b4_tests.s: tests/lab03_b4_tests.c.s
+.PHONY : tests/lab03_b4_tests.s
+
+# target to generate assembly for a file
+tests/lab03_b4_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/tests/lab03_b4_tests.c.s
+.PHONY : tests/lab03_b4_tests.c.s
+
+tests/lab03_b5_tests.obj: tests/lab03_b5_tests.c.obj
+.PHONY : tests/lab03_b5_tests.obj
+
+# target to build an object file
+tests/lab03_b5_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/tests/lab03_b5_tests.c.obj
+.PHONY : tests/lab03_b5_tests.c.obj
+
+tests/lab03_b5_tests.i: tests/lab03_b5_tests.c.i
+.PHONY : tests/lab03_b5_tests.i
+
+# target to preprocess a source file
+tests/lab03_b5_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/tests/lab03_b5_tests.c.i
+.PHONY : tests/lab03_b5_tests.c.i
+
+tests/lab03_b5_tests.s: tests/lab03_b5_tests.c.s
+.PHONY : tests/lab03_b5_tests.s
+
+# target to generate assembly for a file
+tests/lab03_b5_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/tests/lab03_b5_tests.c.s
+.PHONY : tests/lab03_b5_tests.c.s
+
+tests/lab03_b7_tests.obj: tests/lab03_b7_tests.c.obj
+.PHONY : tests/lab03_b7_tests.obj
+
+# target to build an object file
+tests/lab03_b7_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/tests/lab03_b7_tests.c.obj
+.PHONY : tests/lab03_b7_tests.c.obj
+
+tests/lab03_b7_tests.i: tests/lab03_b7_tests.c.i
+.PHONY : tests/lab03_b7_tests.i
+
+# target to preprocess a source file
+tests/lab03_b7_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/tests/lab03_b7_tests.c.i
+.PHONY : tests/lab03_b7_tests.c.i
+
+tests/lab03_b7_tests.s: tests/lab03_b7_tests.c.s
+.PHONY : tests/lab03_b7_tests.s
+
+# target to generate assembly for a file
+tests/lab03_b7_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/tests/lab03_b7_tests.c.s
+.PHONY : tests/lab03_b7_tests.c.s
+
+tests/linear_tests.obj: tests/linear_tests.c.obj
+.PHONY : tests/linear_tests.obj
+
+# target to build an object file
+tests/linear_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/tests/linear_tests.c.obj
+.PHONY : tests/linear_tests.c.obj
+
+tests/linear_tests.i: tests/linear_tests.c.i
+.PHONY : tests/linear_tests.i
+
+# target to preprocess a source file
+tests/linear_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/tests/linear_tests.c.i
+.PHONY : tests/linear_tests.c.i
+
+tests/linear_tests.s: tests/linear_tests.c.s
+.PHONY : tests/linear_tests.s
+
+# target to generate assembly for a file
+tests/linear_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/tests/linear_tests.c.s
+.PHONY : tests/linear_tests.c.s
+
+tests/loss_contract_tests.obj: tests/loss_contract_tests.c.obj
+.PHONY : tests/loss_contract_tests.obj
+
+# target to build an object file
+tests/loss_contract_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/tests/loss_contract_tests.c.obj
+.PHONY : tests/loss_contract_tests.c.obj
+
+tests/loss_contract_tests.i: tests/loss_contract_tests.c.i
+.PHONY : tests/loss_contract_tests.i
+
+# target to preprocess a source file
+tests/loss_contract_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/tests/loss_contract_tests.c.i
+.PHONY : tests/loss_contract_tests.c.i
+
+tests/loss_contract_tests.s: tests/loss_contract_tests.c.s
+.PHONY : tests/loss_contract_tests.s
+
+# target to generate assembly for a file
+tests/loss_contract_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/tests/loss_contract_tests.c.s
+.PHONY : tests/loss_contract_tests.c.s
+
+tests/loss_header_compile.obj: tests/loss_header_compile.c.obj
+.PHONY : tests/loss_header_compile.obj
+
+# target to build an object file
+tests/loss_header_compile.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/tests/loss_header_compile.c.obj
+.PHONY : tests/loss_header_compile.c.obj
+
+tests/loss_header_compile.i: tests/loss_header_compile.c.i
+.PHONY : tests/loss_header_compile.i
+
+# target to preprocess a source file
+tests/loss_header_compile.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/tests/loss_header_compile.c.i
+.PHONY : tests/loss_header_compile.c.i
+
+tests/loss_header_compile.s: tests/loss_header_compile.c.s
+.PHONY : tests/loss_header_compile.s
+
+# target to generate assembly for a file
+tests/loss_header_compile.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/tests/loss_header_compile.c.s
+.PHONY : tests/loss_header_compile.c.s
+
+tests/miniai_mean_tests.obj: tests/miniai_mean_tests.c.obj
+.PHONY : tests/miniai_mean_tests.obj
+
+# target to build an object file
+tests/miniai_mean_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/tests/miniai_mean_tests.c.obj
+.PHONY : tests/miniai_mean_tests.c.obj
+
+tests/miniai_mean_tests.i: tests/miniai_mean_tests.c.i
+.PHONY : tests/miniai_mean_tests.i
+
+# target to preprocess a source file
+tests/miniai_mean_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/tests/miniai_mean_tests.c.i
+.PHONY : tests/miniai_mean_tests.c.i
+
+tests/miniai_mean_tests.s: tests/miniai_mean_tests.c.s
+.PHONY : tests/miniai_mean_tests.s
+
+# target to generate assembly for a file
+tests/miniai_mean_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/tests/miniai_mean_tests.c.s
+.PHONY : tests/miniai_mean_tests.c.s
+
 tests/onestep_tests.obj: tests/onestep_tests.c.obj
 .PHONY : tests/onestep_tests.obj
 
@@ -1255,6 +2189,102 @@ tests/onestep_tests.s: tests/onestep_tests.c.s
 tests/onestep_tests.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_tests.dir\build.make CMakeFiles/miniai_onestep_tests.dir/tests/onestep_tests.c.s
 .PHONY : tests/onestep_tests.c.s
+
+tests/sinc_tests.obj: tests/sinc_tests.c.obj
+.PHONY : tests/sinc_tests.obj
+
+# target to build an object file
+tests/sinc_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/tests/sinc_tests.c.obj
+.PHONY : tests/sinc_tests.c.obj
+
+tests/sinc_tests.i: tests/sinc_tests.c.i
+.PHONY : tests/sinc_tests.i
+
+# target to preprocess a source file
+tests/sinc_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/tests/sinc_tests.c.i
+.PHONY : tests/sinc_tests.c.i
+
+tests/sinc_tests.s: tests/sinc_tests.c.s
+.PHONY : tests/sinc_tests.s
+
+# target to generate assembly for a file
+tests/sinc_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/tests/sinc_tests.c.s
+.PHONY : tests/sinc_tests.c.s
+
+tests/tanh_activation_tests.obj: tests/tanh_activation_tests.c.obj
+.PHONY : tests/tanh_activation_tests.obj
+
+# target to build an object file
+tests/tanh_activation_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/tests/tanh_activation_tests.c.obj
+.PHONY : tests/tanh_activation_tests.c.obj
+
+tests/tanh_activation_tests.i: tests/tanh_activation_tests.c.i
+.PHONY : tests/tanh_activation_tests.i
+
+# target to preprocess a source file
+tests/tanh_activation_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/tests/tanh_activation_tests.c.i
+.PHONY : tests/tanh_activation_tests.c.i
+
+tests/tanh_activation_tests.s: tests/tanh_activation_tests.c.s
+.PHONY : tests/tanh_activation_tests.s
+
+# target to generate assembly for a file
+tests/tanh_activation_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/tests/tanh_activation_tests.c.s
+.PHONY : tests/tanh_activation_tests.c.s
+
+tests/test_differentiation_errors.obj: tests/test_differentiation_errors.c.obj
+.PHONY : tests/test_differentiation_errors.obj
+
+# target to build an object file
+tests/test_differentiation_errors.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/tests/test_differentiation_errors.c.obj
+.PHONY : tests/test_differentiation_errors.c.obj
+
+tests/test_differentiation_errors.i: tests/test_differentiation_errors.c.i
+.PHONY : tests/test_differentiation_errors.i
+
+# target to preprocess a source file
+tests/test_differentiation_errors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/tests/test_differentiation_errors.c.i
+.PHONY : tests/test_differentiation_errors.c.i
+
+tests/test_differentiation_errors.s: tests/test_differentiation_errors.c.s
+.PHONY : tests/test_differentiation_errors.s
+
+# target to generate assembly for a file
+tests/test_differentiation_errors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/tests/test_differentiation_errors.c.s
+.PHONY : tests/test_differentiation_errors.c.s
+
+tests/vector_activation_tests.obj: tests/vector_activation_tests.c.obj
+.PHONY : tests/vector_activation_tests.obj
+
+# target to build an object file
+tests/vector_activation_tests.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/tests/vector_activation_tests.c.obj
+.PHONY : tests/vector_activation_tests.c.obj
+
+tests/vector_activation_tests.i: tests/vector_activation_tests.c.i
+.PHONY : tests/vector_activation_tests.i
+
+# target to preprocess a source file
+tests/vector_activation_tests.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/tests/vector_activation_tests.c.i
+.PHONY : tests/vector_activation_tests.c.i
+
+tests/vector_activation_tests.s: tests/vector_activation_tests.c.s
+.PHONY : tests/vector_activation_tests.s
+
+# target to generate assembly for a file
+tests/vector_activation_tests.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/tests/vector_activation_tests.c.s
+.PHONY : tests/vector_activation_tests.c.s
 
 # Help Target
 help:
@@ -1293,26 +2323,66 @@ help:
 	@echo ... NightlySubmit
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
+	@echo ... lab03_a8_tests
 	@echo ... miniai
 	@echo ... miniai_absolute_error_demo
+	@echo ... miniai_absolute_error_derivative_tests
 	@echo ... miniai_activation_tests
+	@echo ... miniai_bce_derivative_tests
 	@echo ... miniai_cli
 	@echo ... miniai_header_tests
+	@echo ... miniai_invsqrt_tests
 	@echo ... miniai_lab02_b4_tests
+	@echo ... miniai_lab02_b8_tests
 	@echo ... miniai_lab03_a1_tests
+	@echo ... miniai_lab03_a2_tests
 	@echo ... miniai_lab03_a3_tests
 	@echo ... miniai_lab03_a4_tests
+	@echo ... miniai_lab03_a6_tests
+	@echo ... miniai_lab03_b4_tests
+	@echo ... miniai_lab03_b5_tests
+	@echo ... miniai_lab03_b7_tests
+	@echo ... miniai_linear_demo
+	@echo ... miniai_linear_tests
+	@echo ... miniai_loss_contract_tests
+	@echo ... miniai_loss_header_compile
+	@echo ... miniai_mean_tests
 	@echo ... miniai_onestep_demo
 	@echo ... miniai_onestep_tests
+	@echo ... miniai_population_variance_demo
+	@echo ... miniai_stddev_demo
+	@echo ... miniai_tanh_tests
+	@echo ... miniai_vector_activation_tests
+	@echo ... miniai_vector_add_demo
+	@echo ... sinc_tests
+	@echo ... test_differentiation_errors
 	@echo ... examples/absolute_error_demo.obj
 	@echo ... examples/absolute_error_demo.i
 	@echo ... examples/absolute_error_demo.s
+	@echo ... examples/linear_demo.obj
+	@echo ... examples/linear_demo.i
+	@echo ... examples/linear_demo.s
 	@echo ... examples/onestep_demo.obj
 	@echo ... examples/onestep_demo.i
 	@echo ... examples/onestep_demo.s
+	@echo ... examples/population_variance_demo.obj
+	@echo ... examples/population_variance_demo.i
+	@echo ... examples/population_variance_demo.s
+	@echo ... examples/stddev_demo.obj
+	@echo ... examples/stddev_demo.i
+	@echo ... examples/stddev_demo.s
+	@echo ... examples/vector_add_demo.obj
+	@echo ... examples/vector_add_demo.i
+	@echo ... examples/vector_add_demo.s
+	@echo ... src/differentiation.obj
+	@echo ... src/differentiation.i
+	@echo ... src/differentiation.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/math/statistics.obj
+	@echo ... src/math/statistics.i
+	@echo ... src/math/statistics.s
 	@echo ... src/math/vector.obj
 	@echo ... src/math/vector.i
 	@echo ... src/math/vector.s
@@ -1331,9 +2401,15 @@ help:
 	@echo ... src/ml/activation/gaussian.obj
 	@echo ... src/ml/activation/gaussian.i
 	@echo ... src/ml/activation/gaussian.s
+	@echo ... src/ml/activation/invsqrt.obj
+	@echo ... src/ml/activation/invsqrt.i
+	@echo ... src/ml/activation/invsqrt.s
 	@echo ... src/ml/activation/leaky_relu.obj
 	@echo ... src/ml/activation/leaky_relu.i
 	@echo ... src/ml/activation/leaky_relu.s
+	@echo ... src/ml/activation/linear.obj
+	@echo ... src/ml/activation/linear.i
+	@echo ... src/ml/activation/linear.s
 	@echo ... src/ml/activation/onestep.obj
 	@echo ... src/ml/activation/onestep.i
 	@echo ... src/ml/activation/onestep.s
@@ -1349,6 +2425,9 @@ help:
 	@echo ... src/ml/activation/sigmweight.obj
 	@echo ... src/ml/activation/sigmweight.i
 	@echo ... src/ml/activation/sigmweight.s
+	@echo ... src/ml/activation/sinc.obj
+	@echo ... src/ml/activation/sinc.i
+	@echo ... src/ml/activation/sinc.s
 	@echo ... src/ml/activation/soft_exponential.obj
 	@echo ... src/ml/activation/soft_exponential.i
 	@echo ... src/ml/activation/soft_exponential.s
@@ -1358,30 +2437,96 @@ help:
 	@echo ... src/ml/activation/softsign.obj
 	@echo ... src/ml/activation/softsign.i
 	@echo ... src/ml/activation/softsign.s
+	@echo ... src/ml/activation/tanh_activation.obj
+	@echo ... src/ml/activation/tanh_activation.i
+	@echo ... src/ml/activation/tanh_activation.s
 	@echo ... src/ml/loss/absolute_error.obj
 	@echo ... src/ml/loss/absolute_error.i
 	@echo ... src/ml/loss/absolute_error.s
+	@echo ... src/ml/loss/binary_cross_entropy.obj
+	@echo ... src/ml/loss/binary_cross_entropy.i
+	@echo ... src/ml/loss/binary_cross_entropy.s
+	@echo ... src/ml/loss/huber.obj
+	@echo ... src/ml/loss/huber.i
+	@echo ... src/ml/loss/huber.s
+	@echo ... src/ml/loss/vector_loss.obj
+	@echo ... src/ml/loss/vector_loss.i
+	@echo ... src/ml/loss/vector_loss.s
+	@echo ... tests/absolute_error_derivative_tests.obj
+	@echo ... tests/absolute_error_derivative_tests.i
+	@echo ... tests/absolute_error_derivative_tests.s
 	@echo ... tests/activation_tests.obj
 	@echo ... tests/activation_tests.i
 	@echo ... tests/activation_tests.s
+	@echo ... tests/bce_derivative_tests.obj
+	@echo ... tests/bce_derivative_tests.i
+	@echo ... tests/bce_derivative_tests.s
 	@echo ... tests/header_tests.obj
 	@echo ... tests/header_tests.i
 	@echo ... tests/header_tests.s
+	@echo ... tests/invsqrt_tests.obj
+	@echo ... tests/invsqrt_tests.i
+	@echo ... tests/invsqrt_tests.s
 	@echo ... tests/lab02_b4_tests.obj
 	@echo ... tests/lab02_b4_tests.i
 	@echo ... tests/lab02_b4_tests.s
+	@echo ... tests/lab02_b8_tests.obj
+	@echo ... tests/lab02_b8_tests.i
+	@echo ... tests/lab02_b8_tests.s
 	@echo ... tests/lab03_a1_tests.obj
 	@echo ... tests/lab03_a1_tests.i
 	@echo ... tests/lab03_a1_tests.s
+	@echo ... tests/lab03_a2_tests.obj
+	@echo ... tests/lab03_a2_tests.i
+	@echo ... tests/lab03_a2_tests.s
 	@echo ... tests/lab03_a3_tests.obj
 	@echo ... tests/lab03_a3_tests.i
 	@echo ... tests/lab03_a3_tests.s
 	@echo ... tests/lab03_a4_tests.obj
 	@echo ... tests/lab03_a4_tests.i
 	@echo ... tests/lab03_a4_tests.s
+	@echo ... tests/lab03_a6_tests.obj
+	@echo ... tests/lab03_a6_tests.i
+	@echo ... tests/lab03_a6_tests.s
+	@echo ... tests/lab03_a8_tests.obj
+	@echo ... tests/lab03_a8_tests.i
+	@echo ... tests/lab03_a8_tests.s
+	@echo ... tests/lab03_b4_tests.obj
+	@echo ... tests/lab03_b4_tests.i
+	@echo ... tests/lab03_b4_tests.s
+	@echo ... tests/lab03_b5_tests.obj
+	@echo ... tests/lab03_b5_tests.i
+	@echo ... tests/lab03_b5_tests.s
+	@echo ... tests/lab03_b7_tests.obj
+	@echo ... tests/lab03_b7_tests.i
+	@echo ... tests/lab03_b7_tests.s
+	@echo ... tests/linear_tests.obj
+	@echo ... tests/linear_tests.i
+	@echo ... tests/linear_tests.s
+	@echo ... tests/loss_contract_tests.obj
+	@echo ... tests/loss_contract_tests.i
+	@echo ... tests/loss_contract_tests.s
+	@echo ... tests/loss_header_compile.obj
+	@echo ... tests/loss_header_compile.i
+	@echo ... tests/loss_header_compile.s
+	@echo ... tests/miniai_mean_tests.obj
+	@echo ... tests/miniai_mean_tests.i
+	@echo ... tests/miniai_mean_tests.s
 	@echo ... tests/onestep_tests.obj
 	@echo ... tests/onestep_tests.i
 	@echo ... tests/onestep_tests.s
+	@echo ... tests/sinc_tests.obj
+	@echo ... tests/sinc_tests.i
+	@echo ... tests/sinc_tests.s
+	@echo ... tests/tanh_activation_tests.obj
+	@echo ... tests/tanh_activation_tests.i
+	@echo ... tests/tanh_activation_tests.s
+	@echo ... tests/test_differentiation_errors.obj
+	@echo ... tests/test_differentiation_errors.i
+	@echo ... tests/test_differentiation_errors.s
+	@echo ... tests/vector_activation_tests.obj
+	@echo ... tests/vector_activation_tests.i
+	@echo ... tests/vector_activation_tests.s
 .PHONY : help
 
 

@@ -37,3 +37,8 @@ int miniai_gradient_checked(
 #endif
 
 #endif /* MINIAI_DIFFERENTIATION_H */
+typedef double (*miniai_scalar_function)(double x);
+
+double miniai_derivative_central(miniai_scalar_function f, double x, double h);
+
+#endif

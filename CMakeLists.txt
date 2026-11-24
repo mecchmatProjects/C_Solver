@@ -212,3 +212,7 @@ add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
 target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)
+
+add_executable(miniai_test_objectives tests/objectives.h
+    tests/objectives.c
+    tests/objectives_test.c)

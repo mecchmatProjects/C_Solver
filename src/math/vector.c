@@ -3,7 +3,6 @@
 #include "miniai/ml/activation/relu.h"
 #include <math.h>
 #include <stddef.h>
-#include "activation.h"
 
 int miniai_vector_add(const double a[], const double b[], double out[],
                       size_t n) {
@@ -158,6 +157,7 @@ int miniai_vector_sigmoid(const double in[], double out[], size_t n) {
     }
 
     return 0;
+}
 double miniai_l2_norm(const double *arr, size_t length) {
     if (length == 0) {
         return 0.0;

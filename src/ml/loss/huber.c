@@ -28,6 +28,7 @@ double miniai_huber_loss_derivative(double prediction, double target, double del
         double sign_e = (e > 0.0) ? 1.0 : ((e < 0.0) ? -1.0 : 0.0);
         return delta * sign_e;
     }
+}
 #include "miniai/ml/loss/losses.h"
 
 #include <math.h>

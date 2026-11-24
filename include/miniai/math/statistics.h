@@ -3,11 +3,16 @@
 
 #include <stddef.h>
 
-/* Lab 3 declarations only. Scalar statistics return NAN for n == 0,
- * NULL data, or non-finite elements. Variance is population variance.
- * Transformations: 0 means success, nonzero means error; in-place is allowed.
- * Empty/invalid data and zero range/stddev are errors; leave output unchanged.
- * Output has capacity n; partial overlap is unsupported.
+
+/**
+ * @brief Calculates the arithmetic mean of an array.
+ *
+ * Formula: mean = Σxᵢ / n.
+ *
+ * @param data Input array of double values.
+ * @param n Number of elements in the array.
+ * @return Arithmetic mean, or NAN if n == 0, data is NULL,
+ *         or any element is not finite.
  */
 double miniai_mean(const double data[], size_t n);
 double miniai_min(const double data[], size_t n);

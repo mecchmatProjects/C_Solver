@@ -237,8 +237,7 @@ option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 
 add_library(miniai
     src/ml/activation/invsqrt.c
     src/math/vector.c
-    src/ml/loss/vector_loss.c
-    src/math/statistics.c
+    src/gradient_check.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -411,13 +410,9 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
 
-    add_executable(miniai_linear_tests tests/linear_tests.c)
-    target_link_libraries(miniai_linear_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_linear_tests COMMAND miniai_linear_tests)
-
-    add_executable(miniai_linear_demo examples/linear_demo.c)
-    target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
-    add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+    add_executable(test_gradient_check tests/test_gradient_check.c)
+    target_link_libraries(test_gradient_check PRIVATE miniai::miniai)
+    add_test(NAME test_gradient_check COMMAND test_gradient_check)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

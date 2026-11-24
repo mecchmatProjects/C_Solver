@@ -14,6 +14,35 @@ option(MINIAI_ENABLE_LOSS_INTEGRATION "Build Lab 2 B10 loss integration tests an
 option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
+    src/ml/activation/invsqrt.c
+    src/math/vector.c
+    src/ml/loss/vector_loss.c
+    src/math/statistics.c
+    src/ml/activation/activation.c
+    src/ml/activation/bent.c
+    src/ml/activation/arctan.c
+    src/ml/activation/elu.c
+    src/ml/activation/gaussian.c
+    src/ml/activation/leaky_relu.c
+    src/ml/activation/relu.c
+    src/ml/activation/s_relu.c
+    src/ml/activation/sigmoid.c
+    src/ml/activation/sigmweight.c
+    src/ml/activation/softplus.c
+    src/ml/activation/soft_exponential.c
+    src/ml/activation/softsign.c
+    include/miniai/ml/activation/onestep.h
+    src/ml/activation/onestep.c
+    src/ml/loss/binary_cross_entropy.c
+    src/ml/loss/absolute_error.c
+    src/ml/loss/huber.c
+    src/math/vector.c
+    src/math/statistics.c
+    include/miniai/math/statistics.h
+    src/ml/activation/sinc.c
+    src/ml/activation/tanh_activation.c
+    src/ml/activation/linear.c
+    src/differentiation.c
         src/ml/activation/invsqrt.c
         src/math/vector.c
         src/ml/loss/vector_loss.c
@@ -80,6 +109,9 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a3_tests tests/lab03_a3_tests.c)
     target_link_libraries(miniai_lab03_a3_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a3_tests COMMAND miniai_lab03_a3_tests)
+    add_executable(miniai_lab04_a3_tests tests/test_differentiation.c)
+    target_link_libraries(miniai_lab04_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab04_a3_tests COMMAND miniai_lab04_a3_tests)
     add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
     target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)

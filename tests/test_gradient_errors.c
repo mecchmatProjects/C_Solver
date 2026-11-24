@@ -27,7 +27,8 @@ static void expect_status(double actual, double expected,
     }
 }
 
-static double f_valid(const double x[], size_t n) {
+static double f_valid(const double x[], size_t n, void* context) {
+    (void) context;
     double sum = 0.0;
     for (size_t i = 0; i < n; i++) {
         sum = sum + x[i] * x[i];
@@ -35,7 +36,8 @@ static double f_valid(const double x[], size_t n) {
     return sum;
 }
 
-static double f_fail(const double x[], size_t n) {
+static double f_fail(const double x[], size_t n, void* context) {
+    (void) context;
     if (n > 1 && x[1] > 2.00005) {
         return NAN;
     }

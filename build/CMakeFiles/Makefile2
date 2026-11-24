@@ -67,12 +67,34 @@ all: CMakeFiles/miniai_cli.dir/all
 all: CMakeFiles/miniai_lab03_a1_tests.dir/all
 all: CMakeFiles/miniai_activation_tests.dir/all
 all: CMakeFiles/miniai_lab03_a3_tests.dir/all
+all: CMakeFiles/miniai_vector_activation_tests.dir/all
 all: CMakeFiles/miniai_header_tests.dir/all
+all: CMakeFiles/miniai_bce_derivative_tests.dir/all
+all: CMakeFiles/miniai_invsqrt_tests.dir/all
 all: CMakeFiles/miniai_onestep_tests.dir/all
 all: CMakeFiles/miniai_onestep_demo.dir/all
+all: CMakeFiles/miniai_lab03_a2_tests.dir/all
+all: CMakeFiles/miniai_vector_add_demo.dir/all
 all: CMakeFiles/miniai_lab02_b4_tests.dir/all
+all: CMakeFiles/miniai_lab02_b8_tests.dir/all
+all: CMakeFiles/miniai_lab03_b7_tests.dir/all
+all: CMakeFiles/miniai_absolute_error_derivative_tests.dir/all
+all: CMakeFiles/miniai_mean_tests.dir/all
+all: CMakeFiles/miniai_lab03_b4_tests.dir/all
+all: CMakeFiles/miniai_lab03_b5_tests.dir/all
+all: CMakeFiles/lab03_a8_tests.dir/all
+all: CMakeFiles/sinc_tests.dir/all
 all: CMakeFiles/miniai_lab03_a4_tests.dir/all
+all: CMakeFiles/miniai_loss_header_compile.dir/all
+all: CMakeFiles/miniai_loss_contract_tests.dir/all
+all: CMakeFiles/miniai_tanh_tests.dir/all
+all: CMakeFiles/miniai_lab03_a6_tests.dir/all
+all: CMakeFiles/miniai_linear_tests.dir/all
+all: CMakeFiles/miniai_linear_demo.dir/all
 all: CMakeFiles/miniai_absolute_error_demo.dir/all
+all: CMakeFiles/miniai_population_variance_demo.dir/all
+all: CMakeFiles/miniai_stddev_demo.dir/all
+all: CMakeFiles/test_differentiation_errors.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -81,12 +103,34 @@ codegen: CMakeFiles/miniai_cli.dir/codegen
 codegen: CMakeFiles/miniai_lab03_a1_tests.dir/codegen
 codegen: CMakeFiles/miniai_activation_tests.dir/codegen
 codegen: CMakeFiles/miniai_lab03_a3_tests.dir/codegen
+codegen: CMakeFiles/miniai_vector_activation_tests.dir/codegen
 codegen: CMakeFiles/miniai_header_tests.dir/codegen
+codegen: CMakeFiles/miniai_bce_derivative_tests.dir/codegen
+codegen: CMakeFiles/miniai_invsqrt_tests.dir/codegen
 codegen: CMakeFiles/miniai_onestep_tests.dir/codegen
 codegen: CMakeFiles/miniai_onestep_demo.dir/codegen
+codegen: CMakeFiles/miniai_lab03_a2_tests.dir/codegen
+codegen: CMakeFiles/miniai_vector_add_demo.dir/codegen
 codegen: CMakeFiles/miniai_lab02_b4_tests.dir/codegen
+codegen: CMakeFiles/miniai_lab02_b8_tests.dir/codegen
+codegen: CMakeFiles/miniai_lab03_b7_tests.dir/codegen
+codegen: CMakeFiles/miniai_absolute_error_derivative_tests.dir/codegen
+codegen: CMakeFiles/miniai_mean_tests.dir/codegen
+codegen: CMakeFiles/miniai_lab03_b4_tests.dir/codegen
+codegen: CMakeFiles/miniai_lab03_b5_tests.dir/codegen
+codegen: CMakeFiles/lab03_a8_tests.dir/codegen
+codegen: CMakeFiles/sinc_tests.dir/codegen
 codegen: CMakeFiles/miniai_lab03_a4_tests.dir/codegen
+codegen: CMakeFiles/miniai_loss_header_compile.dir/codegen
+codegen: CMakeFiles/miniai_loss_contract_tests.dir/codegen
+codegen: CMakeFiles/miniai_tanh_tests.dir/codegen
+codegen: CMakeFiles/miniai_lab03_a6_tests.dir/codegen
+codegen: CMakeFiles/miniai_linear_tests.dir/codegen
+codegen: CMakeFiles/miniai_linear_demo.dir/codegen
 codegen: CMakeFiles/miniai_absolute_error_demo.dir/codegen
+codegen: CMakeFiles/miniai_population_variance_demo.dir/codegen
+codegen: CMakeFiles/miniai_stddev_demo.dir/codegen
+codegen: CMakeFiles/test_differentiation_errors.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -127,12 +171,34 @@ clean: CMakeFiles/miniai_cli.dir/clean
 clean: CMakeFiles/miniai_lab03_a1_tests.dir/clean
 clean: CMakeFiles/miniai_activation_tests.dir/clean
 clean: CMakeFiles/miniai_lab03_a3_tests.dir/clean
+clean: CMakeFiles/miniai_vector_activation_tests.dir/clean
 clean: CMakeFiles/miniai_header_tests.dir/clean
+clean: CMakeFiles/miniai_bce_derivative_tests.dir/clean
+clean: CMakeFiles/miniai_invsqrt_tests.dir/clean
 clean: CMakeFiles/miniai_onestep_tests.dir/clean
 clean: CMakeFiles/miniai_onestep_demo.dir/clean
+clean: CMakeFiles/miniai_lab03_a2_tests.dir/clean
+clean: CMakeFiles/miniai_vector_add_demo.dir/clean
 clean: CMakeFiles/miniai_lab02_b4_tests.dir/clean
+clean: CMakeFiles/miniai_lab02_b8_tests.dir/clean
+clean: CMakeFiles/miniai_lab03_b7_tests.dir/clean
+clean: CMakeFiles/miniai_absolute_error_derivative_tests.dir/clean
+clean: CMakeFiles/miniai_mean_tests.dir/clean
+clean: CMakeFiles/miniai_lab03_b4_tests.dir/clean
+clean: CMakeFiles/miniai_lab03_b5_tests.dir/clean
+clean: CMakeFiles/lab03_a8_tests.dir/clean
+clean: CMakeFiles/sinc_tests.dir/clean
 clean: CMakeFiles/miniai_lab03_a4_tests.dir/clean
+clean: CMakeFiles/miniai_loss_header_compile.dir/clean
+clean: CMakeFiles/miniai_loss_contract_tests.dir/clean
+clean: CMakeFiles/miniai_tanh_tests.dir/clean
+clean: CMakeFiles/miniai_lab03_a6_tests.dir/clean
+clean: CMakeFiles/miniai_linear_tests.dir/clean
+clean: CMakeFiles/miniai_linear_demo.dir/clean
 clean: CMakeFiles/miniai_absolute_error_demo.dir/clean
+clean: CMakeFiles/miniai_population_variance_demo.dir/clean
+clean: CMakeFiles/miniai_stddev_demo.dir/clean
+clean: CMakeFiles/test_differentiation_errors.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -1038,12 +1104,12 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 CMakeFiles/miniai.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target miniai"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28 "Built target miniai"
 .PHONY : CMakeFiles/miniai.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai.dir/rule
@@ -1055,7 +1121,7 @@ miniai: CMakeFiles/miniai.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai.dir\build.make CMakeFiles/miniai.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Finished codegen for target miniai"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28 "Finished codegen for target miniai"
 .PHONY : CMakeFiles/miniai.dir/codegen
 
 # clean rule for target.
@@ -1070,12 +1136,12 @@ CMakeFiles/miniai.dir/clean:
 CMakeFiles/miniai_cli.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_cli.dir\build.make CMakeFiles/miniai_cli.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_cli.dir\build.make CMakeFiles/miniai_cli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=22,23 "Built target miniai_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=37,38 "Built target miniai_cli"
 .PHONY : CMakeFiles/miniai_cli.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_cli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_cli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_cli.dir/rule
@@ -1087,7 +1153,7 @@ miniai_cli: CMakeFiles/miniai_cli.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_cli.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_cli.dir\build.make CMakeFiles/miniai_cli.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=22,23 "Finished codegen for target miniai_cli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=37,38 "Finished codegen for target miniai_cli"
 .PHONY : CMakeFiles/miniai_cli.dir/codegen
 
 # clean rule for target.
@@ -1102,12 +1168,12 @@ CMakeFiles/miniai_cli.dir/clean:
 CMakeFiles/miniai_lab03_a1_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a1_tests.dir\build.make CMakeFiles/miniai_lab03_a1_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a1_tests.dir\build.make CMakeFiles/miniai_lab03_a1_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=28,29 "Built target miniai_lab03_a1_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=47,48 "Built target miniai_lab03_a1_tests"
 .PHONY : CMakeFiles/miniai_lab03_a1_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_lab03_a1_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_a1_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_lab03_a1_tests.dir/rule
@@ -1119,7 +1185,7 @@ miniai_lab03_a1_tests: CMakeFiles/miniai_lab03_a1_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_lab03_a1_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a1_tests.dir\build.make CMakeFiles/miniai_lab03_a1_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=28,29 "Finished codegen for target miniai_lab03_a1_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=47,48 "Finished codegen for target miniai_lab03_a1_tests"
 .PHONY : CMakeFiles/miniai_lab03_a1_tests.dir/codegen
 
 # clean rule for target.
@@ -1134,12 +1200,12 @@ CMakeFiles/miniai_lab03_a1_tests.dir/clean:
 CMakeFiles/miniai_activation_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_activation_tests.dir\build.make CMakeFiles/miniai_activation_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_activation_tests.dir\build.make CMakeFiles/miniai_activation_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=20,21 "Built target miniai_activation_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=33,34 "Built target miniai_activation_tests"
 .PHONY : CMakeFiles/miniai_activation_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_activation_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_activation_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_activation_tests.dir/rule
@@ -1151,7 +1217,7 @@ miniai_activation_tests: CMakeFiles/miniai_activation_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_activation_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_activation_tests.dir\build.make CMakeFiles/miniai_activation_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=20,21 "Finished codegen for target miniai_activation_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=33,34 "Finished codegen for target miniai_activation_tests"
 .PHONY : CMakeFiles/miniai_activation_tests.dir/codegen
 
 # clean rule for target.
@@ -1166,12 +1232,12 @@ CMakeFiles/miniai_activation_tests.dir/clean:
 CMakeFiles/miniai_lab03_a3_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a3_tests.dir\build.make CMakeFiles/miniai_lab03_a3_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a3_tests.dir\build.make CMakeFiles/miniai_lab03_a3_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=30,31 "Built target miniai_lab03_a3_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=51,52 "Built target miniai_lab03_a3_tests"
 .PHONY : CMakeFiles/miniai_lab03_a3_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_lab03_a3_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_a3_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_lab03_a3_tests.dir/rule
@@ -1183,7 +1249,7 @@ miniai_lab03_a3_tests: CMakeFiles/miniai_lab03_a3_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_lab03_a3_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a3_tests.dir\build.make CMakeFiles/miniai_lab03_a3_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=30,31 "Finished codegen for target miniai_lab03_a3_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=51,52 "Finished codegen for target miniai_lab03_a3_tests"
 .PHONY : CMakeFiles/miniai_lab03_a3_tests.dir/codegen
 
 # clean rule for target.
@@ -1192,18 +1258,50 @@ CMakeFiles/miniai_lab03_a3_tests.dir/clean:
 .PHONY : CMakeFiles/miniai_lab03_a3_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/miniai_vector_activation_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_vector_activation_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=83,84 "Built target miniai_vector_activation_tests"
+.PHONY : CMakeFiles/miniai_vector_activation_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_vector_activation_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_vector_activation_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_vector_activation_tests.dir/rule
+
+# Convenience name for target.
+miniai_vector_activation_tests: CMakeFiles/miniai_vector_activation_tests.dir/rule
+.PHONY : miniai_vector_activation_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_vector_activation_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=83,84 "Finished codegen for target miniai_vector_activation_tests"
+.PHONY : CMakeFiles/miniai_vector_activation_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_vector_activation_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_activation_tests.dir\build.make CMakeFiles/miniai_vector_activation_tests.dir/clean
+.PHONY : CMakeFiles/miniai_vector_activation_tests.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/miniai_header_tests.dir
 
 # All Build rule for target.
 CMakeFiles/miniai_header_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_header_tests.dir\build.make CMakeFiles/miniai_header_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_header_tests.dir\build.make CMakeFiles/miniai_header_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=24,25 "Built target miniai_header_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=39,40 "Built target miniai_header_tests"
 .PHONY : CMakeFiles/miniai_header_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_header_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_header_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_header_tests.dir/rule
@@ -1215,7 +1313,7 @@ miniai_header_tests: CMakeFiles/miniai_header_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_header_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_header_tests.dir\build.make CMakeFiles/miniai_header_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=24,25 "Finished codegen for target miniai_header_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=39,40 "Finished codegen for target miniai_header_tests"
 .PHONY : CMakeFiles/miniai_header_tests.dir/codegen
 
 # clean rule for target.
@@ -1224,18 +1322,82 @@ CMakeFiles/miniai_header_tests.dir/clean:
 .PHONY : CMakeFiles/miniai_header_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/miniai_bce_derivative_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_bce_derivative_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=35,36 "Built target miniai_bce_derivative_tests"
+.PHONY : CMakeFiles/miniai_bce_derivative_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_bce_derivative_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_bce_derivative_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_bce_derivative_tests.dir/rule
+
+# Convenience name for target.
+miniai_bce_derivative_tests: CMakeFiles/miniai_bce_derivative_tests.dir/rule
+.PHONY : miniai_bce_derivative_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_bce_derivative_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=35,36 "Finished codegen for target miniai_bce_derivative_tests"
+.PHONY : CMakeFiles/miniai_bce_derivative_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_bce_derivative_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_bce_derivative_tests.dir\build.make CMakeFiles/miniai_bce_derivative_tests.dir/clean
+.PHONY : CMakeFiles/miniai_bce_derivative_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_invsqrt_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_invsqrt_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=41,42 "Built target miniai_invsqrt_tests"
+.PHONY : CMakeFiles/miniai_invsqrt_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_invsqrt_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_invsqrt_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_invsqrt_tests.dir/rule
+
+# Convenience name for target.
+miniai_invsqrt_tests: CMakeFiles/miniai_invsqrt_tests.dir/rule
+.PHONY : miniai_invsqrt_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_invsqrt_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=41,42 "Finished codegen for target miniai_invsqrt_tests"
+.PHONY : CMakeFiles/miniai_invsqrt_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_invsqrt_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_invsqrt_tests.dir\build.make CMakeFiles/miniai_invsqrt_tests.dir/clean
+.PHONY : CMakeFiles/miniai_invsqrt_tests.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/miniai_onestep_tests.dir
 
 # All Build rule for target.
 CMakeFiles/miniai_onestep_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_tests.dir\build.make CMakeFiles/miniai_onestep_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_tests.dir\build.make CMakeFiles/miniai_onestep_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=36,37 "Built target miniai_onestep_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=75,76 "Built target miniai_onestep_tests"
 .PHONY : CMakeFiles/miniai_onestep_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_onestep_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_onestep_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_onestep_tests.dir/rule
@@ -1247,7 +1409,7 @@ miniai_onestep_tests: CMakeFiles/miniai_onestep_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_onestep_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_tests.dir\build.make CMakeFiles/miniai_onestep_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=36,37 "Finished codegen for target miniai_onestep_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=75,76 "Finished codegen for target miniai_onestep_tests"
 .PHONY : CMakeFiles/miniai_onestep_tests.dir/codegen
 
 # clean rule for target.
@@ -1262,12 +1424,12 @@ CMakeFiles/miniai_onestep_tests.dir/clean:
 CMakeFiles/miniai_onestep_demo.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_demo.dir\build.make CMakeFiles/miniai_onestep_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_demo.dir\build.make CMakeFiles/miniai_onestep_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=34,35 "Built target miniai_onestep_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=73,74 "Built target miniai_onestep_demo"
 .PHONY : CMakeFiles/miniai_onestep_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_onestep_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_onestep_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_onestep_demo.dir/rule
@@ -1279,7 +1441,7 @@ miniai_onestep_demo: CMakeFiles/miniai_onestep_demo.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_onestep_demo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_onestep_demo.dir\build.make CMakeFiles/miniai_onestep_demo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=34,35 "Finished codegen for target miniai_onestep_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=73,74 "Finished codegen for target miniai_onestep_demo"
 .PHONY : CMakeFiles/miniai_onestep_demo.dir/codegen
 
 # clean rule for target.
@@ -1288,18 +1450,82 @@ CMakeFiles/miniai_onestep_demo.dir/clean:
 .PHONY : CMakeFiles/miniai_onestep_demo.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/miniai_lab03_a2_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab03_a2_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=49,50 "Built target miniai_lab03_a2_tests"
+.PHONY : CMakeFiles/miniai_lab03_a2_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab03_a2_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_a2_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab03_a2_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab03_a2_tests: CMakeFiles/miniai_lab03_a2_tests.dir/rule
+.PHONY : miniai_lab03_a2_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab03_a2_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=49,50 "Finished codegen for target miniai_lab03_a2_tests"
+.PHONY : CMakeFiles/miniai_lab03_a2_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab03_a2_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a2_tests.dir\build.make CMakeFiles/miniai_lab03_a2_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab03_a2_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_vector_add_demo.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_vector_add_demo.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=85,86 "Built target miniai_vector_add_demo"
+.PHONY : CMakeFiles/miniai_vector_add_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_vector_add_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_vector_add_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_vector_add_demo.dir/rule
+
+# Convenience name for target.
+miniai_vector_add_demo: CMakeFiles/miniai_vector_add_demo.dir/rule
+.PHONY : miniai_vector_add_demo
+
+# codegen rule for target.
+CMakeFiles/miniai_vector_add_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=85,86 "Finished codegen for target miniai_vector_add_demo"
+.PHONY : CMakeFiles/miniai_vector_add_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_vector_add_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_vector_add_demo.dir\build.make CMakeFiles/miniai_vector_add_demo.dir/clean
+.PHONY : CMakeFiles/miniai_vector_add_demo.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/miniai_lab02_b4_tests.dir
 
 # All Build rule for target.
 CMakeFiles/miniai_lab02_b4_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b4_tests.dir\build.make CMakeFiles/miniai_lab02_b4_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b4_tests.dir\build.make CMakeFiles/miniai_lab02_b4_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=26,27 "Built target miniai_lab02_b4_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=43,44 "Built target miniai_lab02_b4_tests"
 .PHONY : CMakeFiles/miniai_lab02_b4_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_lab02_b4_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab02_b4_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_lab02_b4_tests.dir/rule
@@ -1311,7 +1537,7 @@ miniai_lab02_b4_tests: CMakeFiles/miniai_lab02_b4_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_lab02_b4_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b4_tests.dir\build.make CMakeFiles/miniai_lab02_b4_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=26,27 "Finished codegen for target miniai_lab02_b4_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=43,44 "Finished codegen for target miniai_lab02_b4_tests"
 .PHONY : CMakeFiles/miniai_lab02_b4_tests.dir/codegen
 
 # clean rule for target.
@@ -1320,18 +1546,274 @@ CMakeFiles/miniai_lab02_b4_tests.dir/clean:
 .PHONY : CMakeFiles/miniai_lab02_b4_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/miniai_lab02_b8_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab02_b8_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=45,46 "Built target miniai_lab02_b8_tests"
+.PHONY : CMakeFiles/miniai_lab02_b8_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab02_b8_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab02_b8_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab02_b8_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab02_b8_tests: CMakeFiles/miniai_lab02_b8_tests.dir/rule
+.PHONY : miniai_lab02_b8_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab02_b8_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=45,46 "Finished codegen for target miniai_lab02_b8_tests"
+.PHONY : CMakeFiles/miniai_lab02_b8_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab02_b8_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab02_b8_tests.dir\build.make CMakeFiles/miniai_lab02_b8_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab02_b8_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_lab03_b7_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab03_b7_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=61,62 "Built target miniai_lab03_b7_tests"
+.PHONY : CMakeFiles/miniai_lab03_b7_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab03_b7_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_b7_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab03_b7_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab03_b7_tests: CMakeFiles/miniai_lab03_b7_tests.dir/rule
+.PHONY : miniai_lab03_b7_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab03_b7_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=61,62 "Finished codegen for target miniai_lab03_b7_tests"
+.PHONY : CMakeFiles/miniai_lab03_b7_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab03_b7_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b7_tests.dir\build.make CMakeFiles/miniai_lab03_b7_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab03_b7_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_absolute_error_derivative_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_absolute_error_derivative_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=31,32 "Built target miniai_absolute_error_derivative_tests"
+.PHONY : CMakeFiles/miniai_absolute_error_derivative_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_absolute_error_derivative_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_absolute_error_derivative_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_absolute_error_derivative_tests.dir/rule
+
+# Convenience name for target.
+miniai_absolute_error_derivative_tests: CMakeFiles/miniai_absolute_error_derivative_tests.dir/rule
+.PHONY : miniai_absolute_error_derivative_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_absolute_error_derivative_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=31,32 "Finished codegen for target miniai_absolute_error_derivative_tests"
+.PHONY : CMakeFiles/miniai_absolute_error_derivative_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_absolute_error_derivative_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_derivative_tests.dir\build.make CMakeFiles/miniai_absolute_error_derivative_tests.dir/clean
+.PHONY : CMakeFiles/miniai_absolute_error_derivative_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_mean_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_mean_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=71,72 "Built target miniai_mean_tests"
+.PHONY : CMakeFiles/miniai_mean_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_mean_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_mean_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_mean_tests.dir/rule
+
+# Convenience name for target.
+miniai_mean_tests: CMakeFiles/miniai_mean_tests.dir/rule
+.PHONY : miniai_mean_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_mean_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=71,72 "Finished codegen for target miniai_mean_tests"
+.PHONY : CMakeFiles/miniai_mean_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_mean_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_mean_tests.dir\build.make CMakeFiles/miniai_mean_tests.dir/clean
+.PHONY : CMakeFiles/miniai_mean_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_lab03_b4_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab03_b4_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=57,58 "Built target miniai_lab03_b4_tests"
+.PHONY : CMakeFiles/miniai_lab03_b4_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab03_b4_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_b4_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab03_b4_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab03_b4_tests: CMakeFiles/miniai_lab03_b4_tests.dir/rule
+.PHONY : miniai_lab03_b4_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab03_b4_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=57,58 "Finished codegen for target miniai_lab03_b4_tests"
+.PHONY : CMakeFiles/miniai_lab03_b4_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab03_b4_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b4_tests.dir\build.make CMakeFiles/miniai_lab03_b4_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab03_b4_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_lab03_b5_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab03_b5_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=59,60 "Built target miniai_lab03_b5_tests"
+.PHONY : CMakeFiles/miniai_lab03_b5_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab03_b5_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_b5_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab03_b5_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab03_b5_tests: CMakeFiles/miniai_lab03_b5_tests.dir/rule
+.PHONY : miniai_lab03_b5_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab03_b5_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=59,60 "Finished codegen for target miniai_lab03_b5_tests"
+.PHONY : CMakeFiles/miniai_lab03_b5_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab03_b5_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_b5_tests.dir\build.make CMakeFiles/miniai_lab03_b5_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab03_b5_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/lab03_a8_tests.dir
+
+# All Build rule for target.
+CMakeFiles/lab03_a8_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=1,2 "Built target lab03_a8_tests"
+.PHONY : CMakeFiles/lab03_a8_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lab03_a8_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/lab03_a8_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/lab03_a8_tests.dir/rule
+
+# Convenience name for target.
+lab03_a8_tests: CMakeFiles/lab03_a8_tests.dir/rule
+.PHONY : lab03_a8_tests
+
+# codegen rule for target.
+CMakeFiles/lab03_a8_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=1,2 "Finished codegen for target lab03_a8_tests"
+.PHONY : CMakeFiles/lab03_a8_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/lab03_a8_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lab03_a8_tests.dir\build.make CMakeFiles/lab03_a8_tests.dir/clean
+.PHONY : CMakeFiles/lab03_a8_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sinc_tests.dir
+
+# All Build rule for target.
+CMakeFiles/sinc_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=87,88 "Built target sinc_tests"
+.PHONY : CMakeFiles/sinc_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sinc_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/sinc_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/sinc_tests.dir/rule
+
+# Convenience name for target.
+sinc_tests: CMakeFiles/sinc_tests.dir/rule
+.PHONY : sinc_tests
+
+# codegen rule for target.
+CMakeFiles/sinc_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=87,88 "Finished codegen for target sinc_tests"
+.PHONY : CMakeFiles/sinc_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/sinc_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\sinc_tests.dir\build.make CMakeFiles/sinc_tests.dir/clean
+.PHONY : CMakeFiles/sinc_tests.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/miniai_lab03_a4_tests.dir
 
 # All Build rule for target.
 CMakeFiles/miniai_lab03_a4_tests.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a4_tests.dir\build.make CMakeFiles/miniai_lab03_a4_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a4_tests.dir\build.make CMakeFiles/miniai_lab03_a4_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=32,33 "Built target miniai_lab03_a4_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=53,54 "Built target miniai_lab03_a4_tests"
 .PHONY : CMakeFiles/miniai_lab03_a4_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_lab03_a4_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_a4_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_lab03_a4_tests.dir/rule
@@ -1343,7 +1825,7 @@ miniai_lab03_a4_tests: CMakeFiles/miniai_lab03_a4_tests.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_lab03_a4_tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a4_tests.dir\build.make CMakeFiles/miniai_lab03_a4_tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=32,33 "Finished codegen for target miniai_lab03_a4_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=53,54 "Finished codegen for target miniai_lab03_a4_tests"
 .PHONY : CMakeFiles/miniai_lab03_a4_tests.dir/codegen
 
 # clean rule for target.
@@ -1352,18 +1834,210 @@ CMakeFiles/miniai_lab03_a4_tests.dir/clean:
 .PHONY : CMakeFiles/miniai_lab03_a4_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/miniai_loss_header_compile.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_loss_header_compile.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=69,70 "Built target miniai_loss_header_compile"
+.PHONY : CMakeFiles/miniai_loss_header_compile.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_loss_header_compile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_loss_header_compile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_loss_header_compile.dir/rule
+
+# Convenience name for target.
+miniai_loss_header_compile: CMakeFiles/miniai_loss_header_compile.dir/rule
+.PHONY : miniai_loss_header_compile
+
+# codegen rule for target.
+CMakeFiles/miniai_loss_header_compile.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=69,70 "Finished codegen for target miniai_loss_header_compile"
+.PHONY : CMakeFiles/miniai_loss_header_compile.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_loss_header_compile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_header_compile.dir\build.make CMakeFiles/miniai_loss_header_compile.dir/clean
+.PHONY : CMakeFiles/miniai_loss_header_compile.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_loss_contract_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_loss_contract_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=67,68 "Built target miniai_loss_contract_tests"
+.PHONY : CMakeFiles/miniai_loss_contract_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_loss_contract_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_loss_contract_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_loss_contract_tests.dir/rule
+
+# Convenience name for target.
+miniai_loss_contract_tests: CMakeFiles/miniai_loss_contract_tests.dir/rule
+.PHONY : miniai_loss_contract_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_loss_contract_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=67,68 "Finished codegen for target miniai_loss_contract_tests"
+.PHONY : CMakeFiles/miniai_loss_contract_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_loss_contract_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_loss_contract_tests.dir\build.make CMakeFiles/miniai_loss_contract_tests.dir/clean
+.PHONY : CMakeFiles/miniai_loss_contract_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_tanh_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_tanh_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=81,82 "Built target miniai_tanh_tests"
+.PHONY : CMakeFiles/miniai_tanh_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_tanh_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_tanh_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_tanh_tests.dir/rule
+
+# Convenience name for target.
+miniai_tanh_tests: CMakeFiles/miniai_tanh_tests.dir/rule
+.PHONY : miniai_tanh_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_tanh_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=81,82 "Finished codegen for target miniai_tanh_tests"
+.PHONY : CMakeFiles/miniai_tanh_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_tanh_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_tanh_tests.dir\build.make CMakeFiles/miniai_tanh_tests.dir/clean
+.PHONY : CMakeFiles/miniai_tanh_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_lab03_a6_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_lab03_a6_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=55,56 "Built target miniai_lab03_a6_tests"
+.PHONY : CMakeFiles/miniai_lab03_a6_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_lab03_a6_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_lab03_a6_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_lab03_a6_tests.dir/rule
+
+# Convenience name for target.
+miniai_lab03_a6_tests: CMakeFiles/miniai_lab03_a6_tests.dir/rule
+.PHONY : miniai_lab03_a6_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_lab03_a6_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=55,56 "Finished codegen for target miniai_lab03_a6_tests"
+.PHONY : CMakeFiles/miniai_lab03_a6_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_lab03_a6_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_lab03_a6_tests.dir\build.make CMakeFiles/miniai_lab03_a6_tests.dir/clean
+.PHONY : CMakeFiles/miniai_lab03_a6_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_linear_tests.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_linear_tests.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=65,66 "Built target miniai_linear_tests"
+.PHONY : CMakeFiles/miniai_linear_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_linear_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_linear_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_linear_tests.dir/rule
+
+# Convenience name for target.
+miniai_linear_tests: CMakeFiles/miniai_linear_tests.dir/rule
+.PHONY : miniai_linear_tests
+
+# codegen rule for target.
+CMakeFiles/miniai_linear_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=65,66 "Finished codegen for target miniai_linear_tests"
+.PHONY : CMakeFiles/miniai_linear_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_linear_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_tests.dir\build.make CMakeFiles/miniai_linear_tests.dir/clean
+.PHONY : CMakeFiles/miniai_linear_tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_linear_demo.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_linear_demo.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=63,64 "Built target miniai_linear_demo"
+.PHONY : CMakeFiles/miniai_linear_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_linear_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_linear_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_linear_demo.dir/rule
+
+# Convenience name for target.
+miniai_linear_demo: CMakeFiles/miniai_linear_demo.dir/rule
+.PHONY : miniai_linear_demo
+
+# codegen rule for target.
+CMakeFiles/miniai_linear_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=63,64 "Finished codegen for target miniai_linear_demo"
+.PHONY : CMakeFiles/miniai_linear_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_linear_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_linear_demo.dir\build.make CMakeFiles/miniai_linear_demo.dir/clean
+.PHONY : CMakeFiles/miniai_linear_demo.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/miniai_absolute_error_demo.dir
 
 # All Build rule for target.
 CMakeFiles/miniai_absolute_error_demo.dir/all: CMakeFiles/miniai.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=18,19 "Built target miniai_absolute_error_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=29,30 "Built target miniai_absolute_error_demo"
 .PHONY : CMakeFiles/miniai_absolute_error_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/miniai_absolute_error_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_absolute_error_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
 .PHONY : CMakeFiles/miniai_absolute_error_demo.dir/rule
@@ -1375,13 +2049,109 @@ miniai_absolute_error_demo: CMakeFiles/miniai_absolute_error_demo.dir/rule
 # codegen rule for target.
 CMakeFiles/miniai_absolute_error_demo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=18,19 "Finished codegen for target miniai_absolute_error_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=29,30 "Finished codegen for target miniai_absolute_error_demo"
 .PHONY : CMakeFiles/miniai_absolute_error_demo.dir/codegen
 
 # clean rule for target.
 CMakeFiles/miniai_absolute_error_demo.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_absolute_error_demo.dir\build.make CMakeFiles/miniai_absolute_error_demo.dir/clean
 .PHONY : CMakeFiles/miniai_absolute_error_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_population_variance_demo.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_population_variance_demo.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=77,78 "Built target miniai_population_variance_demo"
+.PHONY : CMakeFiles/miniai_population_variance_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_population_variance_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_population_variance_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_population_variance_demo.dir/rule
+
+# Convenience name for target.
+miniai_population_variance_demo: CMakeFiles/miniai_population_variance_demo.dir/rule
+.PHONY : miniai_population_variance_demo
+
+# codegen rule for target.
+CMakeFiles/miniai_population_variance_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=77,78 "Finished codegen for target miniai_population_variance_demo"
+.PHONY : CMakeFiles/miniai_population_variance_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_population_variance_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_population_variance_demo.dir\build.make CMakeFiles/miniai_population_variance_demo.dir/clean
+.PHONY : CMakeFiles/miniai_population_variance_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/miniai_stddev_demo.dir
+
+# All Build rule for target.
+CMakeFiles/miniai_stddev_demo.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=79,80 "Built target miniai_stddev_demo"
+.PHONY : CMakeFiles/miniai_stddev_demo.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/miniai_stddev_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/miniai_stddev_demo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/miniai_stddev_demo.dir/rule
+
+# Convenience name for target.
+miniai_stddev_demo: CMakeFiles/miniai_stddev_demo.dir/rule
+.PHONY : miniai_stddev_demo
+
+# codegen rule for target.
+CMakeFiles/miniai_stddev_demo.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=79,80 "Finished codegen for target miniai_stddev_demo"
+.PHONY : CMakeFiles/miniai_stddev_demo.dir/codegen
+
+# clean rule for target.
+CMakeFiles/miniai_stddev_demo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\miniai_stddev_demo.dir\build.make CMakeFiles/miniai_stddev_demo.dir/clean
+.PHONY : CMakeFiles/miniai_stddev_demo.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_differentiation_errors.dir
+
+# All Build rule for target.
+CMakeFiles/test_differentiation_errors.dir/all: CMakeFiles/miniai.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=89,90 "Built target test_differentiation_errors"
+.PHONY : CMakeFiles/test_differentiation_errors.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_differentiation_errors.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/test_differentiation_errors.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\7779\C_Solver\build\CMakeFiles 0
+.PHONY : CMakeFiles/test_differentiation_errors.dir/rule
+
+# Convenience name for target.
+test_differentiation_errors: CMakeFiles/test_differentiation_errors.dir/rule
+.PHONY : test_differentiation_errors
+
+# codegen rule for target.
+CMakeFiles/test_differentiation_errors.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=89,90 "Finished codegen for target test_differentiation_errors"
+.PHONY : CMakeFiles/test_differentiation_errors.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_differentiation_errors.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_differentiation_errors.dir\build.make CMakeFiles/test_differentiation_errors.dir/clean
+.PHONY : CMakeFiles/test_differentiation_errors.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -235,7 +235,8 @@ if(BUILD_TESTING)
     add_test(NAME miniai_objective_contract_tests COMMAND miniai_objective_contract_tests)
 endif()
 
-add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
+add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c
+)
 target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 

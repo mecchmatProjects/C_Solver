@@ -42,6 +42,7 @@ add_library(miniai
     src/ml/activation/sinc.c
     src/ml/activation/tanh_activation.c
     src/ml/activation/linear.c
+    src/differentiation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -83,6 +84,9 @@ if(BUILD_TESTING)
         add_executable(miniai_vector_activation_tests tests/vector_activation_tests.c)
         target_link_libraries(miniai_vector_activation_tests PRIVATE miniai::miniai)
         add_test(NAME miniai_vector_activation_tests COMMAND miniai_vector_activation_tests)
+    add_executable(miniai_lab04_a3_tests tests/test_differentiation.c)
+    target_link_libraries(miniai_lab04_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab04_a3_tests COMMAND miniai_lab04_a3_tests)
     if(MINIAI_ENABLE_INVSQRT)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_INVSQRT)
     endif()

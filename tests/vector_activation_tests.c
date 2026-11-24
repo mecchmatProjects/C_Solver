@@ -14,6 +14,8 @@ static void expect_near(double actual, double expected, const char* message) {
     double tolerance = 1e-7 * fmax(1.0, fabs(expected));
     if (!(fabs(actual - expected) <= tolerance)) {
         fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message, actual, expected);
+    }
+}
 static void expect_true(int condition, const char *message) {
     ++checks;
     if (!condition) {

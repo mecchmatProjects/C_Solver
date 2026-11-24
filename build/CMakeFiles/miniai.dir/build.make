@@ -71,11 +71,26 @@ include CMakeFiles/miniai.dir/flags.make
 CMakeFiles/miniai.dir/codegen:
 .PHONY : CMakeFiles/miniai.dir/codegen
 
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj: C:/Users/7779/C_Solver/src/ml/activation/invsqrt.c
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\invsqrt.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\invsqrt.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\invsqrt.c
+
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\activation\invsqrt.c > CMakeFiles\miniai.dir\src\ml\activation\invsqrt.c.i
+
+CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\activation\invsqrt.c -o CMakeFiles\miniai.dir\src\ml\activation\invsqrt.c.s
+
 CMakeFiles/miniai.dir/src/math/vector.c.obj: CMakeFiles/miniai.dir/flags.make
 CMakeFiles/miniai.dir/src/math/vector.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/math/vector.c.obj: C:/Users/7779/C_Solver/src/math/vector.c
 CMakeFiles/miniai.dir/src/math/vector.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/miniai.dir/src/math/vector.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/miniai.dir/src/math/vector.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/math/vector.c.obj -MF CMakeFiles\miniai.dir\src\math\vector.c.obj.d -o CMakeFiles\miniai.dir\src\math\vector.c.obj -c C:\Users\7779\C_Solver\src\math\vector.c
 
 CMakeFiles/miniai.dir/src/math/vector.c.i: cmake_force
@@ -86,11 +101,41 @@ CMakeFiles/miniai.dir/src/math/vector.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/math/vector.c.s"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\math\vector.c -o CMakeFiles\miniai.dir\src\math\vector.c.s
 
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj: C:/Users/7779/C_Solver/src/ml/loss/vector_loss.c
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj -MF CMakeFiles\miniai.dir\src\ml\loss\vector_loss.c.obj.d -o CMakeFiles\miniai.dir\src\ml\loss\vector_loss.c.obj -c C:\Users\7779\C_Solver\src\ml\loss\vector_loss.c
+
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\loss\vector_loss.c > CMakeFiles\miniai.dir\src\ml\loss\vector_loss.c.i
+
+CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\loss\vector_loss.c -o CMakeFiles\miniai.dir\src\ml\loss\vector_loss.c.s
+
+CMakeFiles/miniai.dir/src/math/statistics.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/math/statistics.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/math/statistics.c.obj: C:/Users/7779/C_Solver/src/math/statistics.c
+CMakeFiles/miniai.dir/src/math/statistics.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/miniai.dir/src/math/statistics.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/math/statistics.c.obj -MF CMakeFiles\miniai.dir\src\math\statistics.c.obj.d -o CMakeFiles\miniai.dir\src\math\statistics.c.obj -c C:\Users\7779\C_Solver\src\math\statistics.c
+
+CMakeFiles/miniai.dir/src/math/statistics.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/math/statistics.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\math\statistics.c > CMakeFiles\miniai.dir\src\math\statistics.c.i
+
+CMakeFiles/miniai.dir/src/math/statistics.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/math/statistics.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\math\statistics.c -o CMakeFiles\miniai.dir\src\math\statistics.c.s
+
 CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj: CMakeFiles/miniai.dir/flags.make
 CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj: C:/Users/7779/C_Solver/src/ml/activation/activation.c
 CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\activation.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\activation.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\activation.c
 
 CMakeFiles/miniai.dir/src/ml/activation/activation.c.i: cmake_force
@@ -105,7 +150,7 @@ CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj: CMakeFiles/miniai.dir/flags.
 CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj: C:/Users/7779/C_Solver/src/ml/activation/bent.c
 CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\bent.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\bent.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\bent.c
 
 CMakeFiles/miniai.dir/src/ml/activation/bent.c.i: cmake_force
@@ -120,7 +165,7 @@ CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj: CMakeFiles/miniai.dir/flag
 CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj: C:/Users/7779/C_Solver/src/ml/activation/arctan.c
 CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\arctan.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\arctan.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\arctan.c
 
 CMakeFiles/miniai.dir/src/ml/activation/arctan.c.i: cmake_force
@@ -135,7 +180,7 @@ CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj: CMakeFiles/miniai.dir/flags.m
 CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj: C:/Users/7779/C_Solver/src/ml/activation/elu.c
 CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/elu.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\elu.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\elu.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\elu.c
 
 CMakeFiles/miniai.dir/src/ml/activation/elu.c.i: cmake_force
@@ -150,7 +195,7 @@ CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj: CMakeFiles/miniai.dir/fl
 CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj: C:/Users/7779/C_Solver/src/ml/activation/gaussian.c
 CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\gaussian.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\gaussian.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\gaussian.c
 
 CMakeFiles/miniai.dir/src/ml/activation/gaussian.c.i: cmake_force
@@ -165,7 +210,7 @@ CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj: CMakeFiles/miniai.dir/
 CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj: C:/Users/7779/C_Solver/src/ml/activation/leaky_relu.c
 CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\leaky_relu.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\leaky_relu.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\leaky_relu.c
 
 CMakeFiles/miniai.dir/src/ml/activation/leaky_relu.c.i: cmake_force
@@ -180,7 +225,7 @@ CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj: CMakeFiles/miniai.dir/flags.
 CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj: C:/Users/7779/C_Solver/src/ml/activation/relu.c
 CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/relu.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\relu.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\relu.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\relu.c
 
 CMakeFiles/miniai.dir/src/ml/activation/relu.c.i: cmake_force
@@ -195,7 +240,7 @@ CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj: CMakeFiles/miniai.dir/flag
 CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj: C:/Users/7779/C_Solver/src/ml/activation/s_relu.c
 CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\s_relu.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\s_relu.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\s_relu.c
 
 CMakeFiles/miniai.dir/src/ml/activation/s_relu.c.i: cmake_force
@@ -210,7 +255,7 @@ CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj: CMakeFiles/miniai.dir/fla
 CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj: C:/Users/7779/C_Solver/src/ml/activation/sigmoid.c
 CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\sigmoid.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\sigmoid.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\sigmoid.c
 
 CMakeFiles/miniai.dir/src/ml/activation/sigmoid.c.i: cmake_force
@@ -225,7 +270,7 @@ CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj: CMakeFiles/miniai.dir/
 CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj: C:/Users/7779/C_Solver/src/ml/activation/sigmweight.c
 CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\sigmweight.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\sigmweight.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\sigmweight.c
 
 CMakeFiles/miniai.dir/src/ml/activation/sigmweight.c.i: cmake_force
@@ -240,7 +285,7 @@ CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj: CMakeFiles/miniai.dir/fl
 CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj: C:/Users/7779/C_Solver/src/ml/activation/softplus.c
 CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\softplus.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\softplus.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\softplus.c
 
 CMakeFiles/miniai.dir/src/ml/activation/softplus.c.i: cmake_force
@@ -255,7 +300,7 @@ CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj: CMakeFiles/minia
 CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj: C:/Users/7779/C_Solver/src/ml/activation/soft_exponential.c
 CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\soft_exponential.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\soft_exponential.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\soft_exponential.c
 
 CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.i: cmake_force
@@ -270,7 +315,7 @@ CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj: CMakeFiles/miniai.dir/fl
 CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj: C:/Users/7779/C_Solver/src/ml/activation/softsign.c
 CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\softsign.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\softsign.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\softsign.c
 
 CMakeFiles/miniai.dir/src/ml/activation/softsign.c.i: cmake_force
@@ -285,7 +330,7 @@ CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj: CMakeFiles/miniai.dir/fla
 CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj: C:/Users/7779/C_Solver/src/ml/activation/onestep.c
 CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\onestep.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\onestep.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\onestep.c
 
 CMakeFiles/miniai.dir/src/ml/activation/onestep.c.i: cmake_force
@@ -296,11 +341,26 @@ CMakeFiles/miniai.dir/src/ml/activation/onestep.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/activation/onestep.c.s"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\activation\onestep.c -o CMakeFiles\miniai.dir\src\ml\activation\onestep.c.s
 
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj: C:/Users/7779/C_Solver/src/ml/loss/binary_cross_entropy.c
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj -MF CMakeFiles\miniai.dir\src\ml\loss\binary_cross_entropy.c.obj.d -o CMakeFiles\miniai.dir\src\ml\loss\binary_cross_entropy.c.obj -c C:\Users\7779\C_Solver\src\ml\loss\binary_cross_entropy.c
+
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\loss\binary_cross_entropy.c > CMakeFiles\miniai.dir\src\ml\loss\binary_cross_entropy.c.i
+
+CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\loss\binary_cross_entropy.c -o CMakeFiles\miniai.dir\src\ml\loss\binary_cross_entropy.c.s
+
 CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj: CMakeFiles/miniai.dir/flags.make
 CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
 CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj: C:/Users/7779/C_Solver/src/ml/loss/absolute_error.c
 CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj -MF CMakeFiles\miniai.dir\src\ml\loss\absolute_error.c.obj.d -o CMakeFiles\miniai.dir\src\ml\loss\absolute_error.c.obj -c C:\Users\7779\C_Solver\src\ml\loss\absolute_error.c
 
 CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.i: cmake_force
@@ -311,9 +371,87 @@ CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.s"
 	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\loss\absolute_error.c -o CMakeFiles\miniai.dir\src\ml\loss\absolute_error.c.s
 
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj: C:/Users/7779/C_Solver/src/ml/loss/huber.c
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj -MF CMakeFiles\miniai.dir\src\ml\loss\huber.c.obj.d -o CMakeFiles\miniai.dir\src\ml\loss\huber.c.obj -c C:\Users\7779\C_Solver\src\ml\loss\huber.c
+
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/loss/huber.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\loss\huber.c > CMakeFiles\miniai.dir\src\ml\loss\huber.c.i
+
+CMakeFiles/miniai.dir/src/ml/loss/huber.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/loss/huber.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\loss\huber.c -o CMakeFiles\miniai.dir\src\ml\loss\huber.c.s
+
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj: C:/Users/7779/C_Solver/src/ml/activation/sinc.c
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\sinc.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\sinc.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\sinc.c
+
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/activation/sinc.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\activation\sinc.c > CMakeFiles\miniai.dir\src\ml\activation\sinc.c.i
+
+CMakeFiles/miniai.dir/src/ml/activation/sinc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/activation/sinc.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\activation\sinc.c -o CMakeFiles\miniai.dir\src\ml\activation\sinc.c.s
+
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj: C:/Users/7779/C_Solver/src/ml/activation/tanh_activation.c
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\tanh_activation.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\tanh_activation.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\tanh_activation.c
+
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\activation\tanh_activation.c > CMakeFiles\miniai.dir\src\ml\activation\tanh_activation.c.i
+
+CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\activation\tanh_activation.c -o CMakeFiles\miniai.dir\src\ml\activation\tanh_activation.c.s
+
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj: C:/Users/7779/C_Solver/src/ml/activation/linear.c
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj -MF CMakeFiles\miniai.dir\src\ml\activation\linear.c.obj.d -o CMakeFiles\miniai.dir\src\ml\activation\linear.c.obj -c C:\Users\7779\C_Solver\src\ml\activation\linear.c
+
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/ml/activation/linear.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\ml\activation\linear.c > CMakeFiles\miniai.dir\src\ml\activation\linear.c.i
+
+CMakeFiles/miniai.dir/src/ml/activation/linear.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/ml/activation/linear.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\ml\activation\linear.c -o CMakeFiles\miniai.dir\src\ml\activation\linear.c.s
+
+CMakeFiles/miniai.dir/src/differentiation.c.obj: CMakeFiles/miniai.dir/flags.make
+CMakeFiles/miniai.dir/src/differentiation.c.obj: CMakeFiles/miniai.dir/includes_C.rsp
+CMakeFiles/miniai.dir/src/differentiation.c.obj: C:/Users/7779/C_Solver/src/differentiation.c
+CMakeFiles/miniai.dir/src/differentiation.c.obj: CMakeFiles/miniai.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/miniai.dir/src/differentiation.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/miniai.dir/src/differentiation.c.obj -MF CMakeFiles\miniai.dir\src\differentiation.c.obj.d -o CMakeFiles\miniai.dir\src\differentiation.c.obj -c C:\Users\7779\C_Solver\src\differentiation.c
+
+CMakeFiles/miniai.dir/src/differentiation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/miniai.dir/src/differentiation.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\7779\C_Solver\src\differentiation.c > CMakeFiles\miniai.dir\src\differentiation.c.i
+
+CMakeFiles/miniai.dir/src/differentiation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/miniai.dir/src/differentiation.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\7779\C_Solver\src\differentiation.c -o CMakeFiles\miniai.dir\src\differentiation.c.s
+
 # Object files for target miniai
 miniai_OBJECTS = \
+"CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj" \
 "CMakeFiles/miniai.dir/src/math/vector.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj" \
+"CMakeFiles/miniai.dir/src/math/statistics.c.obj" \
 "CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj" \
 "CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj" \
 "CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj" \
@@ -328,12 +466,21 @@ miniai_OBJECTS = \
 "CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj" \
 "CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj" \
 "CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj" \
-"CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj"
+"CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj" \
+"CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj" \
+"CMakeFiles/miniai.dir/src/differentiation.c.obj"
 
 # External object files for target miniai
 miniai_EXTERNAL_OBJECTS =
 
+libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/invsqrt.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/math/vector.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/loss/vector_loss.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/math/statistics.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/activation.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/bent.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/arctan.c.obj
@@ -348,10 +495,16 @@ libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/softplus.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/soft_exponential.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/softsign.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/onestep.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/loss/binary_cross_entropy.c.obj
 libminiai.a: CMakeFiles/miniai.dir/src/ml/loss/absolute_error.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/loss/huber.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/sinc.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/tanh_activation.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/ml/activation/linear.c.obj
+libminiai.a: CMakeFiles/miniai.dir/src/differentiation.c.obj
 libminiai.a: CMakeFiles/miniai.dir/build.make
 libminiai.a: CMakeFiles/miniai.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C static library libminiai.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\7779\C_Solver\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C static library libminiai.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\miniai.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\miniai.dir\link.txt --verbose=$(VERBOSE)
 

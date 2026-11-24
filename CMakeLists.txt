@@ -15,9 +15,7 @@ option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 
 
 add_library(miniai
     src/ml/activation/invsqrt.c
-    src/math/vector.c
     src/ml/loss/vector_loss.c
-    src/math/statistics.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -139,7 +137,7 @@ if(BUILD_TESTING)
 
     add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
     target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
+    add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests) 
 
     add_executable(miniai_lab02_b8_tests tests/lab02_b8_tests.c)
     target_link_libraries(miniai_lab02_b8_tests PRIVATE miniai::miniai)
@@ -175,6 +173,9 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
 
+    add_executable(miniai_huber_derivative_tests tests/huber_derivative_tests.c)
+    target_link_libraries(miniai_huber_derivative_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_huber_derivative_tests COMMAND miniai_huber_derivative_tests)
     add_executable(miniai_loss_header_compile tests/loss_header_compile.c)
     target_include_directories(miniai_loss_header_compile PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
     add_test(NAME miniai_loss_header_compile COMMAND miniai_loss_header_compile)

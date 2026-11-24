@@ -1,4 +1,19 @@
 .DS_Store
+/**/.DS_Store
+.DS_Store
+**/.idea/
+/out/build/x64-Debug/.cmake/api/v1
+/out/build/x64-Debug/CMakeFiles
+/out/build/x64-Debug/Testing/Temporary
+/out/build/x64-Debug
+/.vs/C_Solver/v18
+/.vs/CMake Overview
+/.vs/ProjectSettings.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/.vs/C_Solver/FileContentIndex
+/CMakeSettings.json
+/.vs
 .idea/
 ybuild/
 build/

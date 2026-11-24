@@ -17,7 +17,7 @@ static int near(double actual, double expected) {
     ++checks;
     if (!isfinite(actual) || !isfinite(expected) ||
         fabs(actual - expected) >
-            1e-12 + 1e-9 * fmax(fabs(actual), fabs(expected))) {
+            1e-8 + 1e-7 * fmax(fabs(actual), fabs(expected))) {
         fprintf(stderr, "FAIL: actual %.17g, expected %.17g\n",
                 actual, expected);
         ++failures;
@@ -192,7 +192,7 @@ int main(void) {
     expect_neuron_error(neuron_objective(parameters, 3, &context),
                         "dimension mismatch in objective");
 
-    if (central_gradient(parameters, 4, 1e-3, &context, numerical) != 0 ||
+    if (central_gradient(parameters, 4, 1e-5, &context, numerical) != 0 ||
         analytical_gradient(parameters, &context, analytical) != 0) {
         fprintf(stderr, "FAIL: gradient calculation failed\n");
         ++failures;

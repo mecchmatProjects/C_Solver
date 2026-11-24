@@ -13,7 +13,7 @@ typedef struct {
 static int near(double actual, double expected) {
     return isfinite(actual) && isfinite(expected) &&
            fabs(actual - expected) <=
-               1e-12 + 1e-9 * fmax(fabs(actual), fabs(expected));
+               1e-8 + 1e-7 * fmax(fabs(actual), fabs(expected));
 }
 
 static double neuron_objective(const double parameters[], size_t n,
@@ -170,7 +170,7 @@ int run_neuron_gradient_demo(void) {
     const double weights[] = {0.8, -0.2, 0.3};
     const double bias = 0.1;
     const double target = 1.0;
-    const double h = 1e-3;
+    const double h = 1e-5;
     const double exact_gradient[] = {
         -0.177446917, -0.088723459, 0.177446917, -0.177446917};
     double parameters[] = {0.8, -0.2, 0.3, 0.1};

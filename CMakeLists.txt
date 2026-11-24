@@ -10,10 +10,13 @@ include(CTest)
 
 
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
+option(MINIAI_ENABLE_LOSS_INTEGRATION "Build Lab 2 B10 loss integration tests and demo (requires scalar loss implementations)" OFF)
+option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
     src/ml/activation/invsqrt.c
     src/math/vector.c
+    src/ml/loss/vector_loss.c
     src/math/statistics.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
@@ -38,6 +41,9 @@ add_library(miniai
     src/math/statistics.c
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c
+    src/ml/activation/tanh_activation.c
+    src/ml/activation/linear.c
+    src/differentiation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -59,6 +65,11 @@ target_include_directories(miniai
 
 add_executable(miniai_cli src/main.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
+
+if(MINIAI_ENABLE_LOSS_INTEGRATION)
+    add_executable(miniai_loss_demo examples/loss_demo.c)
+    target_link_libraries(miniai_loss_demo PRIVATE miniai::miniai)
+endif()
 
 if(BUILD_TESTING)
     add_executable(miniai_lab03_a1_tests tests/lab03_a1_tests.c)
@@ -86,6 +97,12 @@ if(BUILD_TESTING)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
     add_test(NAME miniai_cli_smoke COMMAND miniai_cli)
 
+    if(MINIAI_ENABLE_LOSS_INTEGRATION)
+        add_executable(miniai_loss_integration_tests tests/loss_integration_tests.c)
+        target_link_libraries(miniai_loss_integration_tests PRIVATE miniai::miniai)
+        add_test(NAME miniai_loss_integration_tests COMMAND miniai_loss_integration_tests)
+        add_test(NAME miniai_loss_demo COMMAND miniai_loss_demo)
+    endif()
     add_executable(miniai_bce_derivative_tests tests/bce_derivative_tests.c)
     target_link_libraries(miniai_bce_derivative_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_bce_derivative_tests COMMAND miniai_bce_derivative_tests)
@@ -102,6 +119,16 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
 
+    if(MINIAI_ENABLE_VECTOR_MSE_TESTS)
+        add_executable(miniai_lab03_b10_tests tests/lab03_b10_tests.c)
+        target_link_libraries(miniai_lab03_b10_tests PRIVATE miniai::miniai)
+        add_test(NAME miniai_lab03_b10_tests COMMAND miniai_lab03_b10_tests)
+    else()
+        message(STATUS
+            "Lab 3 B10 tests are disabled; enable MINIAI_ENABLE_VECTOR_MSE_TESTS "
+            "after Lab 2 B2 is available."
+        )
+    endif()
 
     add_executable(miniai_lab03_a2_tests tests/lab03_a2_tests.c)
     target_link_libraries(miniai_lab03_a2_tests PRIVATE miniai::miniai)
@@ -159,6 +186,22 @@ if(BUILD_TESTING)
     add_executable(miniai_loss_contract_tests tests/loss_contract_tests.c)
     target_link_libraries(miniai_loss_contract_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_loss_contract_tests COMMAND miniai_loss_contract_tests)
+
+    add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
+    target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)
+
+    add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
+    target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
+
+    add_executable(miniai_linear_tests tests/linear_tests.c)
+    target_link_libraries(miniai_linear_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_tests COMMAND miniai_linear_tests)
+
+    add_executable(miniai_linear_demo examples/linear_demo.c)
+    target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
@@ -174,3 +217,16 @@ add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
 target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)
+if(BUILD_TESTING)
+    add_executable(lab04_a2_tests tests/test_differentiation_backward.c)
+    target_link_libraries(lab04_a2_tests PRIVATE miniai::miniai)
+    add_test(NAME lab04_a2_tests COMMAND lab04_a2_tests)
+
+    add_executable(lab04_a3_tests tests/test_differentiation.c)
+    target_link_libraries(lab04_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME lab04_a3_tests COMMAND lab04_a3_tests)
+
+    add_executable(test_differentiation_errors tests/test_differentiation_errors.c)
+    target_link_libraries(test_differentiation_errors PRIVATE miniai::miniai)
+    add_test(NAME test_differentiation_errors COMMAND test_differentiation_errors)
+endif()

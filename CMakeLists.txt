@@ -212,3 +212,12 @@ add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
 target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)
+
+# Lab 4, A9: property/regression tests for numerical differentiation accuracy
+if(BUILD_TESTING)
+    add_executable(miniai_lab04_a9_tests
+        tests/test_differentiation.c
+        tests/test_numeric_properties.c)
+    target_link_libraries(miniai_lab04_a9_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab04_a9_tests COMMAND miniai_lab04_a9_tests)
+endif()

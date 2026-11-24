@@ -43,6 +43,7 @@ add_library(miniai
     src/ml/activation/tanh_activation.c
     src/ml/activation/linear.c
     src/differentiation.c
+    src/gradient_check.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -198,6 +199,10 @@ if(BUILD_TESTING)
     add_executable(miniai_linear_demo examples/linear_demo.c)
     target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_gradient_check_tests tests/test_gradient_check.c)
+    target_link_libraries(miniai_gradient_check_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_gradient_check_tests COMMAND miniai_gradient_check_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
@@ -207,7 +212,6 @@ add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 add_executable(miniai_population_variance_demo examples/population_variance_demo.c)
 target_link_libraries(miniai_population_variance_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_population_variance_demo COMMAND miniai_population_variance_demo)
-
 
 add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
@@ -226,3 +230,7 @@ if(BUILD_TESTING)
     target_link_libraries(test_differentiation_errors PRIVATE miniai::miniai)
     add_test(NAME test_differentiation_errors COMMAND test_differentiation_errors)
 endif()
+
+add_executable(miniai_gradient_demo examples/gradient_demo.c)
+target_link_libraries(miniai_gradient_demo PRIVATE miniai::miniai)
+add_test(NAME miniai_gradient_demo COMMAND miniai_gradient_demo)

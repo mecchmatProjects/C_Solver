@@ -63,7 +63,7 @@ target_include_directories(miniai
         $<INSTALL_INTERFACE:include>
 )
 
-add_executable(miniai_cli src/main.c "src/ml/loss/huber.c" "tests/huber_derivative_tests.c")
+add_executable(miniai_cli src/main.c)
 target_link_libraries(miniai_cli PRIVATE miniai::miniai)
 
 if(MINIAI_ENABLE_LOSS_INTEGRATION)

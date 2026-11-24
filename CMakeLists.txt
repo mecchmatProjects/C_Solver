@@ -42,6 +42,7 @@ add_library(miniai
     src/ml/activation/sinc.c
     src/ml/activation/tanh_activation.c
     src/ml/activation/linear.c
+    src/gradient_safe.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -197,6 +198,10 @@ if(BUILD_TESTING)
     add_executable(miniai_linear_demo examples/linear_demo.c)
     target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_lab4_B4_tests tests/test_gradient_errors.c)
+    target_link_libraries(miniai_lab4_B4_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab4_B4_tests COMMAND miniai_lab4_B4_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

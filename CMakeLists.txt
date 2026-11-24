@@ -13,6 +13,7 @@ option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
 
 add_library(miniai
     src/math/vector.c
+    src/gradient_check.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -108,6 +109,10 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
     target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
+
+    add_executable(test_gradient_check tests/test_gradient_check.c)
+    target_link_libraries(test_gradient_check PRIVATE miniai::miniai)
+    add_test(NAME test_gradient_check COMMAND test_gradient_check)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)

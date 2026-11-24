@@ -212,3 +212,11 @@ add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
 target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)
+
+target_sources(miniai PRIVATE src/differentiation.c)
+
+if(BUILD_TESTING)
+    add_executable(miniai_lab04_a1_tests tests/test_differentiation.c)
+    target_link_libraries(miniai_lab04_a1_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab04_a1_tests COMMAND miniai_lab04_a1_tests)
+endif()

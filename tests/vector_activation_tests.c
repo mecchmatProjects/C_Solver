@@ -106,16 +106,7 @@ static void test_vector_sigmoid(void) {
     }
 }
 
-int main(void) {
-    test_vector_sigmoid();
 
-    if (failures > 0) {
-        fprintf(stderr, "FAILURE: %d of %d checks failed.\n", failures, checks);
-        return 1;
-    }
-}
-
-    printf("SUCCESS: All %d checks passed.\n", checks);
 static void test_relu_values(void) {
     const double input[] = {-2.0, 0.0, 3.0};
     double output[3] = {-1.0, -1.0, -1.0};

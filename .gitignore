@@ -1,4 +1,7 @@
 .DS_Store
+.idea/
+ybuild/
+build/
 /**/.DS_Store
 .DS_Store
 **/.idea/

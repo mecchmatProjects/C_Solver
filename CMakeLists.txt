@@ -10,9 +10,11 @@ include(CTest)
 
 option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)" ON)
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
+option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)" OFF)
 
 add_library(miniai
     src/math/vector.c
+    src/ml/loss/vector_loss.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -29,8 +31,9 @@ add_library(miniai
     include/miniai/ml/activation/onestep.h
     src/ml/activation/onestep.c
     src/ml/loss/absolute_error.c
-    src/math/vector.c
-        src/ml/activation/tanh_activation.c
+    src/ml/loss/huber.c
+    src/ml/activation/tanh_activation.c
+    src/ml/activation/linear.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -74,7 +77,7 @@ if(BUILD_TESTING)
     if(MINIAI_ENABLE_ARCTAN_TESTS)
         target_compile_definitions(miniai_activation_tests PRIVATE MINIAI_ENABLE_ARCTAN_TESTS)
     endif()
-    
+
     add_executable(miniai_header_tests tests/header_tests.c)
     target_link_libraries(miniai_header_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_header_tests COMMAND miniai_header_tests)
@@ -88,9 +91,24 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_onestep_demo PRIVATE miniai::miniai)
     add_test(NAME miniai_onestep_demo_smoke COMMAND miniai_onestep_demo)
 
+    if(MINIAI_ENABLE_VECTOR_MSE_TESTS)
+        add_executable(miniai_lab03_b10_tests tests/lab03_b10_tests.c)
+        target_link_libraries(miniai_lab03_b10_tests PRIVATE miniai::miniai)
+        add_test(NAME miniai_lab03_b10_tests COMMAND miniai_lab03_b10_tests)
+    else()
+        message(STATUS
+            "Lab 3 B10 tests are disabled; enable MINIAI_ENABLE_VECTOR_MSE_TESTS "
+            "after Lab 2 B2 is available."
+        )
+    endif()
+
     add_executable(miniai_lab02_b4_tests tests/lab02_b4_tests.c)
     target_link_libraries(miniai_lab02_b4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab02_b4_tests COMMAND miniai_lab02_b4_tests)
+
+    add_executable(miniai_lab02_b8_tests tests/lab02_b8_tests.c)
+    target_link_libraries(miniai_lab02_b8_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab02_b8_tests COMMAND miniai_lab02_b8_tests)
 
     add_executable(lab03_a8_tests tests/lab03_a8_tests.c)
     target_link_libraries(lab03_a8_tests PRIVATE miniai::miniai)
@@ -100,13 +118,9 @@ if(BUILD_TESTING)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
 
-    add_executable(miniai_lab02_a7_tests tests/lab02_a7_tests.c)
-    target_link_libraries(miniai_lab02_a7_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_lab02_a7_tests COMMAND miniai_lab02_a7_tests)
-    
-    add_executable(miniai_lab03_a7_tests tests/lab03_a7_tests.c)
-    target_link_libraries(miniai_lab03_a7_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_lab03_a7_tests COMMAND miniai_lab03_a7_tests)
+    add_executable(miniai_loss_header_compile tests/loss_header_compile.c)
+    target_include_directories(miniai_loss_header_compile PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+    add_test(NAME miniai_loss_header_compile COMMAND miniai_loss_header_compile)
 
     add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
     target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
@@ -115,11 +129,78 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
     target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
+
+    add_executable(miniai_linear_tests tests/linear_tests.c)
+    target_link_libraries(miniai_linear_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_tests COMMAND miniai_linear_tests)
+
+    add_executable(miniai_linear_demo examples/linear_demo.c)
+    target_link_libraries(miniai_linear_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_linear_demo_smoke COMMAND miniai_linear_demo)
+
+    add_executable(miniai_neuron_gradient_demo examples/neuron_gradient_demo.c)
+    target_link_libraries(miniai_neuron_gradient_demo PRIVATE miniai::miniai)
+    add_test(NAME miniai_neuron_gradient_demo_smoke
+             COMMAND miniai_neuron_gradient_demo)
+
+    add_executable(miniai_neuron_gradient_tests tests/test_neuron_gradient.c)
+    target_link_libraries(miniai_neuron_gradient_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_neuron_gradient_tests
+             COMMAND miniai_neuron_gradient_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
 target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 
+target_sources(miniai PRIVATE
+    src/differentiation.c
+    src/differentiation_experiments.c
+    src/differentiation_extra.c
+)
 
+add_executable(miniai_derivative_demo examples/derivative_demo.c)
+target_link_libraries(miniai_derivative_demo PRIVATE miniai::miniai)
 
+if(BUILD_TESTING)
+    add_test(NAME miniai_derivative_demo_smoke COMMAND miniai_derivative_demo)
+
+    add_executable(miniai_lab04_a10_tests tests/lab04_a10_tests.c)
+    target_link_libraries(miniai_lab04_a10_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab04_a10_tests COMMAND miniai_lab04_a10_tests)
+
+    add_executable(miniai_test_differentiation
+        tests/test_differentiation.c
+        tests/test_functions.c
+    )
+    target_link_libraries(miniai_test_differentiation PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_differentiation COMMAND miniai_test_differentiation)
+
+    add_executable(miniai_test_differentiation_errors
+        tests/test_differentiation_errors.c
+        tests/test_functions.c
+    )
+    target_link_libraries(miniai_test_differentiation_errors PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_differentiation_errors COMMAND miniai_test_differentiation_errors)
+
+    add_executable(miniai_test_differentiation_experiments
+        tests/test_differentiation_experiments.c
+        tests/test_functions.c
+    )
+    target_link_libraries(miniai_test_differentiation_experiments PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_differentiation_experiments COMMAND miniai_test_differentiation_experiments)
+
+    add_executable(miniai_test_differentiation_extra
+        tests/test_differentiation_extra.c
+        tests/test_functions.c
+    )
+    target_link_libraries(miniai_test_differentiation_extra PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_differentiation_extra COMMAND miniai_test_differentiation_extra)
+
+    add_executable(miniai_test_numeric_properties
+        tests/test_numeric_properties.c
+        tests/test_functions.c
+    )
+    target_link_libraries(miniai_test_numeric_properties PRIVATE miniai::miniai)
+    add_test(NAME miniai_test_numeric_properties COMMAND miniai_test_numeric_properties)
+endif()

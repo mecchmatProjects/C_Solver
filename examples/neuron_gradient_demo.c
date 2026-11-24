@@ -170,9 +170,10 @@ int run_neuron_gradient_demo(void) {
     const double weights[] = {0.8, -0.2, 0.3};
     const double bias = 0.1;
     const double target = 1.0;
-    const double h = 1e-3;
+    const double h = 1e-4;
     const double exact_gradient[] = {
-        -0.177446917, -0.088723459, 0.177446917, -0.177446917};
+        -0.17744691734927373, -0.088723458674636865,
+        0.17744691734927373, -0.17744691734927373};
     double parameters[] = {0.8, -0.2, 0.3, 0.1};
     double numerical_gradient[4];
     double analytical_gradient[4];
@@ -228,8 +229,8 @@ int run_neuron_gradient_demo(void) {
             return 1;
         }
     }
-    if (!near(prediction, 0.622459331) ||
-        !near(loss, 0.142536957)) {
+    if (!near(prediction, 0.6224593312018546) ||
+        !near(loss, 0.14253695659655091)) {
         fputs("Neuron prediction or loss is outside the expected tolerance\n",
               stderr);
         return 1;

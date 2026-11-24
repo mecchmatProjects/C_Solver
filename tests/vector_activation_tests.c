@@ -160,7 +160,7 @@ int main(void) {
     test_empty_and_invalid_arguments();
 
     if (failures != 0) {
-        fprintf(stderr, "FAILURE:" %d of %d vector activation checks failed\n", failures, checks);
+        fprintf(stderr, "FAILURE: %d of %d vector activation checks failed\n", failures, checks);
         return 1;
     }
 

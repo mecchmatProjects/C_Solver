@@ -37,7 +37,7 @@ add_library(miniai
     src/ml/loss/absolute_error.c
     src/ml/loss/huber.c
     src/math/vector.c
-    src/ml/loss/huber.c)
+    src/ml/loss/huber.c
     src/math/statistics.c
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c

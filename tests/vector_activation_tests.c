@@ -14,6 +14,7 @@ static void expect_near(double actual, double expected, const char* message) {
     double tolerance = 1e-7 * fmax(1.0, fabs(expected));
     if (!(fabs(actual - expected) <= tolerance)) {
         fprintf(stderr, "FAIL: %s (actual %.17g, expected %.17g)\n", message, actual, expected);
+        ++failures;
     }
 }
 static void expect_true(int condition, const char *message) {
@@ -112,6 +113,7 @@ int main(void) {
         fprintf(stderr, "FAILURE: %d of %d checks failed.\n", failures, checks);
         return 1;
     }
+}
 
     printf("SUCCESS: All %d checks passed.\n", checks);
 static void test_relu_values(void) {
@@ -159,17 +161,18 @@ static void test_empty_and_invalid_arguments(void) {
 }
 
 int main(void) {
+    test_vector_sigmoid();
+    
     test_relu_values();
     test_single_element();
     test_in_place();
     test_empty_and_invalid_arguments();
 
     if (failures != 0) {
-        fprintf(stderr, "%d of %d vector activation checks failed\n", failures,
-                checks);
+        fprintf(stderr, "FAILURE:" %d of %d vector activation checks failed\n", failures, checks);
         return 1;
     }
 
-    printf("%d vector activation checks passed\n", checks);
+    printf("SUCCESS: All %d vector activation checks passed\n", checks);
     return 0;
 }

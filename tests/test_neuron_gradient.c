@@ -175,7 +175,8 @@ int main(void) {
     const double input[] = {1.0, 0.5, -1.0};
     const double parameters[] = {0.8, -0.2, 0.3, 0.1};
     const double expected_exact[] = {
-        -0.177446917, -0.088723459, 0.177446917, -0.177446917};
+        -0.17744691734927373, -0.088723458674636865,
+        0.17744691734927373, -0.17744691734927373};
     double numerical[4];
     double analytical[4];
     double saved[4] = {-100.0, -100.0, -100.0, -100.0};
@@ -188,11 +189,11 @@ int main(void) {
     context.input_count = 3;
     context.target = 1.0;
 
-    near(neuron_objective(parameters, 4, &context), 0.142536957);
+    near(neuron_objective(parameters, 4, &context), 0.14253695659655091);
     expect_neuron_error(neuron_objective(parameters, 3, &context),
                         "dimension mismatch in objective");
 
-    if (central_gradient(parameters, 4, 1e-3, &context, numerical) != 0 ||
+    if (central_gradient(parameters, 4, 1e-4, &context, numerical) != 0 ||
         analytical_gradient(parameters, &context, analytical) != 0) {
         fprintf(stderr, "FAIL: gradient calculation failed\n");
         ++failures;

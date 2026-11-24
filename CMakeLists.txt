@@ -15,9 +15,7 @@ option(MINIAI_ENABLE_VECTOR_MSE_TESTS "Build Lab 3 B10 tests (requires Lab 2 B2 
 
 add_library(miniai
     src/ml/activation/invsqrt.c
-    src/math/vector.c
     src/ml/loss/vector_loss.c
-    src/math/statistics.c
     src/ml/activation/activation.c
     src/ml/activation/bent.c
     src/ml/activation/arctan.c
@@ -37,7 +35,6 @@ add_library(miniai
     src/ml/loss/absolute_error.c
     src/ml/loss/huber.c
     src/math/vector.c
-    src/ml/loss/huber.c
     src/math/statistics.c
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c

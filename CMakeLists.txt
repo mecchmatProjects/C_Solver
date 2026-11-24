@@ -9,6 +9,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 include(CTest)
 
 
+option(MINIAI_ENABLE_INVSQRT "Build unfinished InvSqrt and its tests (Lab 2 A3)" ON)
 option(MINIAI_ENABLE_ARCTAN_TESTS "Run pending Arctan tests (Lab 2 A7)" OFF)
 
 add_library(miniai
@@ -36,6 +37,7 @@ add_library(miniai
     src/math/statistics.c
     include/miniai/math/statistics.h
     src/ml/activation/sinc.c
+        src/ml/activation/tanh_activation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -143,6 +145,22 @@ if(BUILD_TESTING)
     add_executable(miniai_lab03_a4_tests tests/lab03_a4_tests.c)
     target_link_libraries(miniai_lab03_a4_tests PRIVATE miniai::miniai)
     add_test(NAME miniai_lab03_a4_tests COMMAND miniai_lab03_a4_tests)
+
+    add_executable(miniai_lab02_a7_tests tests/lab02_a7_tests.c)
+    target_link_libraries(miniai_lab02_a7_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab02_a7_tests COMMAND miniai_lab02_a7_tests)
+    
+    add_executable(miniai_lab03_a7_tests tests/lab03_a7_tests.c)
+    target_link_libraries(miniai_lab03_a7_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a7_tests COMMAND miniai_lab03_a7_tests)
+
+    add_executable(miniai_tanh_tests tests/tanh_activation_tests.c)
+    target_link_libraries(miniai_tanh_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_tanh_tests COMMAND miniai_tanh_tests)
+
+    add_executable(miniai_lab03_a6_tests tests/lab03_a6_tests.c)
+    target_link_libraries(miniai_lab03_a6_tests PRIVATE miniai::miniai)
+    add_test(NAME miniai_lab03_a6_tests COMMAND miniai_lab03_a6_tests)
 endif()
 
 add_executable(miniai_absolute_error_demo examples/absolute_error_demo.c)
@@ -158,3 +176,5 @@ add_executable(miniai_stddev_demo examples/stddev_demo.c
         examples/stddev_demo.c)
 target_link_libraries(miniai_stddev_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_stddev_demo COMMAND miniai_stddev_demo)
+
+

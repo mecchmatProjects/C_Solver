@@ -268,6 +268,13 @@ MINIAI_ENABLE_ARCTAN_TESTS:BOOL=OFF
 //Build unfinished InvSqrt and its tests (Lab 2 A3)
 MINIAI_ENABLE_INVSQRT:BOOL=OFF
 
+//Build Lab 2 B10 loss integration tests and demo (requires scalar
+// loss implementations)
+MINIAI_ENABLE_LOSS_INTEGRATION:BOOL=OFF
+
+//Build Lab 3 B10 tests (requires Lab 2 B2 miniai_squared_error)
+MINIAI_ENABLE_VECTOR_MSE_TESTS:BOOL=OFF
+
 //Value Computed by CMake
 MiniAI_BINARY_DIR:STATIC=C:/Users/7779/C_Solver/build
 

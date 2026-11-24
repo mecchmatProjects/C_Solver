@@ -122,10 +122,4 @@ target_link_libraries(miniai_absolute_error_demo PRIVATE miniai::miniai)
 add_test(NAME miniai_absolute_error_demo COMMAND miniai_absolute_error_demo)
 
 
-target_sources(miniai PRIVATE src/differentiation.c)
 
-if(BUILD_TESTING)
-    add_executable(miniai_lab04_a1_tests tests/test_differentiation.c)
-    target_link_libraries(miniai_lab04_a1_tests PRIVATE miniai::miniai)
-    add_test(NAME miniai_lab04_a1_tests COMMAND miniai_lab04_a1_tests)
-endif()

@@ -42,6 +42,7 @@ add_library(miniai
     src/ml/activation/sinc.c
     src/ml/activation/tanh_activation.c
     src/ml/activation/linear.c
+    src/differentiation.c
 )
 add_library(miniai::miniai ALIAS miniai)
 
@@ -218,4 +219,17 @@ add_executable(lab04_b11_tests tests/test_differentiation_extra.c)
 target_link_libraries(lab04_b11_tests PRIVATE miniai::miniai)
 if(BUILD_TESTING)
     add_test(NAME lab04_b11_tests COMMAND lab04_b11_tests)
+endif()
+if(BUILD_TESTING)
+    add_executable(lab04_a2_tests tests/test_differentiation_backward.c)
+    target_link_libraries(lab04_a2_tests PRIVATE miniai::miniai)
+    add_test(NAME lab04_a2_tests COMMAND lab04_a2_tests)
+
+    add_executable(lab04_a3_tests tests/test_differentiation.c)
+    target_link_libraries(lab04_a3_tests PRIVATE miniai::miniai)
+    add_test(NAME lab04_a3_tests COMMAND lab04_a3_tests)
+
+    add_executable(test_differentiation_errors tests/test_differentiation_errors.c)
+    target_link_libraries(test_differentiation_errors PRIVATE miniai::miniai)
+    add_test(NAME test_differentiation_errors COMMAND test_differentiation_errors)
 endif()

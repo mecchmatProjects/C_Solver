@@ -1,6 +1,6 @@
 #ifndef MINIAI_ML_ACTIVATION_ACTIVATIONS_H
 #define MINIAI_ML_ACTIVATION_ACTIVATIONS_H
-
+#include "miniai/ml/activation/invsqrt.h"
 #include "miniai/ml/activation/bent.h"
 #include "miniai/ml/activation/arctan.h"
 #include "miniai/ml/activation/elu.h"
@@ -15,5 +15,6 @@
 #include "miniai/ml/activation/softsign.h"
 #include "miniai/ml/activation/invsqrt.h"
 #include "miniai/ml/activation/onestep.h"
+#include "miniai/ml/activation/linear.h"
 
 #endif

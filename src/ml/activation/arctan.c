@@ -4,20 +4,8 @@
 
 static double arctan_value(const Activation *activation, double x) {
     (void)activation;
-    double epsilon = 1e-9;
-    double result = 0.0;
-    double term = x;
-    int n = 1;
-
-    while (fabs(term) > epsilon) {
-        result += term;
-        term *= -x * x * (2 * n - 1) / (2 * n + 1);
-        n++;
-    }
-    
-    return result;
+    return atan(x);
 }
-
 
 static double arctan_derivative(const Activation *activation, double x) {
     (void)activation;
